@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layout :: head"></head>
+<body>
+	<div th:replace="admin/layout :: header"></div>
+	<div id="page-wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">Danh sách chuyến xe</h1>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">Tất cả chuyến xe</div>
+						<span th:text="${success}" style="padding-left: 10px;color: red;"></span>
+						<th:block th:if="${#lists.isEmpty(chuyenxe)}">
+							<h3 style="text-align: center;">Danh sách chuyến xe trống</h3>
+						</th:block>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<div class="table-responsive"  style="width: 100%;">
+								<th:block th:unless="${#lists.isEmpty(chuyenxe)}">
+									<div class="row">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th  style="text-align: center;">ID chuyến xe</th>
+													<th  style="text-align: center;">Ga đi</th>
+													<th  style="text-align: center;">Ga đến</th>
+													<th  style="text-align: center;">Số người</th>
+													<th style="text-align: center;">Giá</th>
+													<th style="text-align: center;">Mô tả</th>
+													<th></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr th:each="chuyenxe,iterStat : ${chuyenxe}">
+													<td style="text-align: center;" th:text="${chuyenxe.id_CX}"></td>
+													<td style="text-align: center;" th:text="${chuyenxe.gaDi}"></td>
+													<td style="text-align: center;" th:text="${chuyenxe.gaDen}"></td>
+													<td style="text-align: center;" th:text="${chuyenxe.soNguoi}"></td>
+													<td style="text-align: center;" th:text="${chuyenxe.gia}"></td>
+													<td style="text-align: center;" th:text="${chuyenxe.moTa}"></td>
+													<td class="ql"><a
+														th:href="@{/chuyenxe/{id}/xoa(id=${chuyenxe.id_CX})}">Xóa</a><a
+														th:href="@{/chuyenxe/{id}/sua(id=${chuyenxe.id_CX})}">Sửa</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</th:block>
+							</div>
+							<!-- /.table-responsive -->
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			$('#dataTables-example').DataTable({
+				responsive : true
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+
+	<div class="container main-content form">
+		<div class="row">
+			<form action="#" th:action="@{/chuyenxe/luu}" th:object="${chuyenxe}"
+				method="POST">
+				<div class="form-group">
+					<label>ID chuyến xe</label> <input type="text" class="form-control"
+						th:field="*{id_CX}" />
+				</div>
+				<div class="form-group">
+					<label>Ga đi</label> <input type="text" class="form-control"
+						th:field="*{gaDi}" /> <label th:if="${#fields.hasErrors('gaDi')}"
+						th:errors="*{gaDi}"></label>
+				</div>
+
+				<div class="form-group">
+					<label>Ga Đến</label> <input type="text" class="form-control"
+						th:field="*{gaDen}" />
+				</div>
+				<div class="form-group">
+					<label>Số người</label> <input type="text" class="form-control"
+						th:field="*{soNguoi}" />
+				</div>
+				<div class="form-group">
+					<label>Giá</label> <input type="text" class="form-control"
+						th:field="*{gia}" />
+				</div>
+				<div class="form-group">
+					<label>Mô tả</label> <input type="text" class="form-control"
+						th:field="*{moTa}" />
+				</div>
+				<button type="submit" class="btn btn-primary">Save</button>
+				<a th:href="@{/chuyenxe}" class="btn btn-success pull-left">
+					<span class="glyphicon glyphicon-plus"></span> Trở lại
+				</a>
+			</form>
+		</div>
+	</div>
+	<!-- /.container -->
+
+	<footer th:replace="layout :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.ql a{
+	padding:10px;
+	color: red;
+}
+.ql a:HOVER {
+	text-decoration: none;
+}
+.ql {
+	text-align: center;
+}

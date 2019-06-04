@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+	<nav th:replace="layout :: header"></nav>
+
+	<div class="container main-content list">
+		<div th:if="${success}"
+			class="row alert alert-success alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<span th:text="${success}"></span>
+		</div>
+		<div class="row">
+			<a th:href="@{/chuyenxe/taomoi}" class="btn btn-success pull-left">
+				<span class="glyphicon glyphicon-plus"></span> Add new employee
+			</a>
+			<form class="form-inline pull-right" action="#"
+				th:action="@{/employee/search}" method="GET">
+				<div class="form-group">
+					<input type="text" class="form-control" name="s"
+						placeholder="Type employee name..." />
+				</div>
+				<button type="submit" class="btn btn-primary">Search</button>
+			</form>
+		</div>
+		<th:block th:if="${#lists.isEmpty(chuyenxe)}">
+			<h3>Không có chuyến xe</h3>
+		</th:block>
+
+		<th:block th:unless="${#lists.isEmpty(chuyenxe)}">
+			<div class="row">
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>ID chuyến xe</th>
+							<th>Ga đi</th>
+							<th>Ga đến</th>
+							<th>Số người</th>
+							<th>Giá</th>
+							<th>Mô tả</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="chuyenxe,iterStat : ${chuyenxe}">
+							<td th:text="${chuyenxe.id_CX}"></td>
+							<td th:text="${chuyenxe.gaDi}"></td>
+							<td th:text="${chuyenxe.gaDen}"></td>
+							<td th:text="${chuyenxe.soNguoi}"></td>
+							<td th:text="${chuyenxe.gia}"></td>
+							<td th:text="${chuyenxe.moTa}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</th:block>
+	</div>
+	<!-- /.container -->
+
+	<footer th:replace="layout :: footer"></footer>
+</body>
+</html>
