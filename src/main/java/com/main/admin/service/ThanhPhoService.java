@@ -1,6 +1,6 @@
 package com.main.admin.service;
 
-import com.main.admin.model.ThanhPho;
+import com.main.admin.entity.ThanhPho;
 
 public interface ThanhPhoService {
 	

@@ -1,6 +1,6 @@
 package com.main.admin.service;
 
-import com.main.admin.model.ChuyenXe;
+import com.main.admin.entity.ChuyenXe;
 
 public interface ChuyenXeService {
 	
