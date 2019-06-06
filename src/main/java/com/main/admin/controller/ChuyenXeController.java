@@ -1,5 +1,7 @@
 package com.main.admin.controller;
 
+import java.text.SimpleDateFormat;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +39,10 @@ public class ChuyenXeController {
 	@PostMapping("/chuyenxe/luu")
 	public String luu(@Valid ChuyenXe chuyenXe,BindingResult result, RedirectAttributes redirect) {
 		if (result.hasErrors()) {
-			return "admin/listTrip";
+			System.out.println("loi");
+			System.out.println(result);
+			redirect.addFlashAttribute("success", "Lưu chuyến xe thất bại!");
+			return "redirect:/chuyenxe/danhsach";
 		}
 		chuyenXeService.luuChuyenXe(chuyenXe);
 		redirect.addFlashAttribute("success", "Lưu chuyến xe thành công!");
@@ -46,6 +51,10 @@ public class ChuyenXeController {
 	@GetMapping("/chuyenxe/{id}/sua")
 	public String sua(@PathVariable int id, ModelMap modelMap,RedirectAttributes redirect) {
 		modelMap.addAttribute("chuyenxe",chuyenXeService.tim(id));
+		SimpleDateFormat sm = new SimpleDateFormat("mm/dd/yyyy");
+		System.out.println(sm.format(chuyenXeService.tim(id).getNgayDi()));
+		modelMap.put("ngayDi", sm.format(chuyenXeService.tim(id).getNgayDi()));
+		modelMap.put("thanhpho", thanhPhoService.findAll());
 		redirect.addFlashAttribute("success", "Sửa chuyến xe thành công!");
 		return "admin/editTrip";
 	}

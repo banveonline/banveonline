@@ -1,44 +1,58 @@
 package com.main.admin.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "chuyenxe")
-public class ChuyenXe implements Serializable{
+public class ChuyenXe implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@Column(name = "id_cx")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_cx", nullable = false)
 	private int id_CX;
-	
+
 	@Column(name = "id_nx")
 	private int id_nx;
-	
+
 	@Column(name = "gadi")
 	private String gaDi;
-	
+
 	@Column(name = "gaden")
 	private String gaDen;
-	
+
 	@Column(name = "songuoi")
 	private int soNguoi;
-	
+
 	@Column(name = "gia")
 	private double gia;
-	
+
 	@Column(name = "mota")
 	private String moTa;
 
-	public ChuyenXe(int id_CX, int id_nx, String gaDi, String gaDen, int soNguoi, double gia, String moTa) {
+	@Column(name = "giodi")
+	private String gioDi;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "ngaydi")
+	private Date ngayDi;
+
+	public ChuyenXe(int id_CX, int id_nx, String gaDi, String gaDen, int soNguoi, double gia, String moTa, String gioDi,
+			Date ngayDi) {
 		super();
 		this.id_CX = id_CX;
 		this.id_nx = id_nx;
@@ -47,6 +61,8 @@ public class ChuyenXe implements Serializable{
 		this.soNguoi = soNguoi;
 		this.gia = gia;
 		this.moTa = moTa;
+		this.gioDi = gioDi;
+		this.ngayDi = ngayDi;
 	}
 
 	public ChuyenXe() {
@@ -109,7 +125,20 @@ public class ChuyenXe implements Serializable{
 		this.moTa = moTa;
 	}
 
-	
-	
-	
+	public String getGioDi() {
+		return gioDi;
+	}
+
+	public void setGioDi(String gioDi) {
+		this.gioDi = gioDi;
+	}
+
+	public Date getNgayDi() {
+		return ngayDi;
+	}
+
+	public void setNgayDi(Date ngayDi) {
+		this.ngayDi = ngayDi;
+	}
+
 }
