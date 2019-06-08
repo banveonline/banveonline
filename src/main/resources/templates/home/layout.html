@@ -6,10 +6,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head
-	th:fragment="homehead">
-<title>Govihar a Travel Agency Category Flat bootstrap
-	Responsive website Template | Home :: w3layouts</title>
+<head th:fragment="homehead">
+<title>Vé xe online</title>
 <!-- Custom Theme files -->
 <meta name="
 	viewport" content="width=device-width, initial-scale=1">
@@ -18,12 +16,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	content="Govihar Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript">
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 </script>
 <!-- //Custom Theme files -->
 <link th:href="@{/css/bootstrap.min.css}" type="text/css"
 	rel="stylesheet" media="all">
 <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet"
+	media="all">
+<link th:href="@{/css/route-styles.min.css}" type="text/css" rel="stylesheet"
 	media="all">
 <link rel="stylesheet" th:href="@{/css/flexslider.css}" type="text/css"
 	media="screen" />
@@ -249,14 +251,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script th:src="@{/js/jquery-ui.js}"></script>
 	<script type="text/javascript" th:src="@{/js/script.js}"></script>
 	<script type="text/javascript">
-			$(window).load(function() {
-				$('.flexslider').flexslider({
-					animation : "slide",
-					start : function(slider) {
-						$('body').removeClass('loading');
-					}
-				});
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				animation : "slide",
+				start : function(slider) {
+					$('body').removeClass('loading');
+				}
 			});
-		</script>
+		});
+	</script>
 </body>
 </html>

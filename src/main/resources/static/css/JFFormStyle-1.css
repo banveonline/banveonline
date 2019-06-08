@@ -1,6 +1,5 @@
 ﻿    /* custom select */
         .row {
-		float: right;
 	}
         form.style-1 .custom-select{ display: none; } /* prevent to display original selects */
         

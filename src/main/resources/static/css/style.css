@@ -538,7 +538,7 @@ select {
     padding: 7px 33px 7px 7px;
     outline: none;
     border: none;
-    background: url(../images/arrow.png) no-repeat 76% center #ffffff;
+    background: url(../images/arrow.png) no-repeat 90% center #ffffff;
     border-radius: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
@@ -2011,6 +2011,7 @@ border:1px solid #d5d5d5;
 .spl-btn-bor {
     padding: 8px 20px;
     background: #6fd508;
+    text-align: center;
 }
 .spl-btn-bor span{
 margin-right: 10px;
