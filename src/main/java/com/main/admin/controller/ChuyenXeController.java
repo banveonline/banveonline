@@ -51,9 +51,6 @@ public class ChuyenXeController {
 	@GetMapping("/chuyenxe/{id}/sua")
 	public String sua(@PathVariable int id, ModelMap modelMap,RedirectAttributes redirect) {
 		modelMap.addAttribute("chuyenxe",chuyenXeService.tim(id));
-		SimpleDateFormat sm = new SimpleDateFormat("mm/dd/yyyy");
-		System.out.println(sm.format(chuyenXeService.tim(id).getNgayDi()));
-		modelMap.put("ngayDi", sm.format(chuyenXeService.tim(id).getNgayDi()));
 		modelMap.put("thanhpho", thanhPhoService.findAll());
 		redirect.addFlashAttribute("success", "Sửa chuyến xe thành công!");
 		return "admin/editTrip";

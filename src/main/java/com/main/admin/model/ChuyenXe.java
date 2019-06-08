@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "chuyenxe")
 public class ChuyenXe implements Serializable {
@@ -49,6 +51,7 @@ public class ChuyenXe implements Serializable {
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "ngaydi")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date ngayDi;
 
 	public ChuyenXe(int id_CX, int id_nx, String gaDi, String gaDen, int soNguoi, double gia, String moTa, String gioDi,
