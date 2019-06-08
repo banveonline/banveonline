@@ -6,8 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head
-	th:fragment="home-head>
+<head th:fragment="homehead">
 <title>Govihar a Travel Agency Category Flat bootstrap
 	Responsive website Template | Home :: w3layouts</title>
 <!-- Custom Theme files -->
@@ -84,8 +83,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li class="active"><a th:href="@{/}">Trang chủ</a></li>
 						<li><a th:href="@{/nha-xe}">Nhà xe</a></li>
 						<li><a th:href="@{/khuyen-mai}">Khuyến mãi</a></li>
-						<li><a href="@{/huong-dan}">Hướng dẫn</a></li>
-						<li><a href="@{/}">Tuyển dụng</a></li>
+						<li><a th:href="@{/huong-dan}">Hướng dẫn</a></li>
+						<li><a th:href="@{/}">Tuyển dụng</a></li>
 					</ul>
 					<div class="clearfix"></div>
 					<!-- script-for-menu -->
