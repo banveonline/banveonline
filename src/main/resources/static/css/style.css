@@ -585,7 +585,7 @@ select option{
 .book_date {
     position: relative;
 }
-.book_date span.glyphicon-calendar,.book_date span.glyphicon-map-marker  {
+.book_date span.glyphicon-calendar,.book_date span.glyphicon-map-marker, .book_date span.glyphicon-time  {
     color: #192436;
     position: absolute;
     z-index: 999;

@@ -52,19 +52,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="col-md-8 banner-right">
 				<div class="sap_tabs">
 					<div class="booking-info">
-						<h2>Book Domestic & International Flight Tickets</h2>
+						<h2>Tìm kiếm</h2>
 					</div>
 					<div id="horizontalTab"
 						style="display: block; width: 100%; margin: 0px;">
-						<ul class="resp-tabs-list">
-							<li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Return</span></li>
-							<li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>One
-									way</span></li>
-							<div class="clearfix"></div>
-						</ul>
-						<!---->
-						<div class="resp-tabs-container">
-							<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+						<div>
+							<div>
 								<div class="facts">
 									<div class="booking-form">
 										<!---strat-date-piker---->
@@ -83,24 +76,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<div class="reservation">
 														<ul>
 															<li class="span1_of_1 desti">
-																<h5>Flying from</h5>
+																<h5>Nơi đi</h5>
 																<div class="book_date">
 																	<form>
 																		<span class="glyphicon glyphicon-map-marker"
 																			aria-hidden="true"></span> <input type="text"
-																			placeholder="Type Departure City"
+																			placeholder="Chọn nơi đi"
 																			class="typeahead1 input-md form-control tt-input"
 																			required="">
 																	</form>
 																</div>
 															</li>
 															<li class="span1_of_1 left desti">
-																<h5>Flying to</h5>
+																<h5>Nơi đến</h5>
 																<div class="book_date">
 																	<form>
 																		<span class="glyphicon glyphicon-map-marker"
 																			aria-hidden="true"></span> <input type="text"
-																			placeholder="Type Destination City"
+																			placeholder="Chọn nơi đến"
 																			class="typeahead1 input-md form-control tt-input"
 																			required="">
 																	</form>
@@ -112,7 +105,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<div class="reservation">
 														<ul>
 															<li class="span1_of_1">
-																<h5>Departure</h5>
+																<h5>Ngày đi</h5>
 																<div class="book_date">
 																	<form>
 																		<span class="glyphicon glyphicon-calendar"
@@ -123,178 +116,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 																</div>
 															</li>
 															<li class="span1_of_1 left">
-																<h5>Return</h5>
+																<h5>Giờ đi</h5>
 																<div class="book_date">
 																	<form>
-																		<span class="glyphicon glyphicon-calendar"
-																			aria-hidden="true"></span> <input type="date"
-																			value="Select date" onfocus="this.value = '';"
-																			onblur="if (this.value == '') {this.value = 'Select date';}">
-																	</form>
-																</div>
-															</li>
-															<li class="span1_of_1 left adult">
-																<h5>Adults (18+)</h5> <!----------start section_room----------->
-																<div class="section_room">
-																	<select id="country"
-																		onchange="change_country(this.value)"
-																		class="frm-field required">
-																		<option value="null">1</option>
-																		<option value="null">2</option>
-																		<option value="AX">3</option>
-																		<option value="AX">4</option>
-																		<option value="AX">5</option>
-																		<option value="AX">6</option>
-																	</select>
-																</div>
-															</li>
-															<li class="span1_of_1 left children">
-																<h5>Children (0-17)</h5> <!----------start section_room----------->
-																<div class="section_room">
-																	<select id="country"
-																		onchange="change_country(this.value)"
-																		class="frm-field required">
-																		<option value="null">1</option>
-																		<option value="null">2</option>
-																		<option value="AX">3</option>
-																		<option value="AX">4</option>
-																		<option value="AX">5</option>
-																		<option value="AX">6</option>
-																	</select>
-																</div>
-															</li>
-															<li class="span1_of_1 economy">
-																<h5>Class</h5> <!----------start section_room----------->
-																<div class="section_room">
-																	<select id="country"
-																		onchange="change_country(this.value)"
-																		class="frm-field required">
-																		<option value="null">Economy</option>
-																		<option value="null">Business</option>
-																	</select>
-																</div>
-															</li>
-															<div class="clearfix"></div>
-														</ul>
-													</div>
-													<div class="reservation">
-														<ul>
-															<li class="span1_of_3">
-																<div class="date_btn">
-																	<form>
-																		<input type="submit" value="Search" />
-																	</form>
-																</div>
-															</li>
-															<div class="clearfix"></div>
-														</ul>
-													</div>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<!---->
-									</div>
-								</div>
-							</div>
-							<div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
-								<div class="facts">
-									<div class="booking-form">
-										<!---strat-date-piker---->
-										<link rel="stylesheet" href="css/jquery-ui.css" />
-										<script src="js/jquery-ui.js"></script>
-										<script>
-											$(function() {
-												$("#datepicker,#datepicker1")
-														.datepicker();
-											});
-										</script>
-
-										<!---/End-date-piker---->
-										<div class="online_reservation">
-											<div class="b_room">
-												<div class="booking_room">
-													<div class="reservation">
-														<ul>
-															<li class="span1_of_1 desti">
-																<h5>Flying from</h5>
-																<div class="book_date">
-																	<form>
-																		<span class="glyphicon glyphicon-map-marker"
+																		<span class="glyphicon glyphicon-time"
 																			aria-hidden="true"></span> <input type="text"
-																			placeholder="Type Departure City"
-																			class="typeahead1 input-md form-control tt-input"
-																			required="">
+																			value="hh:mm" onfocus="this.value = '';"
+																			onblur="if (this.value == '') {this.value = 'Select time';}">
 																	</form>
-																</div>
-															</li>
-															<li class="span1_of_1 left desti">
-																<h5>Flying to</h5>
-																<div class="book_date">
-																	<form>
-																		<span class="glyphicon glyphicon-map-marker"
-																			aria-hidden="true"></span> <input type="text"
-																			placeholder="Type Destination City"
-																			class="typeahead1 input-md form-control tt-input"
-																			required="">
-																	</form>
-																</div>
-															</li>
-															<div class="clearfix"></div>
-														</ul>
-													</div>
-													<div class="reservation">
-														<ul>
-															<li class="span1_of_1">
-																<h5>Departure</h5>
-																<div class="book_date">
-																	<form>
-																		<span class="glyphicon glyphicon-calendar"
-																			aria-hidden="true"></span> <input type="date"
-																			value="Select date" onfocus="this.value = '';"
-																			onblur="if (this.value == '') {this.value = 'Select date';}">
-																	</form>
-																</div>
-															</li>
-															<li class="span1_of_1 left">
-																<h5>Adults (18+)</h5> <!----------start section_room----------->
-																<div class="section_room">
-																	<select id="country"
-																		onchange="change_country(this.value)"
-																		class="frm-field required">
-																		<option value="null">1</option>
-																		<option value="null">2</option>
-																		<option value="AX">3</option>
-																		<option value="AX">4</option>
-																		<option value="AX">5</option>
-																		<option value="AX">6</option>
-																	</select>
-																</div>
-															</li>
-															<li class="span1_of_1 left tab-children">
-																<h5>Children (0-17)</h5> <!----------start section_room----------->
-																<div class="section_room">
-																	<select id="country"
-																		onchange="change_country(this.value)"
-																		class="frm-field required">
-																		<option value="null">1</option>
-																		<option value="null">2</option>
-																		<option value="AX">3</option>
-																		<option value="AX">4</option>
-																		<option value="AX">5</option>
-																		<option value="AX">6</option>
-																	</select>
-																</div>
-															</li>
-															<li class="span1_of_1 economy">
-																<h5>Class</h5> <!----------start section_room----------->
-																<div class="section_room">
-																	<select id="country"
-																		onchange="change_country(this.value)"
-																		class="frm-field required">
-																		<option value="null">Economy</option>
-																		<option value="null">Business</option>
-																	</select>
 																</div>
 															</li>
 															<div class="clearfix"></div>
@@ -328,23 +157,591 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<!-- //container -->
 	</div>
-	<!-- //banner -->
-	<div class="move-text">
-		<div class="marquee">
-			Register your hotel with us free of cost.<a href="signup.html">Here</a>
-		</div>
-		<script type="text/javascript" src="js/jquery.marquee.min.js"></script>
-		<script>
-			$('.marquee').marquee({
-				pauseOnHover : true
-			});
-			//@ sourceURL=pen.js
-		</script>
-	</div>
 	<!-- banner-bottom -->
 	<div class="banner-bottom">
 		<!-- container -->
 		<div class="container">
+			<div class="route-search-panel">
+				<div id="routeSearch" class="odd-row clearfix">
+					<div class="content-inner">
+						<h2 class="cd-headline clip is-full-width h1-tt"
+							style="font-size: 18px; font-weight: bold; text-align: center;">
+						</h2>
+						<div class="clearfix">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs clearfix" role="tablist">
+								<li id="lisaigon" role="presentation" class="active"><a
+									href="#saigon" aria-controls="home" role="tab"
+									data-toggle="tab">SÀI GÒN</a></li>
+								<li id="lihanoi" role="presentation"><a href="#hanoi"
+									aria-controls="profile" role="tab" data-toggle="tab">HÀ NỘI</a></li>
+								<li id="lidanang" role="presentation"><a href="#danang"
+									aria-controls="messages" role="tab" data-toggle="tab">ĐÀ
+										NẴNG</a></li>
+								<li id="linhatrang" role="presentation"><a href="#nhatrang"
+									aria-controls="settings" role="tab" data-toggle="tab">NHA
+										TRANG</a></li>
+								<li id="licantho" role="presentation"><a href="#cantho"
+									aria-controls="settings" role="tab" data-toggle="tab">CẦN
+										THƠ</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane fade in active" id="saigon">
+									<div class="clearfix">
+										<div class="col-md-6 pl0 pr0">
+											<ul class="routes-list">
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-sai-gon-di-ha-noi-129t1241.html"><span
+														class="route fl"><small>Sài Gòn →</small> Hà Nội</span></a> <span
+													class="price fl">900.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-ha-noi"
+													data-param="129t1241.html" id="dp1559980805245">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-sai-gon-di-da-lat-lam-dong-129t23991.html"><span
+														class="route fl"><small>Sài Gòn →</small> Đà Lạt</span></a> <span
+													class="price fl">150.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-sai-gon-di-da-lat-lam-dong"
+													data-param="129t23991.html" id="dp1559980805246">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-sai-gon-di-nha-trang-khanh-hoa-129t23591.html"><span
+														class="route fl"><small>Sài Gòn →</small> Nha Trang</span></a>
+													<span class="price fl">180.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-sai-gon-di-nha-trang-khanh-hoa"
+													data-param="129t23591.html" id="dp1559980805247">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-sai-gon-di-da-nang-129t1151.html"><span
+														class="route fl"><small>Sài Gòn →</small> Đà Nẵng</span></a> <span
+													class="price fl">360.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-da-nang"
+													data-param="129t1151.html" id="dp1559980805248">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-sai-gon-di-phnom-penh-campuchia-129t1491181.html"><span
+														class="route fl"><small>Sài Gòn →</small> Phnôm
+															Pênh</span></a> <span class="price fl">200.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-phnom-penh-campuchia"
+													data-param="129t1491181.html" id="dp1559980805249">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+											</ul>
+										</div>
+										<div class="col-md-6 pl0 pr0">
+											<ul class="routes-list">
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-sai-gon-di-mui-ne-binh-thuan-129t27071.html"><span
+														class="route fl"><small>Sài Gòn →</small> Mũi Né</span></a> <span
+													class="price fl">120.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-mui-ne-binh-thuan"
+													data-param="129t27071.html" id="dp1559980805250">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-sai-gon-di-vung-tau-ba-ria-vung-tau-129t2131.html"><span
+														class="route fl"><small>Sài Gòn →</small> Vũng Tàu</span></a>
+													<span class="price fl">105.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-sai-gon-di-vung-tau-ba-ria-vung-tau"
+													data-param="129t2131.html" id="dp1559980805251">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-sai-gon-di-khanh-hoa-129t1321.html"><span
+														class="route fl"><small>Sài Gòn →</small> Khánh Hòa</span></a>
+													<span class="price fl">185.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-khanh-hoa"
+													data-param="129t1321.html" id="dp1559980805252">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-sai-gon-di-dak-lak-129t21431.html"><span
+														class="route fl"><small>Sài Gòn →</small> Buôn Ma
+															Thuột</span></a> <span class="price fl">200.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-sai-gon-di-dak-lak"
+													data-param="129t21431.html" id="dp1559980805253">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-sai-gon-di-rach-gia-kien-giang-129t23741.html"><span
+														class="route fl"><small>Sài Gòn →</small> Rạch Giá
+															- Kiên Giang</span></a> <span class="price fl">120.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-sai-gon-di-rach-gia-kien-giang"
+													data-param="129t23741.html" id="dp1559980805254">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane fade" id="hanoi">
+									<div class="clearfix">
+										<div class="col-md-6  pl0 pr0">
+											<ul class="routes-list">
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-ha-noi-di-sai-gon-124t1291.html"><span
+														class="route fl"><small>Hà Nội →</small> Sài Gòn</span></a> <span
+													class="price fl">900.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-sai-gon"
+													data-param="124t1291.html" id="dp1559980805255">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-ha-noi-di-sa-pa-lao-cai-124t24241.html"><span
+														class="route fl"><small>Hà Nội →</small> Sapa</span></a> <span
+													class="price fl">260.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-ha-noi-di-sa-pa-lao-cai"
+													data-param="124t24241.html" id="dp1559980805256">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-ha-noi-di-lao-cai-124t1381.html"><span
+														class="route fl"><small>Hà Nội →</small> Lào Cai</span></a> <span
+													class="price fl">230.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-ha-noi-di-lao-cai"
+													data-param="124t1381.html" id="dp1559980805257">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-ha-noi-di-thua-thien-hue-124t1571.html"><span
+														class="route fl"><small>Hà Nội →</small> Huế</span></a> <span
+													class="price fl">269.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-thua-thien-hue"
+													data-param="124t1571.html" id="dp1559980805258">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-ha-noi-di-da-nang-124t1151.html"><span
+														class="route fl"><small>Hà Nội →</small> Đà Nẵng</span></a> <span
+													class="price fl">450.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-da-nang"
+													data-param="124t1151.html" id="dp1559980805259">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+											</ul>
+										</div>
+										<div class="col-md-6 pl0 pr0">
+											<ul class="routes-list">
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-ha-noi-di-vinh-nghe-an-124t24701.html"><span
+														class="route fl"><small>Hà Nội →</small> Vinh</span></a> <span
+													class="price fl">220.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-ha-noi-di-vinh-nghe-an"
+													data-param="124t24701.html" id="dp1559980805260">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-ha-noi-di-hai-phong-124t1271.html"><span
+														class="route fl"><small>Hà Nội →</small> Hải Phòng</span></a>
+													<span class="price fl">70.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-hai-phong"
+													data-param="124t1271.html" id="dp1559980805261">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-ha-noi-di-thanh-hoa-124t1561.html"><span
+														class="route fl"><small>Hà Nội →</small> Thanh Hóa</span></a>
+													<span class="price fl">190.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-thanh-hoa"
+													data-param="124t1561.html" id="dp1559980805262">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-ha-noi-di-quang-ninh-124t1491.html"><span
+														class="route fl"><small>Hà Nội →</small> Quảng Ninh</span></a>
+													<span class="price fl">80.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-ha-noi-di-quang-ninh"
+													data-param="124t1491.html" id="dp1559980805263">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-ha-noi-di-ha-giang-124t1221.html"><span
+														class="route fl"><small>Hà Nội →</small> Hà Giang</span></a> <span
+													class="price fl">200.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-ha-noi-di-ha-giang"
+													data-param="124t1221.html" id="dp1559980805264">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane fade" id="danang">
+									<div class="clearfix">
+										<div class="col-md-6  pl0 pr0">
+											<ul class="routes-list">
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-da-nang-di-thai-binh-115t1541.html"><span
+														class="route fl"><small>Đà Nẵng →</small> Thái Bình</span></a>
+													<span class="price fl">360.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-thai-binh"
+													data-param="115t1541.html" id="dp1559980805265">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-da-nang-di-tam-ky-quang-nam-115t25301.html"><span
+														class="route fl"><small>Đà Nẵng →</small> Tam Kỳ</span></a> <span
+													class="price fl">250.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-da-nang-di-tam-ky-quang-nam"
+													data-param="115t25301.html" id="dp1559980805266">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-da-nang-di-hoi-an-quang-nam-115t25221.html"><span
+														class="route fl"><small>Đà Nẵng →</small> Hội An</span></a> <span
+													class="price fl">80.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-hoi-an-quang-nam"
+													data-param="115t25221.html" id="dp1559980805267">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-da-nang-di-hue-thua-thien-hue-115t26471.html"><span
+														class="route fl"><small>Đà Nẵng →</small> Huế</span></a> <span
+													class="price fl">89.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-da-nang-di-hue-thua-thien-hue"
+													data-param="115t26471.html" id="dp1559980805268">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-da-nang-di-nha-trang-khanh-hoa--115t23591.html"><span
+														class="route fl"><small>Đà Nẵng →</small> Nha Trang</span></a>
+													<span class="price fl">235.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-nha-trang-khanh-hoa-"
+													data-param="115t23591.html" id="dp1559980805269">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+											</ul>
+										</div>
+										<div class="col-md-6 pl0 pr0">
+											<ul class="routes-list">
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-da-nang-di-sai-gon-115t1291.html"><span
+														class="route fl"><small>Đà Nẵng →</small> Sài Gòn</span></a> <span
+													class="price fl">450.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-sai-gon"
+													data-param="115t1291.html" id="dp1559980805270">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-da-nang-di-dak-lak-115t1161.html"><span
+														class="route fl"><small>Đà Nẵng →</small> Đắk Lắk</span></a> <span
+													class="price fl">260.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-dak-lak"
+													data-param="115t1161.html" id="dp1559980805271">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-da-nang-di-ha-noi-115t1241.html"><span
+														class="route fl"><small>Đà Nẵng →</small> Hà Nội</span></a> <span
+													class="price fl">350.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-ha-noi"
+													data-param="115t1241.html" id="dp1559980805272">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-da-nang-di-quang-ngai-115t1481.html"><span
+														class="route fl"><small>Đà Nẵng →</small> Quãng
+															Ngãi</span></a> <span class="price fl">170.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-quang-ngai"
+													data-param="115t1481.html" id="dp1559980805273">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-da-nang-di-nghe-an-115t1411.html"><span
+														class="route fl"><small>Đà Nẵng →</small> Nghệ An</span></a> <span
+													class="price fl">230.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-nghe-an"
+													data-param="115t1411.html" id="dp1559980805274">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane fade" id="nhatrang">
+									<div class="clearfix">
+										<div class="col-md-6  pl0 pr0">
+											<ul class="routes-list">
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-nha-trang-khanh-hoa-di-sai-gon-2359t1291.html"><span
+														class="route fl"><small>Nha Trang →</small> Sài Gòn</span></a>
+													<span class="price fl">179.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-nha-trang-khanh-hoa-di-sai-gon"
+													data-param="2359t1291.html" id="dp1559980805275">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-can-tho-2359t1131.html"><span
+														class="route fl"><small>Nha Trang →</small> Cần Thơ</span></a>
+													<span class="price fl">260.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-can-tho"
+													data-param="2359t1131.html" id="dp1559980805276">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-kon-tum-2359t1341.html"><span
+														class="route fl"><small>Nha Trang →</small> Kon Tum</span></a>
+													<span class="price fl">190.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-kon-tum"
+													data-param="2359t1341.html" id="dp1559980805277">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-nha-trang-khanh-hoa-di-da-lat-lam-dong-2359t23991.html"><span
+														class="route fl"><small>Nha Trang →</small> Đà Lạt</span></a>
+													<span class="price fl">109.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-nha-trang-khanh-hoa-di-da-lat-lam-dong"
+													data-param="2359t23991.html" id="dp1559980805278">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-da-nang-2359t1151.html"><span
+														class="route fl"><small>Nha Trang →</small> Đà Nẵng</span></a>
+													<span class="price fl">235.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-da-nang"
+													data-param="2359t1151.html" id="dp1559980805279">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+											</ul>
+										</div>
+										<div class="col-md-6 pl0 pr0">
+											<ul class="routes-list">
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-gia-lai-2359t1211.html"><span
+														class="route fl"><small>Nha Trang →</small> Gia Lai</span></a>
+													<span class="price fl">190.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-gia-lai"
+													data-param="2359t1211.html" id="dp1559980805280">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-vung-tau-ba-ria-vung-tau-2359t2131.html"><span
+														class="route fl"><small>Nha Trang →</small> Vũng
+															Tàu</span></a> <span class="price fl">210.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-vung-tau-ba-ria-vung-tau"
+													data-param="2359t2131.html" id="dp1559980805281">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-phu-yen-2359t1451.html"><span
+														class="route fl"><small>Nha Trang →</small> Phú Yên</span></a>
+													<span class="price fl">70.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-phu-yen"
+													data-param="2359t1451.html" id="dp1559980805282">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-phan-thiet-binh-thuan-2359t2961.html"><span
+														class="route fl"><small>Nha Trang →</small> Phan
+															Thiết</span></a> <span class="price fl">179.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-phan-thiet-binh-thuan"
+													data-param="2359t2961.html" id="dp1559980805283">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-qui-nhon-binh-dinh-2359t2681.html"><span
+														class="route fl"><small>Nha Trang →</small> Quy
+															Nhơn</span></a> <span class="price fl">110.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-qui-nhon-binh-dinh"
+													data-param="2359t2681.html" id="dp1559980805284">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane fade" id="cantho">
+									<div class="clearfix">
+										<div class="col-md-6  pl0 pr0">
+											<ul class="routes-list">
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-can-tho-di-sai-gon-113t1291.html"><span
+														class="route fl"><small>Cần Thơ →</small> Sài Gòn</span></a> <span
+													class="price fl">90.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-can-tho-di-sai-gon"
+													data-param="113t1291.html" id="dp1559980805285">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-can-tho-di-nha-trang-khanh-hoa-113t23591.html"><span
+														class="route fl"><small>Cần Thơ →</small> Nha Trang</span></a>
+													<span class="price fl">260.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-nha-trang-khanh-hoa"
+													data-param="113t23591.html" id="dp1559980805286">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-can-tho-di-ca-mau-113t1121.html"><span
+														class="route fl"><small>Cần Thơ →</small> Cà Mau</span></a> <span
+													class="price fl">120.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-can-tho-di-ca-mau"
+													data-param="113t1121.html" id="dp1559980805287">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-can-tho-di-da-nang-113t1151.html"><span
+														class="route fl"><small>Cần Thơ →</small> Đà Nẵng</span></a> <span
+													class="price fl">630.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-da-nang"
+													data-param="113t1151.html" id="dp1559980805288">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-can-tho-di-da-lat-lam-dong-113t23991.html"><span
+														class="route fl"><small>Cần Thơ →</small> Đà Lạt</span></a> <span
+													class="price fl">320.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-da-lat-lam-dong"
+													data-param="113t23991.html" id="dp1559980805289">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+											</ul>
+										</div>
+										<div class="col-md-6 pl0 pr0">
+											<ul class="routes-list">
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-can-tho-di-vung-tau-ba-ria-vung-tau-113t2131.html"><span
+														class="route fl"><small>Cần Thơ →</small> Vũng Tàu</span></a>
+													<span class="price fl">100.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-vung-tau-ba-ria-vung-tau"
+													data-param="113t2131.html" id="dp1559980805290">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-can-tho-di-an-giang-113t111.html"><span
+														class="route fl"><small>Cần Thơ →</small> An Giang</span></a>
+													<span class="price fl">50.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-an-giang"
+													data-param="113t111.html" id="dp1559980805291">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-khach-tu-can-tho-di-ben-tre-113t171.html"><span
+														class="route fl"><small>Cần Thơ →</small> Bến Tre</span></a> <span
+													class="price fl">68.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-ben-tre"
+													data-param="113t171.html" id="dp1559980805292">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+												<li><a
+													href="/vi-VN/ve-xe-limousine-tu-can-tho-di-rach-gia-kien-giang-113t23741.html"><span
+														class="route fl"><small>Cần Thơ →</small> Rạch Giá</span></a>
+													<span class="price fl">110.000 ₫/vé</span> <input
+													class="input-txt selectDate hasDatepicker" type="hidden"
+													data-url="/vi-VN/ve-xe-limousine-tu-can-tho-di-rach-gia-kien-giang"
+													data-param="113t23741.html" id="dp1559980805293">
+												<button type="button" class="ui-datepicker-trigger">Chọn
+														ngày</button></li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="banner-bottom-info">
 				<h3>Today's Top Deals</h3>
 			</div>
@@ -691,6 +1088,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			// 100% fit in a container
 			});
 		});
+		function changeTab() {
+			var location = document
+					.getElementsByClassName("is-visible")[0]
+					.getAttribute("john");
+			setInActive();
+			$("#li" + location).attr("class", "active");
+			$("#" + location).attr("class",
+					"tab-pane fade in active");
+		};
+		function setInActive() {
+			$("#lisaigon").attr("class", "");
+			$("#lihanoi").attr("class", "");
+			$("#linhatrang").attr("class", "");
+			$("#lidanang").attr("class", "");
+			$("#licantho").attr("class", "");
+			$("#saigon").attr("class", "tab-pane fade");
+			$("#hanoi").attr("class", "tab-pane fade");
+			$("#danang").attr("class", "tab-pane fade");
+			$("#nhatrang").attr("class", "tab-pane fade");
+			$("#cantho").attr("class", "tab-pane fade");
+		};
 	</script>
 </body>
 </html>
