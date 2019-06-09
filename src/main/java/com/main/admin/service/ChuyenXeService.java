@@ -6,6 +6,8 @@ public interface ChuyenXeService {
 	
 	public Iterable<ChuyenXe> listChuyenXe();
 	
+	public Iterable<ChuyenXe> timChuyenXeTheoNoiDi(String noiDi);
+	
 	public void xoaChuyenXe(int id);
 	
 	public void luuChuyenXe(ChuyenXe chuyenXe);
