@@ -224,12 +224,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<b>Đặt vé</b>
 						</p>
 					</li>
-					<li>
+					<li th:each="chuyenXe,iterStat : ${chuyenXeCungTuyen} ">
 						<p class="col-md-2 col-sm-2 text-center">
 							<a href="$"><b>Nhà xe Mail Linh</b></a>
 						</p>
 						<p class="col-md-2 col-sm-2 text-center">
-							<b>2019-07-13</b>
+							<b th:text="${chuyenXe.ngayDi}"></b>
 						</p>
 						<p class="col-md-2 col-sm-2 text-center">
 							<b>7h</b>

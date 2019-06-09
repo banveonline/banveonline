@@ -33,9 +33,4 @@ public class ChuyenXeServiceImpl implements ChuyenXeService{
 		return chuyenXeDAO.findOne(id);
 	}
 
-	@Override
-	public Iterable<ChuyenXe> timChuyenXeTheoNoiDi(String noiDi) {
-		return chuyenXeDAO.timChuyenXeTheoNoiDi(noiDi);
-	}
-
 }
