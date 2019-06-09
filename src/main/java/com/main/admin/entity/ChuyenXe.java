@@ -1,4 +1,4 @@
-package com.main.admin.model;
+package com.main.admin.entity;
 
 import java.io.Serializable;
 import java.util.Date;

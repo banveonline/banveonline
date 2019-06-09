@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.main.admin.model.ChuyenXe;
+import com.main.admin.entity.ChuyenXe;
 import com.main.admin.service.ChuyenXeService;
 import com.main.admin.service.ThanhPhoService;
 
@@ -27,7 +27,7 @@ public class ChuyenXeController {
 	
 	@GetMapping("/chuyenxe/danhsach")
 	public String index(ModelMap modelMap) {
-		modelMap.put("chuyenxe", chuyenXeService.tatCa());
+		modelMap.put("chuyenxe", chuyenXeService.listChuyenXe());
 		return "admin/listTrip";
 	}
 	@GetMapping("/chuyenxe/taomoi")
