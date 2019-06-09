@@ -1,6 +1,6 @@
 package com.main.admin.service;
 
-import com.main.admin.model.Ve;
+import com.main.admin.entity.Ve;
 
 public interface VeService {
 

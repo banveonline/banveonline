@@ -1,0 +1,264 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="homehead">
+<title>Vé xe online</title>
+<!-- Custom Theme files -->
+<meta name="
+	viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords"
+	content="Govihar Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript">
+	
+	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
+</script>
+<!-- //Custom Theme files -->
+<link th:href="@{/css/bootstrap.min.css}" type="text/css"
+	rel="stylesheet" media="all">
+<link th:href="@{/css/style.css}" type="text/css" rel="stylesheet"
+	media="all">
+<link th:href="@{/css/route-styles.min.css}" type="text/css" rel="stylesheet"
+	media="all">
+<link rel="stylesheet" th:href="@{/css/flexslider.css}" type="text/css"
+	media="screen" />
+<link type="text/css" rel="stylesheet"
+	th:href="@{/css/JFFormStyle-1.css}" />
+<!-- js -->
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/modernizr.custom.js}"></script>
+<!-- //js -->
+<!-- fonts -->
+<link
+	href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,700italic,900,900italic'
+	rel='stylesheet' type='text/css'>
+<link
+	href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+	rel='stylesheet' type='text/css'>
+<!-- //fonts -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#horizontalTab').easyResponsiveTabs({
+			type : 'default', //Types: default, vertical, accordion           
+			width : 'auto', //auto or any width like 600px
+			fit : true
+		// 100% fit in a container
+		});
+	});
+</script>
+<!--pop-up-->
+<script src="js/menu_jquery.js"></script>
+<!--//pop-up-->
+</head>
+<body>
+	<!--header-->
+	<div class="header" th:fragment="homeheader">
+		<div class="container">
+			<div class="header-grids">
+				<div class="logo">
+					<h1>
+						<a href="index.html"><span>Go</span>vihar</a>
+					</h1>
+				</div>
+				<!--navbar-header-->
+				<div class="header-dropdown">
+					<div class="emergency-grid">
+						<ul>
+							<li>Toll Free :</li>
+							<li class="call">+1 234 567 8901</li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="nav-top">
+				<div class="top-nav">
+					<span class="menu"><img src="images/menu.png" alt="" /></span>
+					<ul class="nav1">
+						<li class="active"><a th:href="@{/}">Trang chủ</a></li>
+						<li><a th:href="@{/nha-xe}">Nhà xe</a></li>
+						<li><a th:href="@{/khuyen-mai}">Khuyến mãi</a></li>
+						<li><a href="@{/huong-dan}">Hướng dẫn</a></li>
+						<li><a href="@{/}">Tuyển dụng</a></li>
+					</ul>
+					<div class="clearfix"></div>
+					<!-- script-for-menu -->
+					<script>
+						$("span.menu").click(function() {
+							$("ul.nav1").slideToggle(300, function() {
+								// Animation complete.
+							});
+						});
+					</script>
+					<!-- /script-for-menu -->
+				</div>
+				<div class="dropdown-grids">
+					<div id="loginContainer">
+						<a href="#" id="loginButton"><span>Đăng nhập</span></a>
+						<div id="loginBox">
+							<form id="loginForm">
+								<div class="login-grids">
+									<div class="login-grid-left">
+										<fieldset id="body">
+											<fieldset>
+												<label for="username">Tên đang nhập</label> <input
+													type="text" name="username" id="username">
+											</fieldset>
+											<fieldset>
+												<label for="password">Mật khẩu</label> <input
+													type="password" name="password" id="password">
+											</fieldset>
+											<input type="submit" id="login" value="Đăng nhập"> <label
+												for="checkbox"><input type="checkbox" id="checkbox">
+												<i>Nhớ mật khẩu</i></label>
+										</fieldset>
+										<span><a href="#">Quên mật khẩu?</a></span>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!--//header-->
+	<!-- footer -->
+	<div class="footer" th:fragment="homefooter">
+		<!-- container -->
+		<div class="container">
+			<div class="footer-top-grids">
+				<div class="footer-grids">
+					<div class="col-md-3 footer-grid">
+						<h4>Mạng lưới nhà xe</h4>
+						<ul>
+							<li><a href="index.html">Xe Anh Quốc</a></li>
+							<li><a href="flights-hotels.html">Xe Cô Tô Limousine</a></li>
+							<li><a href="index.html">Xe Daily Limousine</a></li>
+							<li><a href="hotels.html">Xe Dream Transport</a></li>
+							<li><a href="bus.html">Xe G5Car</a></li>
+							<li><a href="index.html">Xe HAV Limousine</a></li>
+							<li><a href="holidays.html">Xe Hoa Mai</a></li>
+							<li><a href="hotels.html">Xe Phong Phú</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 footer-grid">
+						<h4>Bến xe</h4>
+						<ul>
+							<li><a href="about.html">Bến xe Gia Lâm</a></li>
+							<li><a href="faqs.html">Bến xe Giap Bát</a></li>
+							<li><a href="privacy.html">Bến xe Miền Đông </a></li>
+							<li><a href="contact.html">Bến xe Mỹ Đình</a></li>
+							<li><a href="blog.html">Bến xe trung tâm Đà Nẵng</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 footer-grid">
+						<h4>Về chúng tôi</h4>
+						<ul>
+							<li><a href="holidays.html">Tuyển dụng</a></li>
+							<li><a href="weekend.html">Tin tức</a></li>
+							<li><a href="index.html">Giới thiệu</a></li>
+							<li><a href="index.html">Liên hệ</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<!-- news-letter -->
+				<div class="news-letter">
+					<div class="news-letter-grids">
+						<div class="col-md-4 news-letter-grid">
+							<p>
+								Toll Free No : <span>1234-5678-901</span>
+							</p>
+						</div>
+						<div class="col-md-4 news-letter-grid">
+							<p class="mail">
+								Email : <a href="mailto:info@example.com">mail@example.com</a>
+							</p>
+						</div>
+						<div class="col-md-4 news-letter-grid">
+							<form>
+								<input type="text" value="Email" onfocus="this.value = '';"
+									onblur="if (this.value == '') {this.value = 'Email';}"
+									required=""> <input type="submit" value="Subscribe">
+							</form>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<!-- //news-letter -->
+			</div>
+		</div>
+		<!-- //container -->
+	</div>
+	<!-- //footer -->
+	<div class="footer-bottom-grids">
+		<!-- container -->
+		<div class="container">
+			<div class="footer-bottom-top-grids">
+				<div class="col-md-4 footer-bottom-left">
+					<h4>Download our mobile Apps</h4>
+					<div class="d-apps">
+						<ul>
+							<li><a href="#"><img src="images/app1.png" alt="" /></li>
+							<li><a href="#"><img src="images/app2.png" alt="" /></a></li>
+							<li><a href="#"><img src="images/app3.png" alt="" /></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4 footer-bottom-left">
+					<h4>We Accept</h4>
+					<div class="a-cards">
+						<ul>
+							<li><a href="#"><img src="images/c1.png" alt="" /></a></li>
+							<li><a href="#"><img src="images/c2.png" alt="" /></a></a></li>
+							<li><a href="#"><img src="images/c3.png" alt="" /></a></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4 footer-bottom-left">
+					<h4>Follow Us</h4>
+					<div class="social">
+						<ul>
+							<li><a href="#" class="facebook"> </a></li>
+							<li><a href="#" class="facebook twitter"> </a></li>
+							<li><a href="#" class="facebook chrome"> </a></li>
+							<li><a href="#" class="facebook dribbble"> </a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="copyright">
+					<p>
+						Copyrights © 2015 Govihar . Design by <a
+							href="http://w3layouts.com/">W3layouts</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script defer th:src="@{/js/jquery.flexslider.js}"></script>
+	<script th:src="@{/js/easyResponsiveTabs.js}" type="text/javascript"></script>
+	<script th:src="@{/js/jquery-ui.js}"></script>
+	<script type="text/javascript" th:src="@{/js/script.js}"></script>
+	<script type="text/javascript">
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				animation : "slide",
+				start : function(slider) {
+					$('body').removeClass('loading');
+				}
+			});
+		});
+	</script>
+</body>
+</html>

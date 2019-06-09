@@ -1,10 +1,10 @@
 package com.main.admin.service;
 
-import com.main.admin.model.ChuyenXe;
+import com.main.admin.entity.ChuyenXe;
 
 public interface ChuyenXeService {
 	
-	public Iterable<ChuyenXe> tatCa();
+	public Iterable<ChuyenXe> listChuyenXe();
 	
 	public void xoaChuyenXe(int id);
 	
