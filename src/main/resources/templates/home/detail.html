@@ -35,8 +35,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										</p>
 									</li>
 									<li>
-										<p class="col-md-6 col-sm-6 text-left">Nhà Xe
-											:</p>
+										<p class="col-md-6 col-sm-6 text-left">Nhà Xe :</p>
 										<p class="col-md-6 text-right">
 											<b>Hoàng Long</b>
 										</p>
@@ -48,16 +47,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										</p>
 									</li>
 									<li>
-										<p class="col-md-6 col-sm-6 text-left">Ngày đi
-											:</p>
+										<p class="col-md-6 col-sm-6 text-left">Ngày đi :</p>
 										<p class="col-md-6 text-right">
 											<b>2019-07-13</b>
 										</p>
 									</li>
 									<li>
-										<p class="col-md-6 col-sm-6 text-left">Ghế trống / Tổng số :</p>
+										<p class="col-md-6 col-sm-6 text-left">Ghế trống / Tổng số
+											:</p>
 										<p class="col-md-6 text-right">
 											<b>10/30 ghế</b>
+										</p>
+									</li>
+									<li>
+										<p class="col-md-6 col-sm-6 text-left">Mô tả :</p>
+										<p class="col-md-6 text-right">
+											<b>Đi từ bến xe Miền Đông - quầy vé số 73 dến Hà Nội</b>
 										</p>
 									</li>
 									<li style="border: 0">
@@ -70,7 +75,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div class="price-road-backlink border-line-detail"></div>
 							</div>
 						</div>
-						
+
 						<div class="row">
 							<div class="border-note">
 								<h2 class="text-center title-road-backlink mb0">Thông tin
@@ -117,211 +122,235 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="col-md-4 single-gd-rt">
 						<div class="spl-btn">
 							<div class="spl-btn-bor">
-								<p>Thông tin đặt vé</p>
+								<p>Thông tin khách hàng</p>
 							</div>
 							<div class="sp-bor-btn text-right">
-								<h4>
-									<span>$8,750</span> $4,850
-								</h4>
-								<p class="best-pri">Best price</p>
-								<a class="best-btn" href="booking.html">Book Now</a>
+								<div class="detail-customer-info">
+									<div class="form-group CustomerFullName">
+										<div class="col-md-12 col-sm-12 pl0 pr0">
+											<label
+												class="col-md-12 pl0 pr0 col-sm-3 control-label text-left multiple-info-note"
+												style="display: none;">Thông tin hành khách 1:</label> <label
+												class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Họ
+												tên <span style="color: red;">*</span>:
+											</label> <input id="cfn" name="CustomerFullName" type="text"
+												class="form-control input-vxr" placeholder="Họ tên"
+												data-toggle="popover" data-content="Họ tên không hợp lệ"
+												data-placement="top">
+										</div>
+									</div>
+									<div class="col-md-12 col-sm-12 pl0 pr0">
+										<label
+											class="col-md-8 pl0 pr0 control-label text-left hidden-xs">Số
+											điện thoại người đi <span style="color: red;">*</span>:
+										</label> <input id="cp" name="CustomerPhone" type="tel"
+											class="form-control input-vxr"
+											placeholder="Nhập số điện thoại" data-toggle="popover"
+											data-content="Vui lòng nhập đúng định dạng (VD: 0912345678)"
+											data-placement="left"
+											onkeypress="return isNumberByEventCode(event)">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-12 col-sm-12 pl0 pr0">
+										<label for="inputEmail3"
+											class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Email
+											<span style="color: red;">*</span>:
+										</label> <input id="ce" name="CustomerEmail" type="text"
+											class="form-control input-vxr" placeholder="Email"
+											data-toggle="popover" data-content="Email không hợp lệ"
+											data-placement="left">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-12 col-sm-12 pl0 pr0">
+										<label for="inputEmail3"
+											class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Số
+											người <span style="color: red;">*</span>:
+										</label> <input id="ce" name="CustomerNumber" type="text"
+											class="form-control input-vxr" placeholder="Số người"
+											data-toggle="popover" data-content="Email không hợp lệ"
+											data-placement="left">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="col-md-12 col-sm-12 pl0 pr0">
+										<label for="inputnote3"
+											class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Ghi
+											Chú:</label>
+										<textarea id="note" name="note" class="form-control input-vxr"
+											placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<button type="button"
+										class="cont-btn btn btn-vxr-lg btn-vxr-lg-action">
+										Tiếp tục <i class="glyphicon glyphicon-chevron-right f14"></i>
+									</button>
+								</div>
 							</div>
 						</div>
-						<div class="map-gd">
-							<iframe
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63718.72916803739!2d102.31975295000002!3d3.489618449999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31ceba2007355f81%3A0xd2ff1ad6a3ca801!2sMentakab%2C+Pahang%2C+Malaysia!5e0!3m2!1sen!2sin!4v1439535856431"></iframe>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<!--//single-page-->
+		</div>
+		<div class="c-rooms">
+			<div class="p-table">
+				<div class="p-table-grids">
+					<div class="col-md-3 p-table-grid">
+						<div class="p-table-grad-heading">
+							<h6>Room type</h6>
 						</div>
-						<div class="other-comments">
-							<div class="comments-head">
-								<h3>Excellent</h3>
-								<p>4.5/5</p>
-								<div class="clearfix"></div>
+						<div class="p-table-grid-info">
+							<a href="#"><img src="images/p2.jpg" alt=""></a>
+							<div class="room-basic-info">
+								<a href="#">Fusce vestibulum ultricies rutrum</a>
+								<h6>1 king bed or 2 single beds</h6>
+								<p>Vestibulum ullamcorper(condimentum luctus)</p>
 							</div>
-							<div class="comments-bot">
-								<p>"Vestibulum ullamcorper condimentum luctus. Ut
-									ullamcorper elit eu auctor commodo."</p>
-								<h4>
-									<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-									John Doe
-								</h4>
-							</div>
-							<div class="comments-bot">
-								<p>"Aliquam non purus quis tellus varius egestas ut vitae
-									tellus. Pellentesque non est ac tortor maximus imperdiet at id
-									quam."</p>
-								<h4>
-									<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-									Luther
-								</h4>
-							</div>
-							<div class="comments-bot">
-								<p>"Vestibulum sapien quam, interdum quis bibendum quis,
-									malesuada a nisi. Proin at blandit justo."</p>
-								<h4>
-									<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-									Patrick
-								</h4>
-							</div>
+						</div>
+					</div>
+					<div class="col-md-3 p-table-grid">
+						<div class="p-table-grad-heading">
+							<h6>Options</h6>
+						</div>
+						<div class="rate-features">
+							<ul>
+								<li>Morbi mollis mattis</li>
+								<li>Donec egestas</li>
+								<li>Donec non risus</li>
+								<li>Pellentesque sem</li>
+								<li>Sed ut urna id metus</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 p-table-grid">
+						<div class="p-table-grad-heading">
+							<h6>Avg rate per night</h6>
+						</div>
+						<div class="avg-rate">
+							<h5>Recommended for you</h5>
+							<p>Price is now:</p>
+							<span class="p-offer">$140</span> <span class="p-last-price">$230</span>
+						</div>
+					</div>
+					<div class="col-md-3 p-table-grid">
+						<div class="p-table-grad-heading">
+							<h6>Book</h6>
+						</div>
+						<div class="book-button-column">
+							<a href="#">Book</a>
 						</div>
 					</div>
 					<div class="clearfix"></div>
 				</div>
-				<!--//single-page-->
 			</div>
-			<div class="c-rooms">
-				<div class="p-table">
-					<div class="p-table-grids">
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Room type</h6>
-							</div>
-							<div class="p-table-grid-info">
-								<a href="#"><img src="images/p2.jpg" alt=""></a>
-								<div class="room-basic-info">
-									<a href="#">Fusce vestibulum ultricies rutrum</a>
-									<h6>1 king bed or 2 single beds</h6>
-									<p>Vestibulum ullamcorper(condimentum luctus)</p>
-								</div>
+			<div class="p-table">
+				<div class="p-table-grids">
+					<div class="col-md-3 p-table-grid">
+						<div class="p-table-grad-heading">
+							<h6>Room type</h6>
+						</div>
+						<div class="p-table-grid-info">
+							<a href="#"><img src="images/p1.jpg" alt=""></a>
+							<div class="room-basic-info">
+								<a href="#">Fusce vestibulum ultricies rutrum</a>
+								<h6>1 king bed or 2 single beds</h6>
+								<p>Vestibulum ullamcorper(condimentum luctus)</p>
 							</div>
 						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Options</h6>
-							</div>
-							<div class="rate-features">
-								<ul>
-									<li>Morbi mollis mattis</li>
-									<li>Donec egestas</li>
-									<li>Donec non risus</li>
-									<li>Pellentesque sem</li>
-									<li>Sed ut urna id metus</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Avg rate per night</h6>
-							</div>
-							<div class="avg-rate">
-								<h5>Recommended for you</h5>
-								<p>Price is now:</p>
-								<span class="p-offer">$140</span> <span class="p-last-price">$230</span>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Book</h6>
-							</div>
-							<div class="book-button-column">
-								<a href="#">Book</a>
-							</div>
-						</div>
-						<div class="clearfix"></div>
 					</div>
+					<div class="col-md-3 p-table-grid">
+						<div class="p-table-grad-heading">
+							<h6>Options</h6>
+						</div>
+						<div class="rate-features">
+							<ul>
+								<li>Morbi mollis mattis</li>
+								<li>Donec egestas</li>
+								<li>Donec non risus</li>
+								<li>Pellentesque sem</li>
+								<li>Sed ut urna id metus</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 p-table-grid">
+						<div class="p-table-grad-heading">
+							<h6>Avg rate per night</h6>
+						</div>
+						<div class="avg-rate">
+							<h5>Recommended for you</h5>
+							<p>Price is now:</p>
+							<span class="p-offer">$140</span> <span class="p-last-price">$230</span>
+						</div>
+					</div>
+					<div class="col-md-3 p-table-grid">
+						<div class="p-table-grad-heading">
+							<h6>Book</h6>
+						</div>
+						<div class="book-button-column">
+							<a href="#">Book</a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
 				</div>
-				<div class="p-table">
-					<div class="p-table-grids">
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Room type</h6>
-							</div>
-							<div class="p-table-grid-info">
-								<a href="#"><img src="images/p1.jpg" alt=""></a>
-								<div class="room-basic-info">
-									<a href="#">Fusce vestibulum ultricies rutrum</a>
-									<h6>1 king bed or 2 single beds</h6>
-									<p>Vestibulum ullamcorper(condimentum luctus)</p>
-								</div>
+			</div>
+			<div class="p-table">
+				<div class="p-table-grids">
+					<div class="col-md-3 p-table-grid">
+						<div class="p-table-grad-heading">
+							<h6>Room type</h6>
+						</div>
+						<div class="p-table-grid-info">
+							<a href="#"><img src="images/p2.jpg" alt=""></a>
+							<div class="room-basic-info">
+								<a href="#">Fusce vestibulum ultricies rutrum</a>
+								<h6>1 king bed or 2 single beds</h6>
+								<p>Vestibulum ullamcorper(condimentum luctus)</p>
 							</div>
 						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Options</h6>
-							</div>
-							<div class="rate-features">
-								<ul>
-									<li>Morbi mollis mattis</li>
-									<li>Donec egestas</li>
-									<li>Donec non risus</li>
-									<li>Pellentesque sem</li>
-									<li>Sed ut urna id metus</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Avg rate per night</h6>
-							</div>
-							<div class="avg-rate">
-								<h5>Recommended for you</h5>
-								<p>Price is now:</p>
-								<span class="p-offer">$140</span> <span class="p-last-price">$230</span>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Book</h6>
-							</div>
-							<div class="book-button-column">
-								<a href="#">Book</a>
-							</div>
-						</div>
-						<div class="clearfix"></div>
 					</div>
-				</div>
-				<div class="p-table">
-					<div class="p-table-grids">
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Room type</h6>
-							</div>
-							<div class="p-table-grid-info">
-								<a href="#"><img src="images/p2.jpg" alt=""></a>
-								<div class="room-basic-info">
-									<a href="#">Fusce vestibulum ultricies rutrum</a>
-									<h6>1 king bed or 2 single beds</h6>
-									<p>Vestibulum ullamcorper(condimentum luctus)</p>
-								</div>
-							</div>
+					<div class="col-md-3 p-table-grid">
+						<div class="p-table-grad-heading">
+							<h6>Options</h6>
 						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Options</h6>
-							</div>
-							<div class="rate-features">
-								<ul>
-									<li>Morbi mollis mattis</li>
-									<li>Donec egestas</li>
-									<li>Donec non risus</li>
-									<li>Pellentesque sem</li>
-									<li>Sed ut urna id metus</li>
-								</ul>
-							</div>
+						<div class="rate-features">
+							<ul>
+								<li>Morbi mollis mattis</li>
+								<li>Donec egestas</li>
+								<li>Donec non risus</li>
+								<li>Pellentesque sem</li>
+								<li>Sed ut urna id metus</li>
+							</ul>
 						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Avg rate per night</h6>
-							</div>
-							<div class="avg-rate">
-								<h5>Recommended for you</h5>
-								<p>Price is now:</p>
-								<span class="p-offer">$140</span> <span class="p-last-price">$230</span>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Book</h6>
-							</div>
-							<div class="book-button-column">
-								<a href="#">Book</a>
-							</div>
-						</div>
-						<div class="clearfix"></div>
 					</div>
+					<div class="col-md-3 p-table-grid">
+						<div class="p-table-grad-heading">
+							<h6>Avg rate per night</h6>
+						</div>
+						<div class="avg-rate">
+							<h5>Recommended for you</h5>
+							<p>Price is now:</p>
+							<span class="p-offer">$140</span> <span class="p-last-price">$230</span>
+						</div>
+					</div>
+					<div class="col-md-3 p-table-grid">
+						<div class="p-table-grad-heading">
+							<h6>Book</h6>
+						</div>
+						<div class="book-button-column">
+							<a href="#">Book</a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
 				</div>
 			</div>
 		</div>
-		<!-- //container -->
+	</div>
+	<!-- //container -->
 	</div>
 	<!-- //banner-bottom -->
 	<!-- footer -->

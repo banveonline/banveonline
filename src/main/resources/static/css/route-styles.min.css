@@ -14602,7 +14602,8 @@ ul.pickup-transfer-list li {
 	background-color: transparent !important;
 	border: none;
 	box-shadow: none;
-	border-radius: 3px !important
+	border-radius: 3px !important;
+	margin-top: 15px;
 }
 
 .offer-tag, .offer-tag:after {
