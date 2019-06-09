@@ -24,21 +24,7 @@
 								<div class="col-sm-6 bg-light boxStyle">
 									<form action="#" th:action="@{/chuyenxe/luu}"
 										th:object="${chuyenxe}" method="POST">
-										<div class="form-group">
-											<div class="width30 floatL">
-												<label>Hình ảnh</label>
-											</div>
-											<div class="width70 floatR">
-												<input type="file" class="form-control-file"
-													id="exampleFormControlFile1" />
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="form-group">
-												<label>ID chuyến xe</label> <input type="text"
-													class="form-control" th:field="*{id_CX}" />
-											</div>
-										</div>
+										<input type="hidden" th:field="*{id_CX}" />
 										<div class="form-group">
 											<table style="width: 100%">
 												<tr>
@@ -72,11 +58,50 @@
 												th:field="*{moTa}" />
 										</div>
 										<div class="form-group">
+											<div class="col-xs-5 date">
+												<div class="input-group input-append date" id="datePicker">
+													<input type="text" th:field="*{ngayDi}"
+														class="form-control" readonly="readonly" name="date" /> <span
+														class="input-group-addon add-on"><span
+														class="glyphicon glyphicon-calendar"></span></span>
+												</div>
+											</div>
+
+											<script>
+												$(document)
+														.ready(
+																function() {
+																	$(
+																			'#datePicker')
+																			.datepicker(
+																					{
+																						format : 'dd/mm/yyyy'
+																					})
+																			.on(
+																					'changeDate',
+																					function(
+																							e) {
+																						// Revalidate the date field
+																						$(
+																								'#eventForm')
+																								.formValidation(
+																										'revalidateField',
+																										'date');
+																					});
+																});
+											</script>
+										</div>
+										<div class="form-group">
+											<label>Giờ đi</label> <input type="text" class="form-control"
+												th:field="*{gioDi}" />
+										</div>
+										<div class="form-group">
 											<div class="row">
 												<input class="btn btn-success" type="submit" value="Submit"
-													style="font-weight: bold" /> <a th:href="@{/chuyenxe/danhsach}"
-													class="btn btn-danger pull-left"> <span
-													class="fa fa-arrow-circle-left pull-left"></span> Trở lại
+													style="font-weight: bold" /> <a
+													th:href="@{/chuyenxe/danhsach}"
+													class="btn btn-danger pull-right"> <span
+													class="fa fa-arrow-circle-left pull-right"></span> Trở lại
 												</a>
 											</div>
 										</div>

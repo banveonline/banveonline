@@ -25,36 +25,37 @@
 									<form action="#" th:action="@{/chuyenxe/luu}"
 										th:object="${chuyenxe}" method="POST">
 										<div class="form-group">
-											<div class="width30 floatL">
-												<label>Hình ảnh</label>
-											</div>
-											<div class="width70 floatR">
-												<input type="file" class="form-control-file"
-													id="exampleFormControlFile1" />
-											</div>
-										</div>
-										<div class="form-group">
 											<div class="form-group">
 												<label>ID chuyến xe</label> <input type="text"
 													class="form-control" th:field="*{id_CX}" readonly="readonly" />
 											</div>
 										</div>
 										<div class="form-group">
-											<label>Ga Đi</label> <input type="text" class="form-control"
-												th:field="*{gaDi}" /> <label
-												th:if="${#fields.hasErrors('gaDi')}" th:errors="*{gaDi}"></label>
-										</div>
-
-										<div class="form-group">
-											<label>Ga Đến</label> <input type="text" class="form-control"
-												th:field="*{gaDen}" />
+											<table style="width: 100%">
+												<tr>
+													<td style="text-align: center;"><label>Ga đi</label></td>
+													<td style="text-align: center;"><label>Ga đến</label></td>
+												</tr>
+												<tr>
+													<td style="text-align: center;"><select
+														th:field="*{gaDi}">
+															<option th:each="thanhpho,iterStat : ${thanhpho}"
+																th:value="${thanhpho.ten}" th:text="${thanhpho.ten}"></option>
+													</select></td>
+													<td style="text-align: center;"><select
+														th:field="*{gaDen}">
+															<option th:each="thanhpho,iterStat : ${thanhpho}"
+																th:value="${thanhpho.ten}" th:text="${thanhpho.ten}"></option>
+													</select></td>
+												</tr>
+											</table>
 										</div>
 										<div class="form-group">
 											<label>Số người</label> <input type="text"
 												class="form-control" th:field="*{soNguoi}" />
 										</div>
 										<div class="form-group">
-											<label>Giá¡</label> <input type="text" class="form-control"
+											<label>Giá</label> <input type="text" class="form-control"
 												th:field="*{gia}" />
 										</div>
 										<div class="form-group">
@@ -62,10 +63,51 @@
 												th:field="*{moTa}" />
 										</div>
 										<div class="form-group">
+											<div class="col-xs-5 date">
+												<div class="input-group input-append date" id="datePicker2">
+													<input type="text" th:field="*{ngayDi}"
+														class="form-control" name="date" /> <span
+														class="input-group-addon add-on"><span
+														class="glyphicon glyphicon-calendar"></span></span>
+												</div>
+											</div>
+
+											<script>
+												$(document)
+														.ready(
+																function() {
+																	$(
+																			'#datePicker2')
+																			.datepicker(
+																					{
+																						format : 'mm/dd/yyyy'
+																					})
+																			.on(
+																					'changeDate',
+																					function(
+																							e) {
+																						// Revalidate the date field
+																						$(
+																								'#eventForm')
+																								.formValidation(
+																										'revalidateField',
+																										'date');
+																					});
+																});
+											</script>
+										</div>
+										<div class="form-group">
+											<label>Giờ đi</label> <input type="text" class="form-control"
+												th:field="*{gioDi}" />
+										</div>
+										<div class="form-group">
 											<div class="row">
 												<input class="btn btn-success" type="submit" value="Submit"
-													style="font-weight: bold" /> <input class="btn btn-danger"
-													type="reset" style="font-weight: bold" />
+													style="font-weight: bold" /> <a
+													th:href="@{/chuyenxe/danhsach}"
+													class="btn btn-danger pull-left"> <span
+													class="fa fa-arrow-circle-left pull-left"></span> Trở lại
+												</a>
 											</div>
 										</div>
 									</form>
