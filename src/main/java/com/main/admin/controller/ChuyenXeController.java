@@ -25,7 +25,7 @@ public class ChuyenXeController {
 	
 	@GetMapping("/chuyenxe/danhsach")
 	public String index(ModelMap modelMap) {
-		modelMap.put("chuyenxe", chuyenXeService.tatCa());
+		modelMap.put("chuyenxe", chuyenXeService.listChuyenXe());
 		return "admin/listTrip";
 	}
 	@GetMapping("/chuyenxe/taomoi")

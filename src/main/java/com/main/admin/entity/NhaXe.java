@@ -13,6 +13,11 @@ import javax.persistence.Table;
 @Table(name = "nhaxe")
 public class NhaXe implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")

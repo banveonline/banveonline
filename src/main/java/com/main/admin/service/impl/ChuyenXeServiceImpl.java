@@ -14,7 +14,7 @@ public class ChuyenXeServiceImpl implements ChuyenXeService{
 	private ChuyenXeDAO chuyenXeDAO;
 
 	@Override
-	public Iterable<ChuyenXe> tatCa() {
+	public Iterable<ChuyenXe> listChuyenXe() {
 		return chuyenXeDAO.findAll();
 	}
 

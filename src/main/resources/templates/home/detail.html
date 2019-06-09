@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="header" th:replace="home/layout :: homeheader"></div>
 	<!--//header-->
 	<!-- banner-bottom -->
-	<div class="banner-bottom">
+	<div class="banner-bottom" th:object="${chiTietChuyenXe}">
 		<!-- container -->
 		<div class="container">
 			<div class="faqs-top-grids">
@@ -43,13 +43,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li>
 										<p class="col-md-6 col-sm-6 text-left">Giá vé :</p>
 										<p class="col-md-6 text-right">
-											<b>737.500 VNĐ</b>
+											<b th:text = "${chiTietChuyenXe.gia}"> VNĐ</b>
 										</p>
 									</li>
 									<li>
 										<p class="col-md-6 col-sm-6 text-left">Ngày đi :</p>
 										<p class="col-md-6 text-right">
-											<b>2019-07-13</b>
+											<b th:text = "${chiTietChuyenXe.ngayDi}"></b>
 										</p>
 									</li>
 									<li>

@@ -18,9 +18,6 @@ public class IndexController {
 		model.addAttribute("thanhpho", thanhPhoService.findAll());
 		return "home/index";
 	}
-	@GetMapping(value = "/detail")
-	public String detail(Model model) {
-		return "home/detail";
-	}
+	
 
 }

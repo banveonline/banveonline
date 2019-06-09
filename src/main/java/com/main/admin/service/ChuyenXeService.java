@@ -4,7 +4,7 @@ import com.main.admin.entity.ChuyenXe;
 
 public interface ChuyenXeService {
 	
-	public Iterable<ChuyenXe> tatCa();
+	public Iterable<ChuyenXe> listChuyenXe();
 	
 	public void xoaChuyenXe(int id);
 	
