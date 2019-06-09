@@ -20,8 +20,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="single-page">
 					<div class="col-md-8 single-gd-lt">
 						<div class="single-pg-hdr">
-							<h2>Hồ Chí Minh - Hà Nội</h2>
-							<p>Nhà xe Hoàng Long</p>
+							<h2>
+								<b th:text="${chiTietChuyenXe.gaDi}"></b> - <b
+									th:text="${chiTietChuyenXe.gaDen}"></b>
+							</h2>
+							<p>Nhà xe<a href="@"><b>Hoàng Long</b></a></p>
 						</div>
 						<div class="row">
 							<div class="border-note">
@@ -31,7 +34,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li>
 										<p class="col-md-6 col-sm-6 text-left">Tuyến đường :</p>
 										<p class="col-md-6 text-right">
-											<b>Hồ Chí Minh - Hà Nội</b>
+											<b th:text="${chiTietChuyenXe.gaDi}"></b> - <b
+												th:text="${chiTietChuyenXe.gaDen}"></b>
 										</p>
 									</li>
 									<li>
@@ -43,13 +47,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li>
 										<p class="col-md-6 col-sm-6 text-left">Giá vé :</p>
 										<p class="col-md-6 text-right">
-											<b th:text = "${chiTietChuyenXe.gia}"> VNĐ</b>
+											<b th:text="${chiTietChuyenXe.gia}"> VNĐ</b>
 										</p>
 									</li>
 									<li>
 										<p class="col-md-6 col-sm-6 text-left">Ngày đi :</p>
 										<p class="col-md-6 text-right">
-											<b th:text = "${chiTietChuyenXe.ngayDi}"></b>
+											<b th:text="${chiTietChuyenXe.ngayDi}"></b>
 										</p>
 									</li>
 									<li>
