@@ -1,11 +1,13 @@
 package com.main.admin.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.main.admin.DAO.VeDAO;
 import com.main.admin.entity.Ve;
 import com.main.admin.service.VeService;
 
+@Service("VeService")
 public class VeServiceImpl implements VeService{
 	
 	@Autowired

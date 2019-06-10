@@ -24,7 +24,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<b th:text="${chiTietChuyenXe.gaDi}"></b> - <b
 									th:text="${chiTietChuyenXe.gaDen}"></b>
 							</h2>
-							<p>Nhà xe<a href="@"><b>Hoàng Long</b></a></p>
+							<p>
+								Nhà xe<a href="@"><b>Hoàng Long</b></a>
+							</p>
 						</div>
 						<div class="row">
 							<div class="border-note">
@@ -128,71 +130,73 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="spl-btn-bor">
 								<p>Thông tin khách hàng</p>
 							</div>
-							<div class="sp-bor-btn text-right">
-								<div class="detail-customer-info">
-									<div class="form-group CustomerFullName">
+							<form th:action="@{/datve}" th:object="${ve}" method="POST">
+								<div class="sp-bor-btn text-right">
+									<div class="detail-customer-info">
+										<div class="form-group CustomerFullName">
+											<div class="col-md-12 col-sm-12 pl0 pr0">
+												<input type="hidden" th:field="*{id}" /> <input
+													type="hidden" th:field="*{id_CX}" /> <label
+													class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Họ
+													tên <span style="color: red;">*</span>:
+												</label> <input id="cfn" name="CustomerFullName" type="text"
+													th:field="*{tenKH}" class="form-control input-vxr"
+													placeholder="Họ tên" data-toggle="popover"
+													data-content="Họ tên không hợp lệ" data-placement="top">
+											</div>
+										</div>
 										<div class="col-md-12 col-sm-12 pl0 pr0">
 											<label
-												class="col-md-12 pl0 pr0 col-sm-3 control-label text-left multiple-info-note"
-												style="display: none;">Thông tin hành khách 1:</label> <label
-												class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Họ
-												tên <span style="color: red;">*</span>:
-											</label> <input id="cfn" name="CustomerFullName" type="text"
-												class="form-control input-vxr" placeholder="Họ tên"
-												data-toggle="popover" data-content="Họ tên không hợp lệ"
-												data-placement="top">
+												class="col-md-8 pl0 pr0 control-label text-left hidden-xs">Số
+												điện thoại người đi <span style="color: red;">*</span>:
+											</label> <input th:field="*{sdt}" id="cp" name="CustomerPhone"
+												type="tel" class="form-control input-vxr"
+												placeholder="Nhập số điện thoại" data-toggle="popover"
+												data-content="Vui lòng nhập đúng định dạng (VD: 0912345678)"
+												data-placement="left"
+												onkeypress="return isNumberByEventCode(event)">
 										</div>
 									</div>
-									<div class="col-md-12 col-sm-12 pl0 pr0">
-										<label
-											class="col-md-8 pl0 pr0 control-label text-left hidden-xs">Số
-											điện thoại người đi <span style="color: red;">*</span>:
-										</label> <input id="cp" name="CustomerPhone" type="tel"
-											class="form-control input-vxr"
-											placeholder="Nhập số điện thoại" data-toggle="popover"
-											data-content="Vui lòng nhập đúng định dạng (VD: 0912345678)"
-											data-placement="left"
-											onkeypress="return isNumberByEventCode(event)">
+									<div class="form-group">
+										<div class="col-md-12 col-sm-12 pl0 pr0">
+											<label for="inputEmail3"
+												class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Email
+												<span style="color: red;">*</span>:
+											</label> <input id="ce" name="CustomerEmail" type="text"
+												class="form-control input-vxr" placeholder="Email"
+												data-toggle="popover" data-content="Email không hợp lệ"
+												data-placement="left">
+										</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-md-12 col-sm-12 pl0 pr0">
-										<label for="inputEmail3"
-											class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Email
-											<span style="color: red;">*</span>:
-										</label> <input id="ce" name="CustomerEmail" type="text"
-											class="form-control input-vxr" placeholder="Email"
-											data-toggle="popover" data-content="Email không hợp lệ"
-											data-placement="left">
+									<div class="form-group">
+										<div class="col-md-12 col-sm-12 pl0 pr0">
+											<label for="inputEmail3"
+												class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Số
+												người <span style="color: red;">*</span>:
+											</label> <input th:field="*{soCho}" id="ce" name="CustomerNumber"
+												type="text" class="form-control input-vxr"
+												placeholder="Số người" data-toggle="popover"
+												data-content="Email không hợp lệ" data-placement="left">
+										</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-md-12 col-sm-12 pl0 pr0">
-										<label for="inputEmail3"
-											class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Số
-											người <span style="color: red;">*</span>:
-										</label> <input id="ce" name="CustomerNumber" type="text"
-											class="form-control input-vxr" placeholder="Số người"
-											data-toggle="popover" data-content="Email không hợp lệ"
-											data-placement="left">
-									</div>
-								</div>
 
-								<div class="form-group">
-									<div class="col-md-12 col-sm-12 pl0 pr0">
-										<label for="inputnote3"
-											class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Ghi
-											Chú:</label>
-										<textarea id="note" name="note" class="form-control input-vxr"></textarea>
+									<div class="form-group">
+										<div class="col-md-12 col-sm-12 pl0 pr0">
+											<label for="inputnote3"
+												class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Ghi
+												Chú:</label>
+											<textarea id="note" name="note"
+												class="form-control input-vxr"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<button type="submit"
+											class="cont-btn btn btn-vxr-lg btn-vxr-lg-action">
+											Tiếp tục <i class="glyphicon glyphicon-chevron-right f14"></i>
+										</button>
 									</div>
 								</div>
-								<div class="form-group">
-									<button type="button"
-										class="cont-btn btn btn-vxr-lg btn-vxr-lg-action">
-										Tiếp tục <i class="glyphicon glyphicon-chevron-right f14"></i>
-									</button>
-								</div>
-							</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -226,7 +230,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</li>
 					<li th:each="chuyenXe,iterStat : ${chuyenxecungtuyen} ">
 						<p class="col-md-2 col-sm-2 text-center">
-							<a href="$"><b>Nhà xe Mail Linh</b></a>
+							<a href="$"><b th:text="${chuyenXe.id_nx}"></b></a>
 						</p>
 						<p class="col-md-2 col-sm-2 text-center">
 							<b th:text="${chuyenXe.ngayDi}"></b>
@@ -239,10 +243,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</p>
 						<p class="col-md-2 col-sm-2 text-center"></p>
 						<p class="col-md-2 col-sm-2 text-center">
-							<button type="button" class="cont-btn btn btn-vxr-lg-action"
-								style="background-color: orange;">
-								Đặt vé <i class="glyphicon glyphicon-chevron-right f14"></i>
-							</button>
+							<a type="button" class="cont-btn btn btn-vxr-lg-action"
+								th:href="@{/{id}/detail(id=${chuyenXe.id_CX})}"
+								style="background-color: orange;"> Đặt vé <i
+								class="glyphicon glyphicon-chevron-right f14"></i>
+							</a>
 						</p>
 					</li>
 				</ul>

@@ -38,7 +38,6 @@ public class ChuyenXeController {
 	@PostMapping("/chuyenxe/luu")
 	public String luu(@Valid ChuyenXe chuyenXe,BindingResult result, RedirectAttributes redirect) {
 		if (result.hasErrors()) {
-			System.out.println("loi");
 			System.out.println(result);
 			redirect.addFlashAttribute("success", "Lưu chuyến xe thất bại!");
 			return "redirect:/chuyenxe/danhsach";
