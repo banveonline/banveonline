@@ -17,6 +17,7 @@ public class ChiTietChuyenXeController {
 	@GetMapping(value = "/{id}/detail")
 	public String detail(ModelMap modelMap,@PathVariable int id) {
 		modelMap.put("chiTietChuyenXe", chuyenXeService.tim(id));
+		modelMap.put("chuyenxecungtuyen", chuyenXeService.timChuyenXeTheoGaDi(chuyenXeService.tim(id).getGaDi()));
 		return "home/detail";
 	}
 }

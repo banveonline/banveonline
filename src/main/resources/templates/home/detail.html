@@ -224,7 +224,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<b>Đặt vé</b>
 						</p>
 					</li>
-					<li th:each="chuyenXe,iterStat : ${chuyenXeCungTuyen} ">
+					<li th:each="chuyenXe,iterStat : ${chuyenxecungtuyen} ">
 						<p class="col-md-2 col-sm-2 text-center">
 							<a href="$"><b>Nhà xe Mail Linh</b></a>
 						</p>
@@ -235,7 +235,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<b>7h</b>
 						</p>
 						<p class="col-md-2 col-sm-2 text-center">
-							<b>750000 VND</b>
+							<b th:text="${chuyenXe.gia}"></b><b> VND</b>
 						</p>
 						<p class="col-md-2 col-sm-2 text-center"></p>
 						<p class="col-md-2 col-sm-2 text-center">
