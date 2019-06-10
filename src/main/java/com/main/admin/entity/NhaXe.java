@@ -1,13 +1,17 @@
 package com.main.admin.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "nhaxe")
@@ -28,24 +32,9 @@ public class NhaXe implements Serializable{
 	
 	@Column(name = "mo_ta")
 	private String moTa;
-
-	public NhaXe() {
-		// TODO Auto-generated constructor stub
-	}
 	
-	public NhaXe(String tenNhaXe, String moTa) {
-		super();
-		this.tenNhaXe = tenNhaXe;
-		this.moTa = moTa;
-	}
-	
-
-	public NhaXe(int id_nx, String tenNhaXe, String moTa) {
-		super();
-		this.id_nx = id_nx;
-		this.tenNhaXe = tenNhaXe;
-		this.moTa = moTa;
-	}
+	@OneToMany(mappedBy="nhaXe")
+	private List<ChuyenXe> ChuyenXe;
 
 	public int getId_nx() {
 		return id_nx;
@@ -70,6 +59,40 @@ public class NhaXe implements Serializable{
 	public void setMoTa(String moTa) {
 		this.moTa = moTa;
 	}
+
+
+	public List<ChuyenXe> getChuyenXe() {
+		return ChuyenXe;
+	}
+
+	public void setChuyenXe(List<ChuyenXe> chuyenXe) {
+		ChuyenXe = chuyenXe;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public NhaXe() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public NhaXe(String tenNhaXe, String moTa, List<com.main.admin.entity.ChuyenXe> chuyenXe) {
+		super();
+		this.tenNhaXe = tenNhaXe;
+		this.moTa = moTa;
+		ChuyenXe = chuyenXe;
+	}
+
+	public NhaXe(int id_nx, String tenNhaXe, String moTa, List<com.main.admin.entity.ChuyenXe> chuyenXe) {
+		super();
+		this.id_nx = id_nx;
+		this.tenNhaXe = tenNhaXe;
+		this.moTa = moTa;
+		ChuyenXe = chuyenXe;
+	}
+
+	
 	
 	
 }

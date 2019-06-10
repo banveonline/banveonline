@@ -3,10 +3,8 @@ package com.main.admin.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.main.admin.DAO.ChuyenXeCungTuyenDAO;
 import com.main.admin.DAO.ChuyenXeDAO;
 import com.main.admin.entity.ChuyenXe;
-import com.main.admin.entity.ChuyenXeCungTuyen;
 import com.main.admin.service.ChuyenXeService;
 
 @Service("ChuyenXeService")

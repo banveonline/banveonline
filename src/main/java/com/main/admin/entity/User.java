@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,71 +26,64 @@ public class User {
 	@Column(name = "mat_khau")
 	private String matKhau;
 	
-	@Column(name = "role")
-	private int id_role;
+	@ManyToOne
+	@JoinColumn(name = "role")
+	private Role role;
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public User(int id_nx, String tenDangNhap, String matKhau, Role role) {
+		super();
+		this.id_nx = id_nx;
+		this.tenDangNhap = tenDangNhap;
+		this.matKhau = matKhau;
+		this.role = role;
+	}
+	
 
-	public User(int id, int id_nx, String tenDangNhap, String matKhau, int id_role) {
+	public User(int id, int id_nx, String tenDangNhap, String matKhau, Role role) {
 		super();
 		this.id = id;
 		this.id_nx = id_nx;
 		this.tenDangNhap = tenDangNhap;
 		this.matKhau = matKhau;
-		this.id_role = id_role;
+		this.role = role;
 	}
-
-
-	public User(int id_nx, String tenDangNhap, String matKhau, int id_role) {
-		super();
-		this.id_nx = id_nx;
-		this.tenDangNhap = tenDangNhap;
-		this.matKhau = matKhau;
-		this.id_role = id_role;
-	}
-
 
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 	public int getId_nx() {
 		return id_nx;
 	}
-
 	public void setId_nx(int id_nx) {
 		this.id_nx = id_nx;
 	}
-
 	public String getTenDangNhap() {
 		return tenDangNhap;
 	}
-
 	public void setTenDangNhap(String tenDangNhap) {
 		this.tenDangNhap = tenDangNhap;
 	}
-
 	public String getMatKhau() {
 		return matKhau;
 	}
-
 	public void setMatKhau(String matKhau) {
 		this.matKhau = matKhau;
 	}
-
-	public int getId_role() {
-		return id_role;
+	public Role getRole() {
+		return role;
 	}
-
-	public void setId_role(int id_role) {
-		this.id_role = id_role;
+	public void setRole(Role role) {
+		this.role = role;
 	}
+	
+
+	
 	
 	
 }

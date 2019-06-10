@@ -104,17 +104,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div id="loginContainer">
 						<a href="#" id="loginButton"><span>Đăng nhập</span></a>
 						<div id="loginBox">
-							<form id="loginForm">
+							<form id="loginForm" th:action="@{/admin/dangNhap}" method="post">
 								<div class="login-grids">
 									<div class="login-grid-left">
 										<fieldset id="body">
 											<fieldset>
 												<label for="username">Tên đang nhập</label> <input
-													type="text" name="username" id="username">
+													type="text" name="tenDangNhap" id="username">
 											</fieldset>
 											<fieldset>
 												<label for="password">Mật khẩu</label> <input
-													type="password" name="password" id="password">
+													type="password" name="matKhau" id="password">
 											</fieldset>
 											<input type="submit" id="login" value="Đăng nhập"> <label
 												for="checkbox"><input type="checkbox" id="checkbox">

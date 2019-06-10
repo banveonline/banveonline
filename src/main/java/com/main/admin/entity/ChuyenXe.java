@@ -8,11 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "chuyenxe")
@@ -28,8 +32,10 @@ public class ChuyenXe implements Serializable {
 	@Column(name = "id_cx", nullable = false)
 	private int id_CX;
 
-	@Column(name = "id_nx")
-	private int id_nx;
+	@ManyToOne
+	@JoinColumn(name = "id_nx")
+	@JsonIgnore
+	private NhaXe nhaXe;
 
 	@Column(name = "gadi")
 	private String gaDi;
@@ -54,11 +60,14 @@ public class ChuyenXe implements Serializable {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date ngayDi;
 
-	public ChuyenXe(int id_CX, int id_nx, String gaDi, String gaDen, int soNguoi, double gia, String moTa, String gioDi,
+	public ChuyenXe() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public ChuyenXe(NhaXe nhaXe, String gaDi, String gaDen, int soNguoi, double gia, String moTa, String gioDi,
 			Date ngayDi) {
 		super();
-		this.id_CX = id_CX;
-		this.id_nx = id_nx;
+		this.nhaXe = nhaXe;
 		this.gaDi = gaDi;
 		this.gaDen = gaDen;
 		this.soNguoi = soNguoi;
@@ -68,8 +77,18 @@ public class ChuyenXe implements Serializable {
 		this.ngayDi = ngayDi;
 	}
 
-	public ChuyenXe() {
+	public ChuyenXe(int id_CX, NhaXe nhaXe, String gaDi, String gaDen, int soNguoi, double gia, String moTa,
+			String gioDi, Date ngayDi) {
 		super();
+		this.id_CX = id_CX;
+		this.nhaXe = nhaXe;
+		this.gaDi = gaDi;
+		this.gaDen = gaDen;
+		this.soNguoi = soNguoi;
+		this.gia = gia;
+		this.moTa = moTa;
+		this.gioDi = gioDi;
+		this.ngayDi = ngayDi;
 	}
 
 	public int getId_CX() {
@@ -80,12 +99,12 @@ public class ChuyenXe implements Serializable {
 		this.id_CX = id_CX;
 	}
 
-	public int getId_nx() {
-		return id_nx;
+	public NhaXe getNhaXe() {
+		return nhaXe;
 	}
 
-	public void setId_nx(int id_nx) {
-		this.id_nx = id_nx;
+	public void setNhaXe(NhaXe nhaXe) {
+		this.nhaXe = nhaXe;
 	}
 
 	public String getGaDi() {
@@ -144,4 +163,9 @@ public class ChuyenXe implements Serializable {
 		this.ngayDi = ngayDi;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	
 }
