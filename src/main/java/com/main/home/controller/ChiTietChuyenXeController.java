@@ -1,5 +1,8 @@
 package com.main.home.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +28,11 @@ public class ChiTietChuyenXeController {
 	
 	@GetMapping(value = "/{id}/detail")
 	public String detail(ModelMap modelMap,@PathVariable int id) {
+		Date ngayDatVe = new Date();
+		SimpleDateFormat sf = new SimpleDateFormat("dd/MM/yyyy");
 		modelMap.put("chiTietChuyenXe", chuyenXeService.tim(id));
 		modelMap.put("ve", new Ve());
+		modelMap.put("ngayDatVe", sf.format(ngayDatVe));
 		modelMap.put("chuyenxecungtuyen", chuyenXeService.timChuyenXeTheoGaDi(chuyenXeService.tim(id).getGaDi()));
 		return "home/detail";
 	}
