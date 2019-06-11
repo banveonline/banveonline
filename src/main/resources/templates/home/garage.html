@@ -5,41 +5,8 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
-<html>
-<head>
-<title>Govihar a Travel Agency Category Flat bootstrap Responsive website Template | Products :: w3layouts</title>
-<!-- Custom Theme files -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Govihar Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //Custom Theme files -->
-<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-<link type="text/css" rel="stylesheet" href="css/JFFormStyle-1.css" />
-<!-- js -->
-<script src="js/jquery.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
-<!-- //js -->
-<!-- fonts -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<!-- //fonts -->	
-<script type="text/javascript">
-		$(document).ready(function () {
-			$('#horizontalTab').easyResponsiveTabs({
-				type: 'default', //Types: default, vertical, accordion           
-				width: 'auto', //auto or any width like 600px
-				fit: true   // 100% fit in a container
-			});
-		});
-	</script>
-<!--pop-up-->
-<script src="js/menu_jquery.js"></script>
-<!--//pop-up-->	
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="home/layout :: homehead"></head>
 <body>
 	<!--header-->
 	<div class="header">
@@ -491,95 +458,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!-- //banner-bottom -->
 	<!-- footer -->
-	<div class="footer">
-		<!-- container -->
-		<div class="container">
-			<div class="footer-top-grids">
-				<div class="footer-grids">
-					<div class="col-md-3 footer-grid">
-						<h4>Our Products</h4>
-						<ul>
-							<li><a href="index.html">Flight Schedule</a></li>
-							<li><a href="flights-hotels.html">City Airline Routes</a></li>
-							<li><a href="index.html">International Flights</a></li>
-							<li><a href="hotels.html">International Hotels</a></li>
-							<li><a href="bus.html">Bus Booking</a></li>
-							<li><a href="index.html">Domestic Airlines</a></li>
-							<li><a href="holidays.html">Holidays Trip</a></li>
-							<li><a href="hotels.html">Hotel Booking</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 footer-grid">
-						<h4>Company</h4>
-						<ul>
-							<li><a href="about.html">About Us</a></li>
-							<li><a href="faqs.html">FAQs</a></li>
-							<li><a href="terms.html">Terms &amp; Conditions</a></li>
-							<li><a href="privacy.html">Privacy </a></li>
-							<li><a href="contact.html">Contact Us</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="booking.html">Feedback</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 footer-grid">
-						<h4>Travel Resources</h4>
-						<ul>
-							<li><a href="holidays.html">Holidays Packages</a></li>
-							<li><a href="weekend.html">Weekend Getaways</a></li>
-							<li><a href="index.html">International Airports</a></li>
-							<li><a href="index.html">Domestic Flights Booking</a></li>
-							<li><a href="booking.html">Customer Support</a></li>
-							<li><a href="booking.html">Cancel Bookings</a></li>
-							<li><a href="booking.html">Print E-tickets</a></li>
-							<li><a href="booking.html">Customer Forums</a></li>
-							<li><a href="booking.html">Make a Payment</a></li>
-							<li><a href="booking.html">Complete Booking</a></li>
-							<li><a href="booking.html">Assurance Claim</a></li>
-							<li><a href="booking.html">Retail Offices</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 footer-grid">
-						<h4>More Links</h4>
-						<ul class="chf_footer_list">
-							<li><a href="#">Flights Discount Coupons</a></li>
-							<li><a href="#">Domestic Airlines</a></li>
-							<li><a href="#">Indigo Airlines</a></li>
-							<li><a href="#">Air Asia</a></li>
-							<li><a href="#">Jet Airways</a></li>
-							<li><a href="#">SpiceJet</a></li>
-							<li><a href="#">GoAir</a></li>
-							<li><a href="#">Air India</a></li>
-							<li><a href="#">Domestic Flight Routes</a></li>
-							<li><a href="#">Indian City Flight</a></li>
-							<li><a href="#">Flight Sitemap</a></li>
-						</ul>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<!-- news-letter -->
-				<div class="news-letter">
-					<div class="news-letter-grids">
-						<div class="col-md-4 news-letter-grid">
-							<p>Toll Free No : <span>1234-5678-901</span></p>
-						</div>
-						<div class="col-md-4 news-letter-grid">
-							<p class="mail">Email : <a href="mailto:info@example.com">mail@example.com</a></p>
-						</div>
-						<div class="col-md-4 news-letter-grid">
-							<form>
-								<input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-								<input type="submit" value="Subscribe">
-							</form>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<!-- //news-letter -->
-			</div>
-		</div>
-		<!-- //container -->
-	</div>
+	<div class="header" th:replace="home/layout :: homefooter"></div>
 	<!-- //footer -->
 	<div class="footer-bottom-grids">
 		<!-- container -->
