@@ -8,6 +8,8 @@ public interface ChuyenXeService {
 	
 	public Iterable<ChuyenXe> timChuyenXeTheoGaDi(String gaDi);
 	
+	public Iterable<ChuyenXe> chuyenXeCungTuyen(String gaDi,String gaDen);
+	
 	public void xoaChuyenXe(int id);
 	
 	public void luuChuyenXe(ChuyenXe chuyenXe);

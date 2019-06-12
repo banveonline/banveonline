@@ -12,5 +12,7 @@ public interface ChuyenXeDAO extends CrudRepository<ChuyenXe, Integer>{
 	@Query("from ChuyenXe c where c.gaDi = ?1")
 	public Iterable<ChuyenXe> timChuyenXeTheoGaDi(String gaDi); 
 	
+	@Query("from ChuyenXe c where c.gaDi = ?1 AND c.gaDen = ?2")
+	public Iterable<ChuyenXe> timChuyenXeCungTuyen(String gaDi, String gaDen);
 	
 }
