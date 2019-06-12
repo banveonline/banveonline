@@ -23,22 +23,38 @@ public class NhaXe implements Serializable{
 	@Column(name = "id")
 	private int id_nx;
 	
+	@Column(name = "")
+	private String anh;
+	
 	@Column(name = "ten_nha_xe")
 	private String tenNhaXe;
 	
 	@Column(name = "mo_ta")
 	private String moTa;
+	
+	@Column(name = "sdt")
+	private String sdt;
+	
+	@Column(name = "dia_chi")
+	private String diaChi;
 
 	public NhaXe() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public NhaXe(String tenNhaXe, String moTa) {
+
+	public NhaXe(int id_nx, String anh, String tenNhaXe, String moTa, String sdt, String diaChi) {
 		super();
+		this.id_nx = id_nx;
+		this.anh = anh;
 		this.tenNhaXe = tenNhaXe;
 		this.moTa = moTa;
+		this.sdt = sdt;
+		this.diaChi = diaChi;
 	}
-	
+
+
+
 
 	public NhaXe(int id_nx, String tenNhaXe, String moTa) {
 		super();
@@ -69,6 +85,36 @@ public class NhaXe implements Serializable{
 
 	public void setMoTa(String moTa) {
 		this.moTa = moTa;
+	}
+
+
+	public String getAnh() {
+		return anh;
+	}
+
+
+	public void setAnh(String anh) {
+		this.anh = anh;
+	}
+
+
+	public String getSdt() {
+		return sdt;
+	}
+
+
+	public void setSdt(String sdt) {
+		this.sdt = sdt;
+	}
+
+
+	public String getDiaChi() {
+		return diaChi;
+	}
+
+
+	public void setDiaChi(String diaChi) {
+		this.diaChi = diaChi;
 	}
 	
 	
