@@ -32,18 +32,21 @@ public class ChiTietChuyenXeController {
 		modelMap.put("chuyenxecungtuyen", chuyenXeService.timChuyenXeTheoGaDi(chuyenXeService.tim(id).getGaDi()));
 		return "home/detail";
 	}
-	
+	@GetMapping("/notification")
+	public String notification(){
+		return "home/notification";
+	}
 	@PostMapping("/datve")
 	public String datVe(@Valid Ve ve,BindingResult result,RedirectAttributes redirect) {
 		if(result.hasErrors()) {
-			redirect.addAttribute("thongbao", "Đặt vé thất bại");
-			return "redirect:/thongbao";
+			redirect.addFlashAttribute("thongbao", "Đặt vé thất bại");
+			return "redirect:/home/notification";
 		}else {
 			Date ngayDatVe = new Date();
 			ve.setNgayDatVe(ngayDatVe);
 			veService.luu(ve);
-			redirect.addAttribute("thongbao", "Đặt vé thành công");
-			return "redirect:/thongbao";
+			redirect.addFlashAttribute("thongbao", "Đặt vé thành công");
+			return "redirect:/notification";
 		}
 	}
 }
