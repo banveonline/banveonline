@@ -13,15 +13,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="header-grids">
 				<div class="logo">
-					<h1><a  href="index.html"><span>Go</span>vihar</a></h1>
+					<h1><a  href="index.html"><span>VeXe</span>Online</a></h1>
 				</div>
 				<!--navbar-header-->
 				<div class="header-dropdown">
 					<div class="emergency-grid">
-						<ul>
-							<li>Toll Free : </li>
-							<li class="call">+1 234 567 8901</li>
-						</ul>
+
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -31,14 +28,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="top-nav">
 					<span class="menu"><img src="images/menu.png" alt="" /></span>
 					<ul class="nav1">
-						<li><a href="index.html">Flights</a></li>
-						<li><a href="hotels.html">Hotels</a></li>
-						<li><a href="holidays.html">Holidays</a></li>
-						<li><a href="flights-hotels.html">Flight+Hotel</a></li>
-						<li><a href="bus.html">Bus</a></li>
-						<li><a href="trains.html">Trains</a></li>
-						<li><a href="weekend.html">Weekend Getaways</a></li>
-						<li><a href="deals.html">Deals</a></li>
+						<li class="active"><a th:href="@{/}">Trang chủ</a></li>
+						<li><a th:href="@{/nha-xe}">Nhà xe</a></li>
+						<li><a th:href="@{/khuyen-mai}">Khuyến mãi</a></li>
+						<li><a href="@{/huong-dan}">Hướng dẫn</a></li>
+						<li><a href="@{/}">Tuyển dụng</a></li>
 					</ul>
 					<div class="clearfix"> </div>
 					<!-- script-for-menu -->
@@ -52,44 +46,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</script>
 						<!-- /script-for-menu -->
 				</div>
-				<div class="dropdown-grids">
-						<div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
-							<div id="loginBox">                
-								<form id="loginForm">
-									<div class="login-grids">
-										<div class="login-grid-left">
-											<fieldset id="body">
-												<fieldset>
-													<label for="email">Email Address</label>
-													<input type="text" name="email" id="email">
-												</fieldset>
-												<fieldset>
-													<label for="password">Password</label>
-													<input type="password" name="password" id="password">
-												</fieldset>
-												<input type="submit" id="login" value="Sign in">
-												<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
+			<div class="dropdown-grids">
+					<div id="loginContainer">
+						<a href="#" id="loginButton"><span>Đăng nhập</span></a>
+						<div id="loginBox">
+							<form id="loginForm">
+								<div class="login-grids">
+									<div class="login-grid-left">
+										<fieldset id="body">
+											<fieldset>
+												<label for="username">Tên đang nhập</label> <input
+													type="text" name="username" id="username">
 											</fieldset>
-											<span><a href="#">Forgot your password?</a></span>
-											<div class="or-grid">
-												<p>OR</p>
-											</div>
-											<div class="social-sits">
-												<div class="facebook-button">
-													<a href="#">Connect with Facebook</a>
-												</div>
-												<div class="chrome-button">
-													<a href="#">Connect with Google</a>
-												</div>
-												<div class="button-bottom">
-													<p>New account? <a href="signup.html">Signup</a></p>
-												</div>
-											</div>
-										</div>
+											<fieldset>
+												<label for="password">Mật khẩu</label> <input
+													type="password" name="password" id="password">
+											</fieldset>
+											<input type="submit" id="login" value="Đăng nhập"> <label
+												for="checkbox"><input type="checkbox" id="checkbox">
+												<i>Nhớ mật khẩu</i></label>
+										</fieldset>
+										<span><a href="#">Quên mật khẩu?</a></span>
 									</div>
-								</form>
-							</div>
+								</div>
+							</form>
 						</div>
+					</div>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -102,179 +84,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="faqs-top-grids">
 				<div class="product-grids">
-					<div class="col-md-3 product-left">
-						<div class="h-class">
-							<h5>Hotel Class</h5>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="starTextLabel">5 Stars (18)</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox" checked="checked" data-track="HOT:SR:StarRating:5Star">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="starTextLabel">4 Stars (30)</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="starTextLabel">3 Stars (106)</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="starTextLabel">2 Stars (78)</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox">
-									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-									<span class="starTextLabel">1 Stars (10)</span>
-								</label>
-							</div>
-						</div>
-						<div class="h-class p-day">
-							<h5>Price per day</h5>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox" checked="checked" data-track="HOT:SR:StarRating:5Star">
-									<span class="p-day-grid">Less than $100 (76)</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox">
-									<span class="p-day-grid">$100 to $200 (132)</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox">
-									<span class="p-day-grid">$300 to $300 (223)</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox">
-									<span class="p-day-grid">$300 to $400 (84)</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox">
-									<span class="p-day-grid">$500 to $600 (23)</span>
-								</label>
-							</div>
-						</div>
-						<div class="h-class">
-							<h5>Area</h5>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="radio" name="hideRegionId" checked="checked" data-track="HOT:SR:Area">
-									<span class="p-day-grid">London</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="radio" name="hideRegionId"  data-track="HOT:SR:Area">
-									<span class="p-day-grid">Newyork</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="radio" name="hideRegionId"  data-track="HOT:SR:Area">
-									<span class="p-day-grid">New Zealand</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="radio" name="hideRegionId"  data-track="HOT:SR:Area">
-									<span class="p-day-grid">Los Angeles</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="radio" name="hideRegionId"  data-track="HOT:SR:Area">
-									<span class="p-day-grid">Sydney</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="radio" name="hideRegionId"  data-track="HOT:SR:Area">
-									<span class="p-day-grid">Agra</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="radio" name="hideRegionId"  data-track="HOT:SR:Area">
-									<span class="p-day-grid">Greece</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="radio" name="hideRegionId"  data-track="HOT:SR:Area">
-									<span class="p-day-grid">Singapore</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="radio" name="hideRegionId"  data-track="HOT:SR:Area">
-									<span class="p-day-grid">Paris</span>
-								</label>
-							</div>
-						</div>
-						<div class="h-class p-day">
-							<h5>Accommodation Type</h5>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox" checked="checked" data-track="HOT:SR:StarRating:5Star">
-									<span class="p-day-grid">Hotel resort (67)</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox">
-									<span class="p-day-grid">Hotel (84)</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox">
-									<span class="p-day-grid">Guest house (24)</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox">
-									<span class="p-day-grid">Apartment (34)</span>
-								</label>
-							</div>
-							<div class="hotel-price">
-								<label class="check">
-									<input type="checkbox">
-									<span class="p-day-grid">Country House (32)</span>
-								</label>
-							</div>
-						</div>
-					</div>
+					
 					<div class="col-md-9 product-right">
 						<div class="product-right-grids">
 							<div class="product-right-top">
@@ -285,15 +95,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="p-right">
 									<div class="col-md-6 p-right-left">
-										<a href="p-single.html">Lorem ipsum dolor sit amet</a>
+										<a href="p-single.html">Xe Phương Trang</a>
 										<div class="p-right-price">
 											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 										</div>
-										<p>Vestibulum molestie id orci eget vulputate</p>
-										<p class="p-call">+1 234 567 890</p>
+										<p>Địa chỉ: 009999090090</p>
+										<p class="p-call">Liên hệ: 0999000 890</p>
 									</div>
 									<div class="col-md-6 p-right-right">
 										<h6>Rating : 4.1/5</h6>
@@ -407,8 +217,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 										</div>
-										<p>Vestibulum molestie id orci eget vulputate</p>
-										<p class="p-call">+1 234 567 890</p>
+										<p>Địa chỉ: a234</p>
+										<p class="p-call">Liên hệ: 099999999999</p>
 									</div>
 									<div class="col-md-6 p-right-right">
 										<h6>Rating : 4.1/5</h6>
@@ -497,7 +307,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="clearfix"> </div>
 					<div class="copyright">
-						<p>Copyrights © 2015 Govihar . Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+						<p>Copyrights Â© 2015 Govihar . Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 					</div>
 				</div>
 		</div>
