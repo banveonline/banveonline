@@ -38,5 +38,10 @@ public class ChuyenXeServiceImpl implements ChuyenXeService{
 		return chuyenXeDAO.timChuyenXeTheoGaDi(gaDi);
 	}
 
+	@Override
+	public Iterable<ChuyenXe> chuyenXeCungTuyen(String gaDi, String gaDen) {
+		return chuyenXeDAO.timChuyenXeCungTuyen(gaDi, gaDen);
+	}
+
 
 }
