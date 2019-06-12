@@ -9,74 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head th:replace="home/layout :: homehead"></head>
 <body>
 	<!--header-->
-	<div class="header">
-		<div class="container">
-			<div class="header-grids">
-				<div class="logo">
-					<h1><a  href="index.html"><span>VeXe</span>Online</a></h1>
-				</div>
-				<!--navbar-header-->
-				<div class="header-dropdown">
-					<div class="emergency-grid">
-
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="nav-top">
-				<div class="top-nav">
-					<span class="menu"><img src="images/menu.png" alt="" /></span>
-					<ul class="nav1">
-						<li class="active"><a th:href="@{/}">Trang chủ</a></li>
-						<li><a th:href="@{/nha-xe}">Nhà xe</a></li>
-						<li><a th:href="@{/khuyen-mai}">Khuyến mãi</a></li>
-						<li><a href="@{/huong-dan}">Hướng dẫn</a></li>
-						<li><a href="@{/}">Tuyển dụng</a></li>
-					</ul>
-					<div class="clearfix"> </div>
-					<!-- script-for-menu -->
-							 <script> 
-							   $( "span.menu" ).click(function() {
-								 $( "ul.nav1" ).slideToggle( 300, function() {
-								 // Animation complete.
-								  });
-								 });
-							
-							</script>
-						<!-- /script-for-menu -->
-				</div>
-			<div class="dropdown-grids">
-					<div id="loginContainer">
-						<a href="#" id="loginButton"><span>Đăng nhập</span></a>
-						<div id="loginBox">
-							<form id="loginForm">
-								<div class="login-grids">
-									<div class="login-grid-left">
-										<fieldset id="body">
-											<fieldset>
-												<label for="username">Tên đang nhập</label> <input
-													type="text" name="username" id="username">
-											</fieldset>
-											<fieldset>
-												<label for="password">Mật khẩu</label> <input
-													type="password" name="password" id="password">
-											</fieldset>
-											<input type="submit" id="login" value="Đăng nhập"> <label
-												for="checkbox"><input type="checkbox" id="checkbox">
-												<i>Nhớ mật khẩu</i></label>
-										</fieldset>
-										<span><a href="#">Quên mật khẩu?</a></span>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
+	<div class="header" th:replace="home/layout :: homeheader"></div>
 	<!--//header-->
 	<!-- banner-bottom -->
 	<div class="banner-bottom">
