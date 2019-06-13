@@ -185,9 +185,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<td class="text-center"><a
 														href="/vi-VN/ve-xe-khach-tu-sai-gon-di-ha-noi-129t1241.html"><span
 															class="route">Hà Nội</span></a></td>
-													<td class="text-right"><a th:href="@{/chuyenxe/hcm-hn}"><button type="button"
+													<td class="text-right"><a th:href="@{/chuyenxe2/hcm-hn}"><button type="button"
 																class="ui-datepicker-trigger text-center">Tìm
-																kiếm</button></a></</td>
+																kiếm</button></a></td>
 												</tr>
 												<tr>
 													<td class="text-center"><a
@@ -733,19 +733,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- popular-grids -->
 	<!-- footer -->
 	<div class="header" th:replace="home/layout :: homefooter"></div>
-	<script defer th:src="@{/js/jquery.flexslider.js}"></script>
-	<script th:src="@{/js/easyResponsiveTabs.js}" type="text/javascript"></script>
-	<script th:src="@{/js/jquery-ui.js}"></script>
-	<script type="text/javascript" th:src="@{/js/script.js}"></script>
-	<script type="text/javascript">
-		$(window).load(function() {
-			$('.flexslider').flexslider({
-				animation : "slide",
-				start : function(slider) {
-					$('body').removeClass('loading');
-				}
-			});
-		});
-	</script>
 </body>
 </html>
