@@ -1,12 +1,15 @@
 package com.main.home.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.main.admin.DAO.ChuyenXeDAO;
 
@@ -16,7 +19,7 @@ public class ChuyenXeController {
 	@Autowired
 	private ChuyenXeDAO chuyenXeDAO;
 
-	@GetMapping(value = "/chuyenxe/{comment}")
+	@GetMapping("/chuyenxe/{comment}")
 	public String index(@PathVariable String comment, ModelMap modelMap) {
 		if (comment.equals("tat-ca-chuyen-xe")) {
 			modelMap.put("chuyenxe", chuyenXeDAO.findAll());
@@ -25,6 +28,14 @@ public class ChuyenXeController {
 					chuyenXeDAO.timChuyenXeCungTuyen(spitComment(comment).get(0), spitComment(comment).get(1)));
 		}
 		return "home/trips";
+	}
+
+	@GetMapping("/chuyenxe/search")
+	public String search(@RequestParam("noi-di") String noiDi,@RequestParam("noi-den") String noiDen,@RequestParam("ngay-di") Date ngayDi ,RedirectAttributes redirect) {
+		System.out.println(noiDi);
+		System.out.println(noiDen);
+		System.out.println(ngayDi);
+		return "redirect:/";
 	}
 
 	public ArrayList<String> spitComment(String comment) {

@@ -64,56 +64,54 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<!-- Set here the key for your domain in order to hide the watermark on the web server -->
 										<div class="online_reservation">
 											<div class="b_room">
-												<div class="booking_room">
-													<div class="reservation">
-														<ul>
-															<li class="span1_of_1 desti">
-																<h5>Đi từ</h5>
-																<div class="book_date">
-																	<select>
-																		<option th:each="thanhpho,iterStat : ${thanhpho}"
-																			th:value="${thanhpho.ten}" th:text="${thanhpho.ten}"></option>
-																	</select>
-																</div>
-															</li>
-															<li class="span1_of_1 left desti">
-																<h5>Đến</h5>
-																<div class="book_date">
-																	<select>
-																		<option th:each="thanhpho,iterStat : ${thanhpho}"
-																			th:value="${thanhpho.ten}" th:text="${thanhpho.ten}"></option>
-																	</select>
-																</div>
-															</li>
-														</ul>
-													</div>
-													<div class="reservation">
-														<ul>
-															<li class="span1_of_1">
-																<h5>Ngày đi</h5>
-																<div class="book_date">
-																	<form>
+												<form th:action="@{/chuyenxe/search}">
+													<div class="booking_room">
+														<div class="reservation">
+															<ul>
+																<li class="span1_of_1 desti">
+																	<h5>Đi từ</h5>
+																	<div class="book_date">
+																		<select name="noi-di">
+																			<option th:each="thanhpho,iterStat : ${thanhpho}"
+																				th:value="${thanhpho.ten}" th:text="${thanhpho.ten}"></option>
+																		</select>
+																	</div>
+																</li>
+																<li class="span1_of_1 left desti">
+																	<h5>Đến</h5>
+																	<div class="book_date">
+																		<select name="noi-den">
+																			<option th:each="thanhpho,iterStat : ${thanhpho}"
+																				th:value="${thanhpho.ten}" th:text="${thanhpho.ten}"></option>
+																		</select>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="reservation">
+															<ul>
+																<li class="span1_of_1">
+																	<h5>Ngày đi</h5>
+																	<div class="book_date">
 																		<span class="glyphicon glyphicon-calendar"
-																			aria-hidden="true"></span> <input type="date"
+																			aria-hidden="true"></span> <input type="date" name="ngay-di"
 																			value="Select date" onfocus="this.value = '';"
 																			onblur="if (this.value == '') {this.value = 'Select date';}">
-																	</form>
-																</div>
-															</li>
-														</ul>
-													</div>
-													<div class="reservation">
-														<ul>
-															<li class="span1_of_3">
-																<div class="date_btn">
-																	<form>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="reservation">
+															<ul>
+																<li class="span1_of_3">
+																	<div class="date_btn">
 																		<input type="submit" value="Search" />
-																	</form>
-																</div>
-															</li>
-														</ul>
+																	</div>
+																</li>
+															</ul>
+														</div>
 													</div>
-												</div>
+												</form>
 												<div class="clearfix"></div>
 											</div>
 										</div>
@@ -132,7 +130,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //banner -->
 	<div class="move-text">
 		<div class="marquee">
-			Xem nhiều chuyến xe hơn. <a th:href="@{/chuyenxe/tat-ca-chuyen-xe}">Nhấn vào đây</a>
+			Xem nhiều chuyến xe hơn. <a th:href="@{/chuyenxe/tat-ca-chuyen-xe}">Nhấn
+				vào đây</a>
 		</div>
 		<script type="text/javascript" src="js/jquery.marquee.min.js"></script>
 		<script>
@@ -185,7 +184,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<td class="text-center"><a
 														href="/vi-VN/ve-xe-khach-tu-sai-gon-di-ha-noi-129t1241.html"><span
 															class="route">Hà Nội</span></a></td>
-													<td class="text-right"><a th:href="@{/chuyenxe/hcm-hn}"><button type="button"
+													<td class="text-right"><a
+														th:href="@{/chuyenxe/hcm-hn}"><button type="button"
 																class="ui-datepicker-trigger text-center">Tìm
 																kiếm</button></a></td>
 												</tr>
@@ -616,7 +616,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<td class="text-center"><a
 														href="/vi-VN/ve-xe-khach-tu-sai-gon-di-ha-noi-129t1241.html"><span
 															class="route">Mũi Né</span></a></td>
-													<td class="text-right"><a th:href="@{/chuyenxe/hcm-hn}"><button type="button"
+													<td class="text-right"><a
+														th:href="@{/chuyenxe/hcm-hn}"><button type="button"
 																class="ui-datepicker-trigger text-center">Tìm
 																kiếm</button></a></td>
 												</tr>
