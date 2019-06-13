@@ -17,17 +17,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="faqs-top-grids">
 				<div class="product-grids">
-					<div class="col-md-9 product-right">
+					<div class="product-right">
 						<div class="product-right-grids">
 							<div class="product-right-top">
 								<div class="">
 									<table class="table table-striped">
 										<tr>
-											<td>Nhà xe</td>
-											<td>Ga đi</td>
-											<td>Ga đến</td>
-											<td>Ngày đi</td>
+											<td class="text-center">Nhà xe</td>
+											<td class="text-center">Ga đi</td>
+											<td class="text-center">Ga đến</td>
+											<td class="text-center">Ngày đi</td>
+											<td class="text-center">Giờ đi</td>
+											<td class="text-center">Giá</td>
 											<td></td>
+										</tr>
+										<tr style="height: 150px;" th:each="chuyenxe,iterStat : ${chuyenxe}">
+											<td class="text-center" style="padding-top: 50px;"><a href="$">Hoàng Long</a></td>
+											<td class="text-center" style="padding-top: 50px;" th:text = "${chuyenxe.gaDi}"></td>
+											<td class="text-center" style="padding-top: 50px;" th:text = "${chuyenxe.gaDen}"></td>
+											<td class="text-center" style="padding-top: 50px;" th:text = "${chuyenxe.ngayDi}"></td>
+											<td class="text-center" style="padding-top: 50px;" th:text = "${chuyenxe.gioDi}"></td>
+											<td class="text-center" style="padding-top: 50px;" th:text = "${chuyenxe.gia}"></td>
+											<td class="text-right" style="padding-top: 50px;"><a th:href="@{/{id}/detail(id=${chuyenxe.id_CX})}"><button
+														type="button" class="ui-datepicker-trigger text-center">Tìm
+														kiếm</button></a></td>
+										</tr>
+										<tr>
 										</tr>
 									</table>
 								</div>

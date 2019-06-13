@@ -51,13 +51,13 @@ public class ChuyenXeController {
 			noiDen = "Hồ Chí Minh";
 			break;
 		case "hn":
-			noiDi = "Hà Nội";
+			noiDen = "Hà Nội";
 			break;
 		case "dn":
-			noiDi = "Đà Nẵng";
+			noiDen = "Đà Nẵng";
 			break;
 		case "nt":
-			noiDi = "Nha Trang";
+			noiDen = "Nha Trang";
 			break;
 		}
 		ls.add(noiDi);
