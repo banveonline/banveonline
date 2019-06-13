@@ -68,13 +68,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li>
 										<p class="col-md-6 col-sm-6 text-left">Mô tả :</p>
 										<p class="col-md-6 text-right">
-											<b>Đi từ bến xe Miền Đông - quầy vé số 73 dến Hà Nội</b>
+											<b th:text="${chiTietCuyenXe.moTa}"></b>
 										</p>
 									</li>
 									<li style="border: 0">
 										<p class="col-md-6 col-sm-6 text-left">Giờ đi :</p>
 										<p class="col-md-6 text-right">
-											<b>12h</b>
+											<b th:text = "${chiTietChuyenXe.gioDi}"></b>
 										</p>
 									</li>
 								</ul>
@@ -82,48 +82,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 						</div>
 
-						<div class="row">
-							<div class="border-note">
-								<h2 class="text-center title-road-backlink mb0">Thông tin
-									tuyến đường Hồ Chí Minh đi Hà Nội</h2>
-								<ul class="list-detail-route">
-									<li>
-										<p class="col-md-6 col-sm-6 text-left">Chiều dài tuyến
-											đường :</p>
-										<p class="col-md-6 text-right">
-											<b>1319 km</b>
-										</p>
-									</li>
-									<li>
-										<p class="col-md-6 col-sm-6 text-left">Thời gian di chuyển
-											:</p>
-										<p class="col-md-6 text-right">
-											<b>34 giờ</b>
-										</p>
-									</li>
-									<li>
-										<p class="col-md-6 col-sm-6 text-left">Giá vé trung bình :</p>
-										<p class="col-md-6 text-right">
-											<b>737500 VNĐ</b>
-										</p>
-									</li>
-									<li>
-										<p class="col-md-6 col-sm-6 text-left">Số lượng chuyến xe
-											:</p>
-										<p class="col-md-6 text-right">
-											<b>5 chuyến</b>
-										</p>
-									</li>
-									<li style="border: 0">
-										<p class="col-md-6 col-sm-6 text-left">Số lượng nhà xe :</p>
-										<p class="col-md-6 text-right">
-											<b>11 nhà xe</b>
-										</p>
-									</li>
-								</ul>
-								<div class="price-road-backlink border-line-detail"></div>
-							</div>
-						</div>
 					</div>
 					<div class="col-md-4 single-gd-rt">
 						<div class="spl-btn">
@@ -186,7 +144,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<label for="inputnote3"
 												class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Ghi
 												Chú:</label>
-											<textarea id="note" name="note"
+											<textarea id="note" name="note" th:field = "*{ghiChu}"
 												class="form-control input-vxr"></textarea>
 										</div>
 									</div>
