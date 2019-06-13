@@ -33,11 +33,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										</tr>
 										<tr style="height: 150px;" th:each="chuyenxe,iterStat : ${chuyenxe}">
 											<td class="text-center" style="padding-top: 50px;"><a href="$">Hoàng Long</a></td>
-											<td class="text-center" style="padding-top: 50px;" th:text = "${chuyenxe.gaDi}"></td>
-											<td class="text-center" style="padding-top: 50px;" th:text = "${chuyenxe.gaDen}"></td>
-											<td class="text-center" style="padding-top: 50px;" th:text = "${chuyenxe.ngayDi}"></td>
-											<td class="text-center" style="padding-top: 50px;" th:text = "${chuyenxe.gioDi}"></td>
-											<td class="text-center" style="padding-top: 50px;" th:text = "${chuyenxe.gia}"></td>
+											<td class="text-center" style="padding-top: 50px;"><b th:text = "${chuyenxe.gaDi}"></b></td>
+											<td class="text-center" style="padding-top: 50px;"><b th:text = "${chuyenxe.gaDen}"></b></td>
+											<td class="text-center" style="padding-top: 50px;"><b th:text = "${chuyenxe.ngayDi}"></b></td>
+											<td class="text-center" style="padding-top: 50px;"><b th:text = "${chuyenxe.gioDi}"></b></td>
+											<td class="text-center" style="padding-top: 50px;"><b th:text="${chuyenxe.gia}"></b><span> VND</span></td>
 											<td class="text-right" style="padding-top: 50px;"><a th:href="@{/{id}/detail(id=${chuyenxe.id_CX})}"><button
 														type="button" class="ui-datepicker-trigger text-center">Tìm
 														kiếm</button></a></td>

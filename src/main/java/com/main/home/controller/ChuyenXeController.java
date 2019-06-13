@@ -18,7 +18,7 @@ public class ChuyenXeController {
 
 	@GetMapping(value = "/chuyenxe/{comment}")
 	public String index(@PathVariable String comment, ModelMap modelMap) {
-		if (comment.equals("all")) {
+		if (comment.equals("tat-ca-chuyen-xe")) {
 			modelMap.put("chuyenxe", chuyenXeDAO.findAll());
 		} else {
 			modelMap.put("chuyenxe",
