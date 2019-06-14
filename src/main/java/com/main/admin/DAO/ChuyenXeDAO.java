@@ -1,5 +1,7 @@
 package com.main.admin.DAO;
 
+import java.util.Date;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -14,6 +16,9 @@ public interface ChuyenXeDAO extends CrudRepository<ChuyenXe, Integer>{
 	
 	@Query("from ChuyenXe c where c.gaDi = ?1 AND c.gaDen = ?2")
 	public Iterable<ChuyenXe> timChuyenXeCungTuyen(String gaDi, String gaDen);
+	
+	@Query("FROM ChuyenXe c WHERE c.gaDi = ?1 AND c.gaDen = ?2 AND c.ngayDi = ?3")
+	public Iterable<ChuyenXe> timChuyenXe(String gaDi, String gaDen, Date ngayDi);
 	
 	@Query("select count(id) from Ve v where v.id_CX = ?1")
 	public int tinhSoGhe(int id);
