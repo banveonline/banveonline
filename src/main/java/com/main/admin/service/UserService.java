@@ -10,4 +10,5 @@ public interface UserService {
 	public User loadUserByUsername(String username);
 	public List<GrantedAuthority> getAuthorities(User user);
 	public User checkLogin(String userName,String password);
+	public void save(User user);
 }

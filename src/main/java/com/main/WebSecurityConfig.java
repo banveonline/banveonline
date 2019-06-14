@@ -35,9 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 
 		// Sét đặt dịch vụ để tìm kiếm User trong Database.
-		// Và sét đặt PasswordEncoder.
 		auth.userDetailsService(userDetailsService);
-
 	}
 
 	@Override
@@ -48,39 +46,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// Các trang không yêu cầu login
 		http.authorizeRequests().antMatchers("/", "/login", "/logout").permitAll();
 
-		// Trang /userInfo yêu cầu phải login với vai trò ROLE_USER hoặc ROLE_ADMIN.
-		// Nếu chưa login, nó sẽ redirect tới trang /login.
-//		http.authorizeRequests().antMatchers("/userInfo").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
+		//role ADMIN or Member
+		http.authorizeRequests().antMatchers("/admin/**").access("hasRole('ADMIN') or hasRole('MEMBER')");
 
-		// Trang chỉ dành cho ADMIN
-		http.authorizeRequests().antMatchers("/admin/**").access("hasRole('ADMIN')");
-
-		// Trang chỉ dành cho ADMIN
-//		http.authorizeRequests().antMatchers("/trainer").access("hasRole('ROLE_TRAINER')");
-//		http.authorizeRequests().antMatchers("/trainee").access("hasRole('ROLE_TRAINEE')");
-//		http.authorizeRequests().antMatchers("/staff").access("hasRole('ROLE_STAFF')");
-
-		// Khi người dùng đã login, với vai trò XX.
-		// Nhưng truy cập vào trang yêu cầu vai trò YY,
-		// Ngoại lệ AccessDeniedException sẽ ném ra.
-		http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
+		http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/error");
 
 		// Cấu hình cho Login Form.
-		http.authorizeRequests().and().formLogin()//
-				// Submit URL của trang login
-				.loginProcessingUrl("/action-login") // Submit URL
-				.loginPage("/")//
-				.defaultSuccessUrl("/admin/index")//
-				.failureUrl("/?error=true")//
-				.usernameParameter("username")//
+		http.authorizeRequests().and().formLogin()
+				//login
+				.loginProcessingUrl("/action-login")
+				.loginPage("/")
+				.defaultSuccessUrl("/admin/index")
+				.failureUrl("/?error=true")
+				.usernameParameter("username")
 				.passwordParameter("password")
-				// Cấu hình cho Logout Page.
-				.and().logout().logoutUrl("/logout").logoutSuccessUrl("/logoutSuccessful");
+				//Logout
+				.and().logout().logoutUrl("/logout").logoutSuccessUrl("/")
+				.and().logout().deleteCookies("JSESSIONID");
 
-		// Cấu hình Remember Me.
-		http.authorizeRequests().and() //
-				.rememberMe().tokenRepository(this.persistentTokenRepository()) //
-				.tokenValiditySeconds(1 * 24 * 60 * 60); // 24h
+		//Remember Me
+		http.authorizeRequests().and()
+				.rememberMe().tokenRepository(this.persistentTokenRepository())
+				.tokenValiditySeconds(60 * 60);
 
 	}
 

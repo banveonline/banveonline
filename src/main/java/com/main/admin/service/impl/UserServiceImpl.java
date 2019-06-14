@@ -30,5 +30,10 @@ public class UserServiceImpl implements UserService{
 	public User checkLogin(String userName, String password) {
 		return userDAO.findByUserNameAndPassword(userName, password);
 	}
+	@Override
+	public void save(User user) {
+		userDAO.save(user);
+	}
+	
 
 }
