@@ -15,7 +15,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-default">
-						<div class="panel-heading">Tất cả chuyến xe</div>
+						<div class="panel-heading">Danh sách đặt vé</div>
 						<span th:text="${success}" style="padding-left: 10px;color: red;"></span>
 						<th:block th:if="${#lists.isEmpty(ve)}">
 							<h3 style="text-align: center;">Danh sách chuyến xe trống</h3>
@@ -30,7 +30,7 @@
 												<tr>
 													<th  style="text-align: center;">ID vé xe</th>
 													<th  style="text-align: center;">ID chuyến xe</th>
-													<th  style="text-align: center;">Họ tên khách hànge</th>
+													<th  style="text-align: center;">Họ tên khách hàng</th>
 													<th  style="text-align: center;">Số điện thoại</th>
 													<th  style="text-align: center;">Số chố</th>
 													<th  style="text-align: center;">Ngày đặt</th>
@@ -49,8 +49,8 @@
 													<td style="text-align: center;" th:text="${vexe.ghiChu}"></td>
 													
 													<td class="ql"><a
-														th:href="@{/admin/chuyenxe/{id}/xoa(id=${vexe.id_CX})}">Xóa</a><a
-														th:href="@{/admin/chuyenxe/{id}/sua(id=${vexe.id_CX})}">Sửa</a></td>
+														th:href="@{/admin/datve/chitiet/{id}(id=${vexe.id_CX})}">Xóa</a><a
+														th:href="@{/admin/datve/chi-tiet-dat-ve/{id}(id=${vexe.id})}">Chi tiết</a></td>
 												</tr>
 											</tbody>
 										</table>
