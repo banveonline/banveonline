@@ -9,6 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "ve")
@@ -18,23 +22,32 @@ public class Ve implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	@Column(name = "chuyen_xe")
 	private int id_CX;
+	
 	@Column(name = "ten_khach_hang")
 	private String tenKH;
+	
 	@Column(name = "sdt")
 	private String sdt;
+	
 	@Column(name = "cmnd")
 	private String cnmd;
+	
 	@Column(name = "so_ghe")
 	private int soCho;
+	
 	@Column(name = "ghi_chu")
 	private String ghiChu;
 	
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Column(name = "ngay_dat_ve")
 	private Date ngayDatVe;
 
