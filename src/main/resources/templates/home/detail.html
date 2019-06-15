@@ -147,6 +147,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 															* parseInt(d);
 													document
 															.getElementById("tongtien").innerHTML = t + " VND";
+													$("#tongtien").val(t);
 												}
 											</script>
 										</div>
@@ -163,9 +164,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<div class="form-group">
 										<div class="col-md-12 col-sm-12 pl0 pr0">
 											<label for="inputnote3"
-												class="col-md-12 pl0  col-sm-3 control-label text-left hidden-xs" style="width: 150px">Giá
+												class="col-md-12 pl0  col-sm-3 control-label text-left hidden-xs" style="width: 150px">Thành
 												tiền:</label>
-											<b id="tongtien" th:field="${gia}"></b>
+												<input id="tongtien" class="pull-left" style="width: 80%;" th:field="*{gia}" readonly="readonly"  value="" /><span class="pull-right" style="padding-top: 10px;">VND</span>
 										</div>
 									</div>
 									<div class="form-group">
