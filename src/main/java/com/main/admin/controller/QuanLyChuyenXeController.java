@@ -40,11 +40,11 @@ public class QuanLyChuyenXeController {
 		if (result.hasErrors()) {
 			System.out.println(result);
 			redirect.addFlashAttribute("success", "Lưu chuyến xe thất bại!");
-			return "redirect:admin/chuyenxe/danhsach";
+			return "redirect:/admin/chuyenxe/danhsach";
 		}
 		chuyenXeService.luuChuyenXe(chuyenXe);
 		redirect.addFlashAttribute("success", "Lưu chuyến xe thành công!");
-		return "redirect:admin/chuyenxe/danhsach";
+		return "redirect:/admin/chuyenxe/danhsach";
 	}
 	@GetMapping("admin/chuyenxe/{id}/sua")
 	public String sua(@PathVariable int id, ModelMap modelMap,RedirectAttributes redirect) {
