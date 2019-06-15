@@ -16,11 +16,7 @@
 				<div class="col-lg-12">
 					<div class="panel panel-default">
 						<div class="panel-heading">Chi tiết đặt vé</div>
-						<a th:href="@{/admin/datve/danhsach}" style="padding: 10px;"><i class="glyphicon glyphicon-chevron-left"></i>Trở lại</a> <span
-							th:text="${success}" style="padding-left: 10px; color: red;"></span>
-						<th:block th:if="${#lists.isEmpty(ve)}">
-							<h3 style="text-align: center;">Danh sách chuyến xe trống</h3>
-						</th:block>
+						<a th:href="@{/admin/datve/danhsach}" style="padding: 10px;"><i class="glyphicon glyphicon-chevron-left"></i>Trở lại</a>
 						<!-- /.panel-heading -->
 						<div class="panel-body">
 							<div style="width: 100%;">
@@ -58,6 +54,10 @@
 											<tr>
 												<td class="in"><b>Giá: </b></td>
 												<td><b th:text="${ve.gia}"></b><span> VND</span></td>
+											</tr>
+											<tr>
+												<td class="in"><b>Ghi chú: </b></td>
+												<td><b th:text="${ve.ghiChu}"></b><span></span></td>
 											</tr>
 										</table>
 									</div>
