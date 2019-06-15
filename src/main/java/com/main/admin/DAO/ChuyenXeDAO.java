@@ -9,6 +9,9 @@ import com.main.admin.entity.ChuyenXe;
 @Repository
 public interface ChuyenXeDAO extends CrudRepository<ChuyenXe, Integer>{
 	
+	@Query("from ChuyenXe c where c.nhaXe.id_nx = ?1")
+	public Iterable<ChuyenXe> dsChuyenXe(int id_nx); 
+	
 	@Query("from ChuyenXe c where c.gaDi = ?1")
 	public Iterable<ChuyenXe> timChuyenXeTheoGaDi(String gaDi); 
 	

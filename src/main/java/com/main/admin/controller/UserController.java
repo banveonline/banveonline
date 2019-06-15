@@ -27,6 +27,7 @@ public class UserController {
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
 		modelMap.put("userName", loginedUser.getUser().getTenDangNhap());
 		modelMap.put("userId", loginedUser.getUser().getId());
+		modelMap.put("id_nx", loginedUser.getUser().getId_nx());
 		return "/admin/index";
 	}
 	@GetMapping("/logout")

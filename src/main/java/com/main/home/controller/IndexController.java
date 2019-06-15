@@ -31,8 +31,8 @@ public class IndexController {
 		if(start) {
 			List<Role> roles = roleService.findByAdminAndMember();
 			User user = userService.loadUserByUsername("admin");
-			if(roles == null && user == null ) {
-				roleService.save(new Role("ROLE_ADMIN","ROLE_ADMIN"));
+			if(roles.isEmpty() && user == null ) {
+				roleService.save(new Role("ROLE_ADM7IN","ROLE_ADMIN"));
 				roleService.save(new Role("ROLE_MEMBER","ROLE_MEMBER"));
 				userService.save(new User(0,"admin","admin",roleService.findByRoleName("ROLE_ADMIN")));
 			}
