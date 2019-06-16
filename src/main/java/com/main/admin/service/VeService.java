@@ -4,7 +4,7 @@ import com.main.admin.entity.Ve;
 
 public interface VeService {
 
-	public Iterable<Ve> danhSachVe();
+	public Iterable<Ve> danhSachVe(Iterable<Integer> id_nx);
 	
 	public void xoa(int id);
 	

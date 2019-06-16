@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.main.admin.entity.ChuyenXe;
-import com.main.admin.entity.NhaXe;
 import com.main.admin.model.CustomUserDetails;
 import com.main.admin.service.ChuyenXeService;
 import com.main.admin.service.NhaXeService;
@@ -61,7 +60,7 @@ public class QuanLyChuyenXeController {
 		return "redirect:/admin/chuyenxe/danhsach";
 	}
 
-	@GetMapping("/chuyenxe/{id}/sua")
+	@GetMapping("/admin/chuyenxe/{id}/sua")
 	public String sua(@PathVariable int id, ModelMap modelMap, RedirectAttributes redirect, Principal principal) {
 		checkLogin(modelMap, principal);
 		modelMap.addAttribute("chuyenxe", chuyenXeService.tim(id));

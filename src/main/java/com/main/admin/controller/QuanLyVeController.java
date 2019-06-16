@@ -1,12 +1,16 @@
 package com.main.admin.controller;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.main.admin.entity.ChuyenXe;
+import com.main.admin.model.CustomUserDetails;
 import com.main.admin.service.ChuyenXeService;
 import com.main.admin.service.VeService;
 
@@ -19,8 +23,9 @@ public class QuanLyVeController {
 	private ChuyenXeService chuyenXeService;
 
 	@GetMapping("/admin/datve/danhsach")
-	private String index(ModelMap modelMap) {
-		modelMap.put("ve", veService.danhSachVe());
+	private String index(ModelMap modelMap,Principal principal) {
+		CustomUserDetails loginedUser = checkLogin(modelMap, principal);
+//		modelMap.put("ve", veService.danhSachVe());
 		return "admin/listTicket";
 	}
 
@@ -47,5 +52,12 @@ public class QuanLyVeController {
 			}
 		}
 		return chuyenXe;
+	}
+	public CustomUserDetails checkLogin(ModelMap modelMap, Principal principal) {
+		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
+		modelMap.put("userName", loginedUser.getUser().getTenDangNhap());
+		modelMap.put("userId", loginedUser.getUser().getId());
+		modelMap.put("id_nx", loginedUser.getUser().getId_nx());
+		return loginedUser;
 	}
 }

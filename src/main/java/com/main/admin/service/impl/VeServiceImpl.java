@@ -14,8 +14,8 @@ public class VeServiceImpl implements VeService{
 	private VeDAO veDAO;
 
 	@Override
-	public Iterable<Ve> danhSachVe() {
-		return veDAO.findAll();
+	public Iterable<Ve> danhSachVe(Iterable<Integer> id_nx) {
+		return veDAO.findAll(id_nx);
 	}
 
 	@Override
