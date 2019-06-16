@@ -25,7 +25,7 @@ public class QuanLyVeController {
 	@GetMapping("/admin/datve/danhsach")
 	private String index(ModelMap modelMap,Principal principal) {
 		CustomUserDetails loginedUser = checkLogin(modelMap, principal);
-//		modelMap.put("ve", veService.danhSachVe());
+		modelMap.put("ve", veService.danhSachVe(loginedUser.getUser().getId_nx()));
 		return "admin/listTicket";
 	}
 
