@@ -52,13 +52,13 @@ public class QuanLyChuyenXeController {
 		if (result.hasErrors()) {
 			System.out.println(result);
 			redirect.addFlashAttribute("success", "Lưu chuyến xe thất bại!");
-			return "redirect:/chuyenxe/danhsach";
+			return "redirect:/admin/chuyenxe/danhsach";
 		}
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
 		chuyenXe.setNhaXe(nhaXeService.timNhaXe(loginedUser.getUser().getId_nx()));
 		chuyenXeService.luuChuyenXe(chuyenXe);
 		redirect.addFlashAttribute("success", "Lưu chuyến xe thành công!");
-		return "redirect:/chuyenxe/danhsach";
+		return "redirect:/admin/chuyenxe/danhsach";
 	}
 
 	@GetMapping("/chuyenxe/{id}/sua")
