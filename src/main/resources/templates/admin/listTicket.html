@@ -40,7 +40,7 @@
 											<tbody>
 												<tr th:each="vexe,iterStat : ${ve}">
 													<td style="text-align: center;" th:text="${vexe.id}"></td>
-													<td style="text-align: center;" th:text="${vexe.id_CX}"></td>
+													<td style="text-align: center;" th:text="${vexe.getChuyenxe().getId_CX()}"></td>
 													<td style="text-align: center;" th:text="${vexe.tenKH}"></td>
 													<td style="text-align: center;" th:text="${vexe.sdt}"></td>
 													<td style="text-align: center;" th:text="${vexe.soCho}"></td>

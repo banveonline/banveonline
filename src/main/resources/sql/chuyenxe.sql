@@ -1,0 +1,4 @@
+INSERT INTO `chuyenxe`(`id_cx`, `id_nx`, `gadi`, `gaden`, `songuoi`, `gia`, `mota`, `giodi`, `ngaydi`) VALUES (14130094, 0, 'Hồ Chí Minh', 'Hà Nội', 0, 300000, 'Hồ Chí Minh - Hà nội', '', '2019-06-25');
+INSERT INTO `chuyenxe`(`id_cx`, `id_nx`, `gadi`, `gaden`, `songuoi`, `gia`, `mota`, `giodi`, `ngaydi`) VALUES (14130096, 0, 'Bắc Kạn', 'Bắc Giang', 23, 200000, '124', '12h', '2019-06-27');
+INSERT INTO `chuyenxe`(`id_cx`, `id_nx`, `gadi`, `gaden`, `songuoi`, `gia`, `mota`, `giodi`, `ngaydi`) VALUES (14130097, 0, 'Thái Nguyên', 'Bạc Liêu', 30, 500000, 'Thái Nguyên - Bạc liêu', '7h30', '2019-06-21');
+INSERT INTO `chuyenxe`(`id_cx`, `id_nx`, `gadi`, `gaden`, `songuoi`, `gia`, `mota`, `giodi`, `ngaydi`) VALUES (14130099, 0, 'Bà Rịa - Vũng Tầu', 'Bến Tre', 35, 900000, 'Vũng Tầu - Bến Tre', '7h30', '2019-06-15');

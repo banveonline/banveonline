@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.main.admin.entity.ChuyenXe;
 import com.main.admin.entity.Ve;
+import com.main.admin.model.VeDetail;
 import com.main.admin.service.ChuyenXeService;
 import com.main.admin.service.VeService;
 
@@ -27,8 +29,10 @@ public class ChiTietChuyenXeController {
 	
 	@GetMapping(value = "/{id}/detail")
 	public String detail(ModelMap modelMap,@PathVariable int id) {
-		modelMap.put("chiTietChuyenXe", chuyenXeService.tim(id));
-		modelMap.put("ve", new Ve());
+		ChuyenXe chuyenXe = chuyenXeService.tim(id);
+		modelMap.put("chuyenXe", chuyenXe);
+		VeDetail ve = new VeDetail();
+		modelMap.put("ve", ve);
 		modelMap.put("chuyenxecungtuyen", chuyenXeService.timChuyenXeTheoGaDi(chuyenXeService.tim(id).getGaDi()));
 		return "home/detail";
 	}
@@ -37,15 +41,16 @@ public class ChiTietChuyenXeController {
 		return "home/notification";
 	}
 	@PostMapping("/datve")
-	public String datVe(@Valid Ve ve,BindingResult result,RedirectAttributes redirect) {
+	public String datVe(@Valid VeDetail ve,BindingResult result,RedirectAttributes redirect) {
 		if(result.hasErrors()) {
 			redirect.addFlashAttribute("thongbao", "Đặt vé thất bại");
 			return "redirect:/home/notification";
 		}else {
 			Date ngayDatVe = new Date();
 			ve.setNgayDatVe(ngayDatVe);
-			System.out.println(ve.getGia());
-			veService.luu(ve);
+			ChuyenXe chuyenXe = chuyenXeService.tim(ve.getId_CX());
+			ve.setChuyenxe(chuyenXe);
+			veService.luu(ve.convertToVe(ve,chuyenXe));
 			redirect.addFlashAttribute("thongbao", "Đặt vé thành công");
 			return "redirect:/notification";
 		}

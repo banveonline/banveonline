@@ -32,7 +32,7 @@ public class QuanLyVeController {
 	@GetMapping("/admin/datve/chi-tiet-dat-ve/{id}")
 	public String ticketDetail(@PathVariable int id, ModelMap modelMap) {
 		modelMap.put("ve", veService.tim(id));
-		modelMap.put("chuyenxe", getChuyenXe( veService.tim(id).getId_CX()));
+		modelMap.put("chuyenxe", getChuyenXe( veService.tim(id).getChuyenxe().getId_CX()));
 		return "admin/ticketDetail";
 	}
 	

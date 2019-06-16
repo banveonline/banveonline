@@ -23,7 +23,7 @@ public interface ChuyenXeDAO extends CrudRepository<ChuyenXe, Integer>{
 	@Query("FROM ChuyenXe c WHERE c.gaDi = ?1 AND c.gaDen = ?2 AND c.ngayDi = ?3")
 	public Iterable<ChuyenXe> timChuyenXe(String gaDi, String gaDen, Date ngayDi);
 	
-	@Query("select count(id) from Ve v where v.id_CX = ?1")
-	public int tinhSoGhe(int id);
+//	@Query("select count(id) from Ve v where v.chuyenxe.nhaXe.id_nx = ?1")
+//	public int tinhSoGhe(int id);
 	
 }

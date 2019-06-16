@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,8 +30,9 @@ public class Ve implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "chuyen_xe")
-	private int id_CX;
+	@ManyToOne
+	@JoinColumn(name = "chuyen_xe")
+	private ChuyenXe chuyenXe;
 
 	@Column(name = "ten_khach_hang")
 	private String tenKH;
@@ -54,36 +57,6 @@ public class Ve implements Serializable {
 	@Column(name = "ngay_dat_ve")
 	private Date ngayDatVe;
 
-	public Ve(int id, int id_CX, String tenKH, String sdt, String cnmd, int soCho, String ghiChu, int gia,
-			Date ngayDatVe) {
-		super();
-		this.id = id;
-		this.id_CX = id_CX;
-		this.tenKH = tenKH;
-		this.sdt = sdt;
-		this.cnmd = cnmd;
-		this.soCho = soCho;
-		this.ghiChu = ghiChu;
-		this.gia = gia;
-		this.ngayDatVe = ngayDatVe;
-	}
-
-	public Ve(int id_CX, String tenKH, String sdt, String cnmd, int soCho, String ghiChu, int gia, Date ngayDatVe) {
-		super();
-		this.id_CX = id_CX;
-		this.tenKH = tenKH;
-		this.sdt = sdt;
-		this.cnmd = cnmd;
-		this.soCho = soCho;
-		this.ghiChu = ghiChu;
-		this.gia = gia;
-		this.ngayDatVe = ngayDatVe;
-	}
-
-	public Ve() {
-		super();
-	}
-
 	public int getId() {
 		return id;
 	}
@@ -92,12 +65,12 @@ public class Ve implements Serializable {
 		this.id = id;
 	}
 
-	public int getId_CX() {
-		return id_CX;
+	public ChuyenXe getChuyenxe() {
+		return chuyenXe;
 	}
 
-	public void setId_CX(int id_CX) {
-		this.id_CX = id_CX;
+	public void setChuyenxe(ChuyenXe chuyenxe) {
+		this.chuyenXe = chuyenxe;
 	}
 
 	public String getTenKH() {
@@ -140,14 +113,6 @@ public class Ve implements Serializable {
 		this.ghiChu = ghiChu;
 	}
 
-	public Date getNgayDatVe() {
-		return ngayDatVe;
-	}
-
-	public void setNgayDatVe(Date ngayDatVe) {
-		this.ngayDatVe = ngayDatVe;
-	}
-
 	public int getGia() {
 		return gia;
 	}
@@ -156,5 +121,47 @@ public class Ve implements Serializable {
 		this.gia = gia;
 	}
 
-	
+	public Date getNgayDatVe() {
+		return ngayDatVe;
+	}
+
+	public void setNgayDatVe(Date ngayDatVe) {
+		this.ngayDatVe = ngayDatVe;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public Ve(ChuyenXe chuyenxe, String tenKH, String sdt, String cnmd, int soCho, String ghiChu, int gia,
+			Date ngayDatVe) {
+		super();
+		this.chuyenXe = chuyenxe;
+		this.tenKH = tenKH;
+		this.sdt = sdt;
+		this.cnmd = cnmd;
+		this.soCho = soCho;
+		this.ghiChu = ghiChu;
+		this.gia = gia;
+		this.ngayDatVe = ngayDatVe;
+	}
+
+	public Ve(int id, ChuyenXe chuyenxe, String tenKH, String sdt, String cnmd, int soCho, String ghiChu, int gia,
+			Date ngayDatVe) {
+		super();
+		this.id = id;
+		this.chuyenXe = chuyenxe;
+		this.tenKH = tenKH;
+		this.sdt = sdt;
+		this.cnmd = cnmd;
+		this.soCho = soCho;
+		this.ghiChu = ghiChu;
+		this.gia = gia;
+		this.ngayDatVe = ngayDatVe;
+	}
+
+	public Ve() {
+		// TODO Auto-generated constructor stub
+	}
+
 }
