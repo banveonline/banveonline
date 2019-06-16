@@ -5,11 +5,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class ChiTietNhaXeControllẻ {
+public class ChiTietNhaXeController {
 
 	@GetMapping(value = "/p")
 	public String index(ModelMap modelMap) {
-		return "home/p-single";
+		return "home/nhaxe";
 	}
 
 }

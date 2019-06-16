@@ -2262,7 +2262,7 @@ span.starTextLabel {
 }
 
 .p-right {
-	float: left;
+	float: right;
 	width: 70%;
 	padding: 1em 0;
 }
@@ -2316,7 +2316,7 @@ span.starTextLabel {
 }
 
 .p-right-right {
-	text-align: right;
+	text-align: left;
 }
 
 .p-right-right h6 {
@@ -2808,7 +2808,7 @@ span.menu {
 		padding: 0 0 0 1em;
 	}
 	.p-right-right {
-		text-align: right;
+		text-align: left;
 		float: left;
 		width: 30%;
 		padding: 0 1em 0 0;
