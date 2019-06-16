@@ -25,14 +25,45 @@ public class NhaXe implements Serializable{
 	@Column(name = "id")
 	private int id_nx;
 	
+	@Column(name = "anh")
+	private String anh;
+	
 	@Column(name = "ten_nha_xe")
 	private String tenNhaXe;
 	
 	@Column(name = "mo_ta")
 	private String moTa;
 	
+	@Column(name = "sdt")
+	private String sdt;
+	
+	@Column(name = "dia_chi")
+	private String diaChi;
+
 	@OneToMany(mappedBy="nhaXe")
 	private List<ChuyenXe> ChuyenXe;
+
+	public NhaXe() {
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	public NhaXe(int id_nx, String anh, String tenNhaXe, String moTa, String sdt, String diaChi) {
+		super();
+		this.id_nx = id_nx;
+		this.anh = anh;
+		this.tenNhaXe = tenNhaXe;
+		this.moTa = moTa;
+		this.sdt = sdt;
+		this.diaChi = diaChi;
+	}
+
+	public NhaXe(int id_nx, String tenNhaXe, String moTa) {
+		super();
+		this.id_nx = id_nx;
+		this.tenNhaXe = tenNhaXe;
+		this.moTa = moTa;
+	}
 
 	public int getId_nx() {
 		return id_nx;
@@ -59,38 +90,34 @@ public class NhaXe implements Serializable{
 	}
 
 
-	public List<ChuyenXe> getChuyenXe() {
-		return ChuyenXe;
+	public String getAnh() {
+		return anh;
 	}
 
-	public void setChuyenXe(List<ChuyenXe> chuyenXe) {
-		ChuyenXe = chuyenXe;
+
+	public void setAnh(String anh) {
+		this.anh = anh;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+
+	public String getSdt() {
+		return sdt;
 	}
 
-	public NhaXe() {
-		// TODO Auto-generated constructor stub
+
+	public void setSdt(String sdt) {
+		this.sdt = sdt;
 	}
 
-	public NhaXe(String tenNhaXe, String moTa, List<com.main.admin.entity.ChuyenXe> chuyenXe) {
-		super();
-		this.tenNhaXe = tenNhaXe;
-		this.moTa = moTa;
-		ChuyenXe = chuyenXe;
+
+	public String getDiaChi() {
+		return diaChi;
 	}
 
-	public NhaXe(int id_nx, String tenNhaXe, String moTa, List<com.main.admin.entity.ChuyenXe> chuyenXe) {
-		super();
-		this.id_nx = id_nx;
-		this.tenNhaXe = tenNhaXe;
-		this.moTa = moTa;
-		ChuyenXe = chuyenXe;
-	}
 
-	
+	public void setDiaChi(String diaChi) {
+		this.diaChi = diaChi;
+	}
 	
 	
 }
