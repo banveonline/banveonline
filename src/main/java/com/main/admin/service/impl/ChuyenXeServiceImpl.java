@@ -51,5 +51,11 @@ public class ChuyenXeServiceImpl implements ChuyenXeService{
 		return chuyenXeDAO.timChuyenXe(gaDi, gaDen, ngayDi);
 	}
 
+	@Override
+	public Iterable<ChuyenXe> listChuyenXe() {
+		
+		return chuyenXeDAO.findAll();
+	}
+
 
 }

@@ -37,7 +37,7 @@ public class QuanLyVeController {
 	}
 	public ChuyenXe getChuyenXe(int id) {
 		ChuyenXe chuyenXe = new ChuyenXe();
-		Iterable<ChuyenXe> ls = chuyenXeService.listChuyenXe();
+		Iterable<ChuyenXe> ls = chuyenXeService.listChuyenXe(id);
 		for (ChuyenXe cx : ls) {
 			if (cx.getId_CX() == id) {
 				chuyenXe = cx;
