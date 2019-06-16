@@ -1,6 +1,5 @@
 package com.main.admin.controller;
 
-
 import java.security.Principal;
 
 import javax.validation.Valid;
@@ -31,22 +30,22 @@ public class QuanLyChuyenXeController {
 	private ThanhPhoService thanhPhoService;
 	@Autowired
 	private NhaXeService nhaXeService;
-	
+
 	@GetMapping("/admin/chuyenxe/danhsach")
-	public String index(ModelMap modelMap,Principal principal) {
-		checkLogin(modelMap, principal);
-		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
+	public String index(ModelMap modelMap, Principal principal) {
+		CustomUserDetails loginedUser = checkLogin(modelMap, principal);
 		modelMap.put("chuyenxe", chuyenXeService.listChuyenXe(loginedUser.getUser().getId_nx()));
 		return "admin/listTrip";
 	}
 
-	@GetMapping("/chuyenxe/taomoi")
-	public String taoChuyenXe(ModelMap modelMap,Principal principal) {
+	@GetMapping("/admin/chuyenxe/taomoi")
+	public String taoChuyenXe(ModelMap modelMap, Principal principal) {
 		checkLogin(modelMap, principal);
 		modelMap.put("chuyenxe", new ChuyenXe());
 		modelMap.put("thanhpho", thanhPhoService.findAll());
 		return "admin/insertTrip";
 	}
+
 	@PostMapping("/admin/chuyenxe/luu")
 	public String luu(@Valid ChuyenXe chuyenXe, BindingResult result, RedirectAttributes redirect, ModelMap modelMap,
 			Principal principal) {
@@ -56,34 +55,33 @@ public class QuanLyChuyenXeController {
 			return "redirect:/chuyenxe/danhsach";
 		}
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
-		for (NhaXe nx : nhaXeService.listNhaXe()) {
-			if (loginedUser.getUser().getId_nx() == nx.getId_nx()) {
-				chuyenXe.setNhaXe(nx);
-			}
-		}
+		chuyenXe.setNhaXe(nhaXeService.timNhaXe(loginedUser.getUser().getId_nx()));
 		chuyenXeService.luuChuyenXe(chuyenXe);
 		redirect.addFlashAttribute("success", "Lưu chuyến xe thành công!");
 		return "redirect:/chuyenxe/danhsach";
 	}
 
 	@GetMapping("/chuyenxe/{id}/sua")
-	public String sua(@PathVariable int id, ModelMap modelMap, RedirectAttributes redirect,Principal principal) {
+	public String sua(@PathVariable int id, ModelMap modelMap, RedirectAttributes redirect, Principal principal) {
 		checkLogin(modelMap, principal);
 		modelMap.addAttribute("chuyenxe", chuyenXeService.tim(id));
 		modelMap.put("thanhpho", thanhPhoService.findAll());
 		redirect.addFlashAttribute("success", "Sửa chuyến xe thành công!");
 		return "admin/editTrip";
 	}
+
 	@GetMapping("/admin/chuyenxe/{id}/xoa")
 	public String xoa(@PathVariable int id, RedirectAttributes redirect) {
 		chuyenXeService.xoaChuyenXe(id);
 		redirect.addFlashAttribute("success", "Xóa chuyến xe thành công!");
 		return "redirect:/admin/chuyenxe/danhsach";
 	}
-	public void checkLogin(ModelMap modelMap,Principal principal) {
+
+	public CustomUserDetails checkLogin(ModelMap modelMap, Principal principal) {
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
 		modelMap.put("userName", loginedUser.getUser().getTenDangNhap());
 		modelMap.put("userId", loginedUser.getUser().getId());
 		modelMap.put("id_nx", loginedUser.getUser().getId_nx());
+		return loginedUser;
 	}
 }
