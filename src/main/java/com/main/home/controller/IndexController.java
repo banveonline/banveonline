@@ -7,13 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.main.admin.entity.ChuyenXe;
-import com.main.admin.entity.Role;
-import com.main.admin.entity.User;
 import com.main.admin.service.ChuyenXeService;
 import com.main.admin.service.RoleService;
 import com.main.admin.service.ThanhPhoService;
 import com.main.admin.service.UserService;
+import com.main.admin.entity.ChuyenXe;
+import com.main.admin.entity.Role;
+import com.main.admin.entity.User;
 
 @Controller
 public class IndexController {
@@ -40,10 +40,6 @@ public class IndexController {
 		}
 		modelMap.put("thanhpho", thanhPhoService.findAll());
 		modelMap.put("saigon_hanoi", chuyenXeService.chuyenXeCungTuyen("Hồ Chí Minh","Hà Nội"));
-		Iterable<ChuyenXe> ls = chuyenXeService.chuyenXeCungTuyen("Hồ Chí Minh","Hà Nội");
-		for(ChuyenXe c : ls) {
-			System.out.println(c.getGaDen());
-		}
 		return "home/index";
 	}
 	

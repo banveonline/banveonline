@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layout :: head"></head>
+<body>
+	<div th:replace="admin/layout :: header"></div>
+	<div id="page-wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">Danh sách đặt vé</h1>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">Danh sách đặt vé</div>
+						<span th:text="${success}" style="padding-left: 10px; color: red;"></span>
+						<th:block th:if="${#lists.isEmpty(ve)}">
+							<h3 style="text-align: center;">Danh sách chuyến xe trống</h3>
+						</th:block>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<div class="table-responsive" style="width: 100%;">
+								<th:block th:unless="${#lists.isEmpty(ve)}">
+									<div class="row">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th style="text-align: center;">ID vé xe</th>
+													<th style="text-align: center;">ID chuyến xe</th>
+													<th style="text-align: center;">Họ tên khách hàng</th>
+													<th style="text-align: center;">Số điện thoại</th>
+													<th style="text-align: center;">Số chố</th>
+													<th style="text-align: center;">Ngày đặt</th>
+													<th></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr th:each="vexe,iterStat : ${ve}">
+													<td style="text-align: center;" th:text="${vexe.id}"></td>
+													<td style="text-align: center;" th:text="${vexe.id_CX}"></td>
+													<td style="text-align: center;" th:text="${vexe.tenKH}"></td>
+													<td style="text-align: center;" th:text="${vexe.sdt}"></td>
+													<td style="text-align: center;" th:text="${vexe.soCho}"></td>
+													<td style="text-align: center;" th:text="${vexe.ngayDatVe}"></td>
+
+													<td class="ql"><a
+														th:href="@{/admin/datve/chi-tiet-dat-ve/{id}(id=${vexe.id})}">Chi
+															tiết</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</th:block>
+							</div>
+							<!-- /.table-responsive -->
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			$('#dataTables-example').DataTable({
+				responsive : true
+			});
+		});
+	</script>
+</body>
+</html>

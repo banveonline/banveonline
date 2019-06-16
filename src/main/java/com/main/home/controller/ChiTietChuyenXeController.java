@@ -44,6 +44,7 @@ public class ChiTietChuyenXeController {
 		}else {
 			Date ngayDatVe = new Date();
 			ve.setNgayDatVe(ngayDatVe);
+			System.out.println(ve.getGia());
 			veService.luu(ve);
 			redirect.addFlashAttribute("thongbao", "Đặt vé thành công");
 			return "redirect:/notification";

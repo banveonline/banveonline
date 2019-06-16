@@ -1,5 +1,6 @@
 package com.main.admin.controller;
 
+
 import java.security.Principal;
 
 import javax.validation.Valid;
@@ -22,7 +23,7 @@ import com.main.admin.service.NhaXeService;
 import com.main.admin.service.ThanhPhoService;
 
 @Controller
-public class ChuyenXeController {
+public class QuanLyChuyenXeController {
 
 	@Autowired
 	private ChuyenXeService chuyenXeService;
@@ -30,8 +31,8 @@ public class ChuyenXeController {
 	private ThanhPhoService thanhPhoService;
 	@Autowired
 	private NhaXeService nhaXeService;
-
-	@GetMapping("/chuyenxe/danhsach")
+	
+	@GetMapping("/admin/chuyenxe/danhsach")
 	public String index(ModelMap modelMap,Principal principal) {
 		checkLogin(modelMap, principal);
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
@@ -46,8 +47,7 @@ public class ChuyenXeController {
 		modelMap.put("thanhpho", thanhPhoService.findAll());
 		return "admin/insertTrip";
 	}
-
-	@PostMapping("/chuyenxe/luu")
+	@PostMapping("/admin/chuyenxe/luu")
 	public String luu(@Valid ChuyenXe chuyenXe, BindingResult result, RedirectAttributes redirect, ModelMap modelMap,
 			Principal principal) {
 		if (result.hasErrors()) {
@@ -74,12 +74,11 @@ public class ChuyenXeController {
 		redirect.addFlashAttribute("success", "Sửa chuyến xe thành công!");
 		return "admin/editTrip";
 	}
-
-	@GetMapping("/chuyenxe/{id}/xoa")
+	@GetMapping("/admin/chuyenxe/{id}/xoa")
 	public String xoa(@PathVariable int id, RedirectAttributes redirect) {
 		chuyenXeService.xoaChuyenXe(id);
 		redirect.addFlashAttribute("success", "Xóa chuyến xe thành công!");
-		return "redirect:/chuyenxe/danhsach";
+		return "redirect:/admin/chuyenxe/danhsach";
 	}
 	public void checkLogin(ModelMap modelMap,Principal principal) {
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();

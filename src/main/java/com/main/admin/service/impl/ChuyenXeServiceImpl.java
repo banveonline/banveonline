@@ -1,5 +1,7 @@
 package com.main.admin.service.impl;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,6 +43,18 @@ public class ChuyenXeServiceImpl implements ChuyenXeService{
 	@Override
 	public Iterable<ChuyenXe> chuyenXeCungTuyen(String gaDi, String gaDen) {
 		return chuyenXeDAO.timChuyenXeCungTuyen(gaDi, gaDen);
+	}
+
+	@Override
+	public Iterable<ChuyenXe> timKiemTheoTuyen(String gaDi, String gaDen, Date ngayDi) {
+		// TODO Auto-generated method stub
+		return chuyenXeDAO.timChuyenXe(gaDi, gaDen, ngayDi);
+	}
+
+	@Override
+	public Iterable<ChuyenXe> listChuyenXe() {
+		
+		return chuyenXeDAO.findAll();
 	}
 
 
