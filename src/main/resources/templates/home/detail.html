@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="header" th:replace="home/layout :: homeheader"></div>
 	<!--//header-->
 	<!-- banner-bottom -->
-	<div class="banner-bottom" th:object="${chiTietChuyenXe}">
+	<div class="banner-bottom" th:object="${chuyenXe}">
 		<!-- container -->
 		<div class="container">
 			<div class="faqs-top-grids">
@@ -21,8 +21,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="col-md-8 single-gd-lt">
 						<div class="single-pg-hdr">
 							<h2>
-								<b th:text="${chiTietChuyenXe.gaDi}"></b> - <b
-									th:text="${chiTietChuyenXe.gaDen}"></b>
+								<b th:text="${chuyenXe.gaDi}"></b> - <b
+									th:text="${chuyenXe.gaDen}"></b>
 							</h2>
 							<p>
 								Nhà xe<a href="@"><b>Hoàng Long</b></a>
@@ -36,8 +36,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li>
 										<p class="col-md-6 col-sm-6 text-left">Tuyến đường :</p>
 										<p class="col-md-6 text-right">
-											<b th:text="${chiTietChuyenXe.gaDi}"></b> - <b
-												th:text="${chiTietChuyenXe.gaDen}"></b>
+											<b th:text="${chuyenXe.gaDi}"></b> - <b
+												th:text="${chuyenXe.gaDen}"></b>
 										</p>
 									</li>
 									<li>
@@ -49,13 +49,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li>
 										<p class="col-md-6 col-sm-6 text-left">Giá vé :</p>
 										<p class="col-md-6 text-right">
-											<b id="gia" th:text="${chiTietChuyenXe.gia}"> VNĐ</b>
+											<b id="gia" th:text="${chuyenXe.gia}"> VNĐ</b>
 										</p>
 									</li>
 									<li>
 										<p class="col-md-6 col-sm-6 text-left">Ngày đi :</p>
 										<p class="col-md-6 text-right">
-											<b th:text="${chiTietChuyenXe.ngayDi}"></b>
+											<b th:text="${chuyenXe.ngayDi}"></b>
 										</p>
 									</li>
 									<li>
@@ -68,13 +68,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li>
 										<p class="col-md-6 col-sm-6 text-left">Mô tả :</p>
 										<p class="col-md-6 text-right">
-											<b th:text="${chiTietChuyenXe.moTa}"></b>
+											<b th:text="${chuyenXe.moTa}"></b>
 										</p>
 									</li>
 									<li style="border: 0">
 										<p class="col-md-6 col-sm-6 text-left">Giờ đi :</p>
 										<p class="col-md-6 text-right">
-											<b th:text="${chiTietChuyenXe.gioDi}"></b>
+											<b th:text="${chuyenXe.gioDi}"></b>
 										</p>
 									</li>
 								</ul>
@@ -93,9 +93,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<div class="detail-customer-info">
 										<div class="form-group CustomerFullName">
 											<div class="col-md-12 col-sm-12 pl0 pr0">
-												<input type="hidden" th:field="*{id}" /> <input
-													type="hidden" th:object="${chiTietChuyenXe}"
-													th:field="*{id_CX}" /> <label
+												<input type="hidden" th:field="*{id}" />
+												<input type="hidden" th:object="${chuyenXe}" th:field="*{id_CX}" />
+												<label
 													class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Họ
 													tên <span style="color: red;">*</span>:
 												</label> <input id="cfn" name="CustomerFullName" type="text"
@@ -208,9 +208,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<b>Đặt vé</b>
 						</p>
 					</li>
-					<li th:each="chuyenXe,iterStat : ${chuyenxecungtuyen} ">
+					<li th:each="chuyenXe,iterStat : ${chuyenXecungtuyen} ">
 						<p class="col-md-2 col-sm-2 text-center">
-							<a href="$"><b th:text="${chuyenXe.id_nx}"></b></a>
+							<a href="$"><b th:text="${chuyenXe.getNhaXe().getId_nx()}"></b></a>
 						</p>
 						<p class="col-md-2 col-sm-2 text-center">
 							<b th:text="${chuyenXe.ngayDi}"></b>

@@ -1,0 +1,4 @@
+INSERT INTO `ve`(`id`, `chuyen_xe`, `sdt`, `cmnd`, `so_ghe`, `ghi_chu`, `ngay_dat_ve`, `ten_khach_hang`, `gia`) VALUES (4, 14130094, '', '', 2, '', '2019-06-15', '', 600000);
+INSERT INTO `ve`(`id`, `chuyen_xe`, `sdt`, `cmnd`, `so_ghe`, `ghi_chu`, `ngay_dat_ve`, `ten_khach_hang`, `gia`) VALUES (5, 14130094, '0979895091', '12345678', 2, 'Ghế gần cửa sổ', '2019-06-15', 'Đỗ Mạnh Hùng', 600000);
+INSERT INTO `ve`(`id`, `chuyen_xe`, `sdt`, `cmnd`, `so_ghe`, `ghi_chu`, `ngay_dat_ve`, `ten_khach_hang`, `gia`) VALUES (6, 14130094, '0979895091', '12345678', 2, '', '2019-06-15', 'Đỗ Mạnh Hùng', 600000);
+INSERT INTO `ve`(`id`, `chuyen_xe`, `sdt`, `cmnd`, `so_ghe`, `ghi_chu`, `ngay_dat_ve`, `ten_khach_hang`, `gia`) VALUES (7, 14130094, '0979895091', '12345678', 2, '', '2019-06-16', 'Đỗ Mạnh Hùng', 600000);

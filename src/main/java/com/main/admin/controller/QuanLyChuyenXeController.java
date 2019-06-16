@@ -50,7 +50,7 @@ public class QuanLyChuyenXeController {
 		if (result.hasErrors()) {
 			System.out.println(result);
 			redirect.addFlashAttribute("success", "Lưu chuyến xe thất bại!");
-			return "redirect:/chuyenxe/danhsach";
+			return "redirect:/admin/chuyenxe/danhsach";
 		}
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
 		for (NhaXe nx : nhaXeService.listNhaXe()) {
@@ -60,7 +60,7 @@ public class QuanLyChuyenXeController {
 		}
 		chuyenXeService.luuChuyenXe(chuyenXe);
 		redirect.addFlashAttribute("success", "Lưu chuyến xe thành công!");
-		return "redirect:/chuyenxe/danhsach";
+		return "redirect:/admin/chuyenxe/danhsach";
 	}
 	@GetMapping("admin/chuyenxe/{id}/sua")
 	public String sua(@PathVariable int id, ModelMap modelMap, RedirectAttributes redirect) {
