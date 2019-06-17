@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layout :: head"></head>
+<body>
+	<div th:replace="admin/layout :: header"></div>
+	<div id="page-wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">Danh sách chuyến xe</h1>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<table id="users" class="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Tên tài khoản</th>
+							<th>Nhà xe</th>
+							<th>Role</th>
+							<th>Thao tác</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			$('#users').DataTable({
+				responsive : true
+			});
+			$.ajax({
+				type : "GET",
+				url : "/admin/user/listUsers",
+				success : function(data) {
+					if(data.length > 0){
+						$("#users").find("tbody .odd").remove();
+					}
+					for(var i in data){
+						var item = data[i];
+						var html = '<tr><td>'+item.id+'</td><td>'+item.tenDangNhap+'</td><td>'+item.nhaXe.tenNhaXe+'</td><td>'+item.role.roleName+'</td><td>Thao tác</td></tr>';
+						$("#users").find("tbody").append(html);
+					}
+				}
+			});
+		});
+	</script>
+</body>
+</html>

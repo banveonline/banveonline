@@ -150,7 +150,7 @@
 						<li><a href="CaNhan.html"><i class="fa fa-table fa-fw"></i>Thông tin nhà xe</a></li>
 						<li sec:authorize="hasRole('ROLE_ADMIN')"><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Quản lý User<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a th:href="@{/admin/user/danhsach}">Danh sách user</a></li>
+								<li><a th:href="@{/admin/user/listUser}">Danh sách user</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -178,6 +178,7 @@
 		<!-- Custom Theme JavaScript -->
 		<script th:src="@{/js/startmin.js}"></script>
 		<script type="text/javascript" th:src="@{/js/js.cookie.js}"></script>
+		<script th:src="@{/js/jquery.spring-friendly.js}"></script>
 	</div>
 </body>
 </html>

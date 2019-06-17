@@ -33,7 +33,7 @@ public class QuanLyChuyenXeController {
 	@GetMapping("/admin/chuyenxe/danhsach")
 	public String index(ModelMap modelMap, Principal principal) {
 		CustomUserDetails loginedUser = checkLogin(modelMap, principal);
-		modelMap.put("chuyenxe", chuyenXeService.listChuyenXe(loginedUser.getUser().getId_nx()));
+		modelMap.put("chuyenxe", chuyenXeService.listChuyenXe(loginedUser.getUser().getNhaXe().getId_nx()));
 		return "admin/listTrip";
 	}
 
@@ -54,7 +54,7 @@ public class QuanLyChuyenXeController {
 			return "redirect:/admin/chuyenxe/danhsach";
 		}
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
-		chuyenXe.setNhaXe(nhaXeService.timNhaXe(loginedUser.getUser().getId_nx()));
+		chuyenXe.setNhaXe(nhaXeService.timNhaXe(loginedUser.getUser().getNhaXe().getId_nx()));
 		chuyenXeService.luuChuyenXe(chuyenXe);
 		redirect.addFlashAttribute("success", "Lưu chuyến xe thành công!");
 		return "redirect:/admin/chuyenxe/danhsach";
@@ -80,7 +80,7 @@ public class QuanLyChuyenXeController {
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
 		modelMap.put("userName", loginedUser.getUser().getTenDangNhap());
 		modelMap.put("userId", loginedUser.getUser().getId());
-		modelMap.put("id_nx", loginedUser.getUser().getId_nx());
+		modelMap.put("id_nx", loginedUser.getUser().getNhaXe().getId_nx());
 		return loginedUser;
 	}
 }

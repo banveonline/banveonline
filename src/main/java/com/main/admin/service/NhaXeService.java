@@ -8,7 +8,7 @@ public interface NhaXeService {
 	
 	public void xoaNhaXe(int id);
 	
-	public void luuNhaXe(NhaXe nhaXe);
+	public NhaXe luuNhaXe(NhaXe nhaXe);
 	
 	public NhaXe timNhaXe(int id);
 

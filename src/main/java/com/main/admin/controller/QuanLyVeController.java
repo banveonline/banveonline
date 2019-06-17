@@ -57,7 +57,7 @@ public class QuanLyVeController {
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
 		modelMap.put("userName", loginedUser.getUser().getTenDangNhap());
 		modelMap.put("userId", loginedUser.getUser().getId());
-		modelMap.put("id_nx", loginedUser.getUser().getId_nx());
+		modelMap.put("id_nx", loginedUser.getUser().getNhaXe().getId_nx());
 		return loginedUser;
 	}
 }

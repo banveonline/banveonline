@@ -23,8 +23,8 @@ public class NhaXeServiceImpl implements NhaXeService{
 	}
 
 	@Override
-	public void luuNhaXe(NhaXe nhaXe) {
-		nhaXeDAO.save(nhaXe);
+	public NhaXe luuNhaXe(NhaXe nhaXe) {
+		return nhaXeDAO.save(nhaXe);
 	}
 
 	@Override
