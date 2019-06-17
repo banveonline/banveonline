@@ -1,5 +1,7 @@
 package com.main.admin.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +32,12 @@ public class NhaXeServiceImpl implements NhaXeService{
 	@Override
 	public NhaXe timNhaXe(int id) {
 		return nhaXeDAO.findOne(id);
+	}
+
+	@Override
+	public List<NhaXe> findAll() {
+		// TODO Auto-generated method stub
+		return nhaXeDAO.findAll();
 	}
 
 }

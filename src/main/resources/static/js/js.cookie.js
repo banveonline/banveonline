@@ -1,6 +1,6 @@
 $.ajaxSetup({
 beforeSend : function(xhr, settings) {
-  if (settings.type == 'POST' || settings.type == 'PUT'
+  if (settings.type == 'POST' || settings.type == 'GET' || settings.type == 'PUT'
       || settings.type == 'DELETE') {
     if (!(/^http:.*/.test(settings.url) || /^https:.*/
         .test(settings.url))) {

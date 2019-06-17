@@ -36,12 +36,13 @@ public class IndexController {
 			List<Role> roles = roleService.findByAdminAndMember();
 			User user = userService.loadUserByUsername("admin");
 			if(roles.isEmpty() && user == null ) {
-				roleService.save(new Role("ROLE_ADM7IN","ROLE_ADMIN"));
+				roleService.save(new Role("ROLE_ADMIN","ROLE_ADMIN"));
 				roleService.save(new Role("ROLE_MEMBER","ROLE_MEMBER"));
 				NhaXe nhaxe = new NhaXe();
 				nhaxe.setMoTa("admin");
+				nhaxe.setId_nx(1);
 				nhaxe = nhaXeService.luuNhaXe(nhaxe);
-				userService.save(new User(nhaxe,"admin","admin",roleService.findByRoleName("ROLE_ADMIN")));
+				userService.save(new User(nhaxe,"admin","admin","admin@gmail.com","0123456789",roleService.findByRoleName("ROLE_ADMIN")));
 			}
 			start = false;
 		}

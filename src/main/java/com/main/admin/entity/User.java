@@ -27,6 +27,12 @@ public class User {
 	@Column(name = "mat_khau")
 	private String matKhau;
 	
+	@Column(name = "email")
+	private String email;
+	
+	@Column(name = "sdt")
+	private String sdt;
+	
 	@ManyToOne
 	@JoinColumn(name = "role")
 	private Role role;
@@ -63,21 +69,36 @@ public class User {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	public User(NhaXe nhaXe, String tenDangNhap, String matKhau, Role role) {
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getSdt() {
+		return sdt;
+	}
+	public void setSdt(String sdt) {
+		this.sdt = sdt;
+	}
+	public User(NhaXe nhaXe, String tenDangNhap, String matKhau, String email, String sdt, Role role) {
 		super();
 		this.nhaXe = nhaXe;
 		this.tenDangNhap = tenDangNhap;
 		this.matKhau = matKhau;
+		this.email = email;
+		this.sdt = sdt;
 		this.role = role;
 	}
-	public User(int id, NhaXe nhaXe, String tenDangNhap, String matKhau, Role role) {
+	public User(int id, NhaXe nhaXe, String tenDangNhap, String matKhau, String email, String sdt, Role role) {
 		super();
 		this.id = id;
 		this.nhaXe = nhaXe;
 		this.tenDangNhap = tenDangNhap;
 		this.matKhau = matKhau;
+		this.email = email;
+		this.sdt = sdt;
 		this.role = role;
 	}
-	
 	
 }
