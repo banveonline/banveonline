@@ -12,7 +12,6 @@ import com.main.admin.service.NhaXeService;
 import com.main.admin.service.RoleService;
 import com.main.admin.service.ThanhPhoService;
 import com.main.admin.service.UserService;
-import com.main.admin.entity.ChuyenXe;
 import com.main.admin.entity.NhaXe;
 import com.main.admin.entity.Role;
 import com.main.admin.entity.User;

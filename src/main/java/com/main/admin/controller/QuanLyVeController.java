@@ -24,13 +24,11 @@ public class QuanLyVeController {
 	private VeService veService;
 	@Autowired
 	private ChuyenXeService chuyenXeService;
-	@Autowired
-	private NhaXeService nhaXeService;
 
 	@GetMapping("/admin/datve/danhsach")
 	private String index(ModelMap modelMap,Principal principal) {
 		CustomUserDetails loginedUser = checkLogin(modelMap, principal);
-		modelMap.put("ve", veService.danhSachVe(loginedUser.getUser().getId_nx()));
+		modelMap.put("ve", veService.danhSachVe(loginedUser.getUser().getNhaXe().getId_nx()));
 		return "admin/listTicket";
 	}
 
@@ -63,7 +61,7 @@ public class QuanLyVeController {
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
 		modelMap.put("userName", loginedUser.getUser().getTenDangNhap());
 		modelMap.put("userId", loginedUser.getUser().getId());
-		modelMap.put("tenNhaXe", nhaXeService.timNhaXe(loginedUser.getUser().getId_nx()).getTenNhaXe());
+		modelMap.put("tenNhaXe", loginedUser.getUser().getNhaXe().getTenNhaXe());
 		modelMap.put("id_nx", loginedUser.getUser().getNhaXe().getId_nx());
 		return loginedUser;
 	}

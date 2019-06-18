@@ -3,6 +3,7 @@ package com.main.admin.controller;
 import java.security.Principal;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.main.admin.entity.User;
 import com.main.admin.form.UserForm;
 import com.main.admin.model.CustomUserDetails;
+import com.main.admin.service.UserService;
 
 @Controller
 public class UserController {

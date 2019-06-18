@@ -80,7 +80,7 @@ public class QuanLyChuyenXeController {
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
 		modelMap.put("userName", loginedUser.getUser().getTenDangNhap());
 		modelMap.put("userId", loginedUser.getUser().getId());
-		modelMap.put("tenNhaXe", nhaXeService.timNhaXe(loginedUser.getUser().getId_nx()).getTenNhaXe());
+		modelMap.put("tenNhaXe", loginedUser.getUser().getNhaXe().getTenNhaXe());
 		modelMap.put("id_nx", loginedUser.getUser().getNhaXe().getId_nx());
 		return loginedUser;
 	}
