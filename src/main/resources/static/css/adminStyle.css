@@ -1,0 +1,13 @@
+a:hover {
+	color:red;
+	text-decoration: none;
+}
+
+.inf {
+	width: 150px;
+	padding-right: 10px;;
+}
+
+.tb-info {
+	margin-left: 30%;
+}

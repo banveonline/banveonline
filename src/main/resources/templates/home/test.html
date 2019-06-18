@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Select a new car from the list.</p>
+<input id="cn" onchange="tt()" />
+
+<p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
+
+<p id="demo"></p>
+
+<script>
+function tt() {
+  var x = document.getElementById("cn").value;
+  parseInt(x);
+  var t =  parseInt(x) * 4;
+  document.getElementById("demo").innerHTML = "You selected: " + t;
+}
+</script>
+
+</body>
+</html>

@@ -16,27 +16,55 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- container -->
 		<div class="container">
 			<div class="faqs-top-grids">
-				<div class="product-grids">
-					<div class="col-md-9 product-right">
-						<div class="product-right-grids">
-							<div class="product-right-top">
-								<div class="">
-									<table class="table table-striped">
-										<tr>
-											<td>Nhà xe</td>
-											<td>Ga đi</td>
-											<td>Ga đến</td>
-											<td>Ngày đi</td>
-											<td></td>
-										</tr>
-									</table>
+				<th:block th:if="${#lists.isEmpty(chuyenxe)}">
+					<h3 style="text-align: center;">Không có chuyến xe cần tìm</h3>
+				</th:block>
+				<th:block th:unless="${#lists.isEmpty(chuyenxe)}">
+					<div class="product-grids">
+						<div class="product-right">
+							<div class="product-right-grids">
+								<div class="product-right-top">
+									<div class="">
+										<table class="table table-striped">
+											<tr>
+												<td class="text-center">Nhà xe</td>
+												<td class="text-center">Ga đi</td>
+												<td class="text-center">Ga đến</td>
+												<td class="text-center">Ngày đi</td>
+												<td class="text-center">Giờ đi</td>
+												<td class="text-center">Giá</td>
+												<td></td>
+											</tr>
+											<tr style="height: 150px;"
+												th:each="chuyenxe,iterStat : ${chuyenxe}">
+												<td class="text-center" style="padding-top: 50px;"><a
+													href="$">Hoàng Long</a></td>
+												<td class="text-center" style="padding-top: 50px;"><b
+													th:text="${chuyenxe.gaDi}"></b></td>
+												<td class="text-center" style="padding-top: 50px;"><b
+													th:text="${chuyenxe.gaDen}"></b></td>
+												<td class="text-center" style="padding-top: 50px;"><b
+													th:text="${chuyenxe.ngayDi}"></b></td>
+												<td class="text-center" style="padding-top: 50px;"><b
+													th:text="${chuyenxe.gioDi}"></b></td>
+												<td class="text-center" style="padding-top: 50px;"><b
+													th:text="${chuyenxe.gia}"></b><span> VND</span></td>
+												<td class="text-right" style="padding-top: 50px;"><a
+													th:href="@{/{id}/detail(id=${chuyenxe.id_CX})}"><button
+															type="button" class="ui-datepicker-trigger text-center">Tìm
+															kiếm</button></a></td>
+											</tr>
+											<tr>
+											</tr>
+										</table>
+									</div>
+									<div class="clearfix"></div>
 								</div>
-								<div class="clearfix"></div>
 							</div>
 						</div>
+						<div class="clearfix"></div>
 					</div>
-					<div class="clearfix"></div>
-				</div>
+				</th:block>
 			</div>
 		</div>
 		<!-- //container -->

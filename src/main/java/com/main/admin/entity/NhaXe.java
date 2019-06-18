@@ -23,7 +23,7 @@ public class NhaXe implements Serializable{
 	@Column(name = "id")
 	private int id_nx;
 	
-	@Column(name = "")
+	@Column(name = "anh")
 	private String anh;
 	
 	@Column(name = "ten_nha_xe")

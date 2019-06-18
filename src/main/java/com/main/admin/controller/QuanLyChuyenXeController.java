@@ -24,39 +24,39 @@ public class QuanLyChuyenXeController {
 	@Autowired
 	private ThanhPhoService thanhPhoService;
 	
-	@GetMapping("/chuyenxe/danhsach")
+	@GetMapping("/admin/chuyenxe/danhsach")
 	public String index(ModelMap modelMap) {
 		modelMap.put("chuyenxe", chuyenXeService.listChuyenXe());
 		return "admin/listTrip";
 	}
-	@GetMapping("/chuyenxe/taomoi")
+	@GetMapping("/admin/chuyenxe/taomoi")
 	public String taoChuyenXe(ModelMap modelMap) {
 		modelMap.put("chuyenxe", new ChuyenXe());
 		modelMap.put("thanhpho", thanhPhoService.findAll());
 		return "admin/insertTrip";
 	}
-	@PostMapping("/chuyenxe/luu")
+	@PostMapping("/admin/chuyenxe/luu")
 	public String luu(@Valid ChuyenXe chuyenXe,BindingResult result, RedirectAttributes redirect) {
 		if (result.hasErrors()) {
 			System.out.println(result);
 			redirect.addFlashAttribute("success", "Lưu chuyến xe thất bại!");
-			return "redirect:/chuyenxe/danhsach";
+			return "redirect:/admin/chuyenxe/danhsach";
 		}
 		chuyenXeService.luuChuyenXe(chuyenXe);
 		redirect.addFlashAttribute("success", "Lưu chuyến xe thành công!");
-		return "redirect:/chuyenxe/danhsach";
+		return "redirect:/admin/chuyenxe/danhsach";
 	}
-	@GetMapping("/chuyenxe/{id}/sua")
+	@GetMapping("admin/chuyenxe/{id}/sua")
 	public String sua(@PathVariable int id, ModelMap modelMap,RedirectAttributes redirect) {
 		modelMap.addAttribute("chuyenxe",chuyenXeService.tim(id));
 		modelMap.put("thanhpho", thanhPhoService.findAll());
 		redirect.addFlashAttribute("success", "Sửa chuyến xe thành công!");
 		return "admin/editTrip";
 	}
-	@GetMapping("/chuyenxe/{id}/xoa")
+	@GetMapping("/admin/chuyenxe/{id}/xoa")
 	public String xoa(@PathVariable int id, RedirectAttributes redirect) {
 		chuyenXeService.xoaChuyenXe(id);
 		redirect.addFlashAttribute("success", "Xóa chuyến xe thành công!");
-		return "redirect:/chuyenxe/danhsach";
+		return "redirect:/admin/chuyenxe/danhsach";
 	}
 }
