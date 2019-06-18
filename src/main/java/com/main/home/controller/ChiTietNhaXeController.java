@@ -9,7 +9,7 @@ public class ChiTietNhaXeController {
 
 	@GetMapping(value = "/p")
 	public String index(ModelMap modelMap) {
-		return "home/nhaxe";
+		return "home/p-single";
 	}
 
 }
