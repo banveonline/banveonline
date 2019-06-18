@@ -3,6 +3,123 @@
 <head th:replace="admin/layout :: head"></head>
 <body>
 	<div th:replace="admin/layout :: header"></div>
-	<form></form>
+	<div id="page-wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">Tạo User</h1>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<form th:action="@{/admin/user/add}" th:object="${userForm}" method="post" id="addUserForm">
+					<div class="form-group">
+						<label for="selectNhaXe">Nhà Xe</label> 
+						<select class="form-control" id="selectNhaXe" name="nhaXe" th:field="*{nhaXe}">
+							<option value="">Chọn Nhà Xe</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="username">Tên đăng nhập</label>
+						<input th:field="*{tenDangNhap}"  name="tenDangNhap" type="text" class="form-control" onblur="checkUserName(this.value)" id="username" aria-describedby="basic-username" placeholder="Tên đăng nhập"> 
+						<div class="valid-feedback" style="color: red" id="username-valid-feedback" hidden="true">
+					        Tên đăng nhập đã tồn tại! 
+					    </div>
+					</div>
+					<div class="form-group">
+						<label for="password">Mật khẩu</label> 
+						<input th:field="*{matKhau}" name="matKhau" type="password" class="form-control" id="password" placeholder="Mật Khẩu">
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label> 
+						<input th:field="*{email}" type="email" name="email" onblur="checkEmail(this.value)" class="form-control" id="email" placeholder="Email">
+						<div class="valid-feedback" style="color: red" id="email-valid-feedback" hidden="true">
+					        Email đã tồn tại! 
+					    </div>
+					</div>
+					<div class="form-group">
+						<label for="sdt">Số điện thoại</label> 
+						<input th:field="*{sdt}" type="text" name="sdt" class="form-control" id="sdt" placeholder="Số điện thoại">
+					</div>
+					<div class="form-group" style="text-align: center;">
+						<button type="submit" class="btn btn-primary">Tạo</button>
+					</div>
+					
+				</form>
+			</div>
+			<!-- /.row -->
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			//get danh sách nhà xe và put vào select nhà xe
+			$.ajax({
+				type : "GET",
+				url : "/listNhaXe",
+				success : function(data) {
+					if (data) {
+						for(var i in data){
+							var item = data[i];
+							var option = new Option(item.tenNhaXe,item.id_nx);
+							$("#selectNhaXe").append(option);
+						}	
+					}
+				}
+			});
+		})
+		
+		//kiểm tra tên đăng nhập có tồn tại chưa
+		checkUserName = function(value){
+			$.ajax({
+				type: "GET",
+				url: "/user/userName/" + value,
+				success : function(data) {
+					if (data) {
+						$("#username-valid-feedback").show();
+					}else{
+						$("#username-valid-feedback").hide();
+					}
+				}
+			})
+		}
+		
+		//kiểm tra Email có tồn tại chưa
+		checkEmail = function(value){
+			if(value){
+				$.ajax({
+					type: "GET",
+					url: "/user/email/" + value,
+					success : function(data) {
+						if (data) {
+							$("#email-valid-feedback").show();
+						}else{
+							$("#email-valid-feedback").hide();
+						}
+					}
+				})
+			}
+		}
+		//tạo user voi ajax
+		$("form").submit(function(e){
+			var form = "#addUserForm";
+			$.ajax({
+				type : $(form).attr('method'),
+				url : $(form).attr('action'),
+				data : $(form).serialize(),
+				success : function(res) {
+					if (res) {
+						alert("Tạo user thành công");
+					} else {
+						alert("Tạo user lỗi");
+					}
+				}
+			});
+            e.preventDefault(e);
+            document.getElementById("addUserForm").reset();
+        });
+	</script>
 </body>
 </html>
+
+

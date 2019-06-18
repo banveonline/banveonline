@@ -1,9 +1,13 @@
 package com.main.admin.DAO;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import com.main.admin.entity.NhaXe;
 
-public interface NhaXeDAO extends CrudRepository<NhaXe, Integer>{
-
+public interface NhaXeDAO extends JpaRepository<NhaXe, Integer>{
+	@Query("select n from NhaXe n where n.id != 1")
+	public List<NhaXe> findAll();
 }
