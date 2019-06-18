@@ -26,31 +26,39 @@ public class ChiTietChuyenXeController {
 	private ChuyenXeService chuyenXeService;
 	@Autowired
 	private VeService veService;
-	
+
 	@GetMapping(value = "/{id}/detail")
-	public String detail(ModelMap modelMap,@PathVariable int id) {
+	public String detail(ModelMap modelMap, @PathVariable int id) {
 		ChuyenXe chuyenXe = chuyenXeService.tim(id);
 		modelMap.put("chuyenXe", chuyenXe);
+		int count = 0;
+		Iterable<Ve> ls = veService.danhSachVe(id);
+		for (Ve v : ls) {
+			count += v.getSoCho();
+		}
+		modelMap.put("soCho", count);
 		VeDetail ve = new VeDetail();
 		modelMap.put("ve", ve);
 		modelMap.put("chuyenxecungtuyen", chuyenXeService.timChuyenXeTheoGaDi(chuyenXeService.tim(id).getGaDi()));
 		return "home/detail";
 	}
+
 	@GetMapping("/notification")
-	public String notification(){
+	public String notification() {
 		return "home/notification";
 	}
+
 	@PostMapping("/datve")
-	public String datVe(@Valid VeDetail ve,BindingResult result,RedirectAttributes redirect) {
-		if(result.hasErrors()) {
+	public String datVe(@Valid VeDetail ve, BindingResult result, RedirectAttributes redirect) {
+		if (result.hasErrors()) {
 			redirect.addFlashAttribute("thongbao", "Đặt vé thất bại");
 			return "redirect:/home/notification";
-		}else {
+		} else {
 			Date ngayDatVe = new Date();
 			ve.setNgayDatVe(ngayDatVe);
 			ChuyenXe chuyenXe = chuyenXeService.tim(ve.getId_CX());
 			ve.setChuyenxe(chuyenXe);
-			veService.luu(ve.convertToVe(ve,chuyenXe));
+			veService.luu(ve.convertToVe(ve, chuyenXe));
 			redirect.addFlashAttribute("thongbao", "Đặt vé thành công");
 			return "redirect:/notification";
 		}

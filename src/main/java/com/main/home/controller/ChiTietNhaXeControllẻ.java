@@ -11,5 +11,9 @@ public class ChiTietNhaXeControllẻ {
 	public String index(ModelMap modelMap) {
 		return "home/p-single";
 	}
+	@GetMapping(value = "/test")
+	public String test() {
+		return "home/test";
+	}
 
 }

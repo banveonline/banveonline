@@ -25,7 +25,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									th:text="${chuyenXe.gaDen}"></b>
 							</h2>
 							<p>
-								Nhà xe<a href="@"><b th:text = "${chuyenXe.nhaXe.id_nx}">Hoàng Long</b></a>
+								Nhà xe<a href="@"><b th:text="${chuyenXe.nhaXe.id_nx}">Hoàng
+										Long</b></a>
 							</p>
 						</div>
 						<div class="row">
@@ -43,7 +44,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li>
 										<p class="col-md-6 col-sm-6 text-left">Nhà Xe :</p>
 										<p class="col-md-6 text-right">
-											<a href="@"><b th:text="${chuyenXe.getNhaXe().getTenNhaXe()}"></b></a>
+											<a href="@"><b
+												th:text="${chuyenXe.getNhaXe().getTenNhaXe()}"></b></a>
 										</p>
 									</li>
 									<li>
@@ -59,10 +61,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										</p>
 									</li>
 									<li>
-										<p class="col-md-6 col-sm-6 text-left">Ghế trống / Tổng số
-											:</p>
+										<p class="col-md-6 col-sm-6 text-left">Đã đặt / Tổng số :</p>
 										<p class="col-md-6 text-right">
-											<b>10/30 ghế</b>
+											<b><b th:text="${soCho}" id="dd"></b>/<b
+												th:text="${chuyenXe.soNguoi}" id="tt"></b> ghế</b>
 										</p>
 									</li>
 									<li>
@@ -88,13 +90,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="spl-btn-bor">
 								<p>Thông tin khách hàng</p>
 							</div>
-							<form th:action="@{/datve}" th:object="${ve}" method="POST">
+							<form th:action="@{/datve}" th:object="${ve}" method="POST"
+								id="ttkh">
 								<div class="sp-bor-btn text-right">
 									<div class="detail-customer-info">
 										<div class="form-group CustomerFullName">
 											<div class="col-md-12 col-sm-12 pl0 pr0">
-												<input type="hidden" th:field="*{id}" />
-												<input type="hidden" th:object="${chuyenXe}" th:field="*{id_CX}" />
+												<input type="hidden" th:field="*{id}" /> <input
+													type="hidden" th:object="${chuyenXe}" th:field="*{id_CX}" />
 												<label
 													class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Họ
 													tên <span style="color: red;">*</span>:
@@ -133,21 +136,38 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 												class="col-md-12 pl0 pr0 col-sm-3 control-label text-left hidden-xs">Số
 												người <span style="color: red;">*</span>:
 											</label> <input id="ce" name="CustomerNumber" type="text"
-												th:field="*{soCho}" id="cn" onchange="tt()"
+												th:field="*{soCho}" id="cn" onchange="tt()" value="0"
 												class="form-control input-vxr" placeholder="Số người"
 												data-toggle="popover" data-content="Email không hợp lệ"
-												data-placement="left">
+												data-placement="right"> <b id="thongbao"></b>
 											<script>
 												function tt() {
+													var dd = document
+															.getElementById("dd").innerText;
+													var tt = document
+															.getElementById("tt").innerText;
 													var x = document
 															.getElementById("cn").value;
-													var d = document
-															.getElementById("gia").innerText;
-													var t = parseInt(x)
-															* parseInt(d);
-													document
-															.getElementById("tongtien").innerHTML = t + " VND";
-													$("#tongtien").val(t);
+													if (x > (parseInt(tt) - parseInt(dd))) {
+														document
+																.getElementById("thongbao").innerHTML = "Số chỗ vượt quá chỗ còn trống";
+													} else if (x == 0) {
+														document
+																.getElementById("thongbao").innerHTML = "Hãy nhập số chỗ";
+														$("#tongtien").val(0);
+													} else {
+														var d = document
+																.getElementById("gia").innerText;
+														var t = parseInt(x)
+																* parseInt(d);
+														document
+																.getElementById("tongtien").innerHTML = t
+																+ " VND" + dd;
+														$("#tongtien").val(t);
+														document
+																.getElementById("thongbao").innerHTML = "";
+
+													}
 												}
 											</script>
 										</div>
@@ -164,10 +184,66 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<div class="form-group">
 										<div class="col-md-12 col-sm-12 pl0 pr0">
 											<label for="inputnote3"
-												class="col-md-12 pl0  col-sm-3 control-label text-left hidden-xs" style="width: 150px">Thành
-												tiền:</label>
-												<input id="tongtien" class="pull-left" style="width: 80%;" th:field="*{gia}" readonly="readonly"  value="" /><span class="pull-right" style="padding-top: 10px;">VND</span>
+												class="col-md-12 pl0  col-sm-3 control-label text-left hidden-xs"
+												style="width: 150px">Thành tiền:</label> <input
+												id="tongtien" class="pull-left" style="width: 80%;"
+												th:field="*{gia}" readonly="readonly" value="" /><span
+												class="pull-right" style="padding-top: 10px;"
+												data-placement="right">VND</span>
 										</div>
+									</div>
+									<div>
+										<script type="text/javascript">
+											$(document)
+													.ready(
+															function() {
+
+																//Khi bàn phím được nhấn và thả ra thì sẽ chạy phương thức này
+																$("#ttkh")
+																		.validate(
+																				{
+																					rules : {
+																						tenKH : "required",
+																						soCho : {
+																							required : true,
+																							number : true
+																						},
+																						sdt : {
+																							required : true,
+																							number : true,
+																							minlength : 10,
+																							maxlength : 10
+																						},
+																						cnmd : {
+																							required : true,
+																							number : true,
+																							minlength : 9,
+																							maxlength : 9
+																						}
+
+																					},
+																					messages : {
+																						tenKH : "Vui lòng nhập họ",
+																						soCho : {
+																							required : "Vui lòng nhập số chỗ",
+																							number : "Phải nhập số"
+																						},
+																						sdt : {
+																							required : "Vui lòng nhập số điện thoại",
+																							minlength : "Số điện thoại phải là 10 số",
+																							maxlength : "Số điện thoại phải là 10 số",
+																							number : "Phải nhập số"
+																						},
+																						cnmd : {
+																							required : "Vui lòng nhập cmnd",
+																							minlength : "Số cmnd phải là 9 số",
+																							maxlength : "Số cmnd phải là 9 số",
+																							number : "Phải nhập số"
+																						}
+																					}
+																				});
+															});
+										</script>
 									</div>
 									<div class="form-group">
 										<button type="submit"
@@ -208,9 +284,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<b>Đặt vé</b>
 						</p>
 					</li>
-					<li th:each="chuyenXe,iterStat : ${chuyenXecungtuyen} ">
+					<li th:each="chuyenXe,iterStat : ${chuyenxecungtuyen} ">
 						<p class="col-md-2 col-sm-2 text-center">
-							<a href="$"><b th:text="${chuyenXe.getNhaXe().getId_nx()}"></b></a>
+							<a href="$"><b th:text="${chuyenXe.nhaXe.tenNhaXe}"></b></a>
 						</p>
 						<p class="col-md-2 col-sm-2 text-center">
 							<b th:text="${chuyenXe.ngayDi}"></b>
@@ -239,54 +315,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- footer -->
 	<div class="footer" th:replace="home/layout :: homefooter"></div>
 	<!-- //footer -->
-	<div class="footer-bottom-grids">
-		<!-- container -->
-		<div class="container">
-			<div class="footer-bottom-top-grids">
-				<div class="col-md-4 footer-bottom-left">
-					<h4>Download our mobile Apps</h4>
-					<div class="d-apps">
-						<ul>
-							<li><a href="#"><img src="images/app1.png" alt="" /></a></li>
-							<li><a href="#"><img src="images/app2.png" alt="" /></a></li>
-							<li><a href="#"><img src="images/app3.png" alt="" /></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-4 footer-bottom-left">
-					<h4>We Accept</h4>
-					<div class="a-cards">
-						<ul>
-							<li><a href="#"><img src="images/c1.png" alt="" /></a></li>
-							<li><a href="#"><img src="images/c2.png" alt="" /></a></a></li>
-							<li><a href="#"><img src="images/c3.png" alt="" /></a></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-4 footer-bottom-left">
-					<h4>Follow Us</h4>
-					<div class="social">
-						<ul>
-							<li><a href="#" class="facebook"> </a></li>
-							<li><a href="#" class="facebook twitter"> </a></li>
-							<li><a href="#" class="facebook chrome"> </a></li>
-							<li><a href="#" class="facebook dribbble"> </a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-				<div class="copyright">
-					<p>
-						Copyrights © 2015 Govihar . Design by <a
-							href="http://w3layouts.com/">W3layouts</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script defer src="js/jquery.flexslider.js"></script>
-	<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
-	<script src="js/jquery-ui.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

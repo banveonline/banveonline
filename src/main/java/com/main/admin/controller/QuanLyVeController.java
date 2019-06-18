@@ -6,12 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.main.admin.entity.ChuyenXe;
 import com.main.admin.model.CustomUserDetails;
 import com.main.admin.service.ChuyenXeService;
+import com.main.admin.service.NhaXeService;
 import com.main.admin.service.VeService;
 
 @Controller
@@ -21,6 +24,8 @@ public class QuanLyVeController {
 	private VeService veService;
 	@Autowired
 	private ChuyenXeService chuyenXeService;
+	@Autowired
+	private NhaXeService nhaXeService;
 
 	@GetMapping("/admin/datve/danhsach")
 	private String index(ModelMap modelMap,Principal principal) {
@@ -35,11 +40,6 @@ public class QuanLyVeController {
 		modelMap.put("chuyenxe", getChuyenXe( veService.tim(id).getChuyenxe().getId_CX()));
 		return "admin/ticketDetail";
 	}
-	
-	@GetMapping("/test")
-	public String xxx() {
-		return "home/test";
-	}
 	public ChuyenXe getChuyenXe(int id) {
 		ChuyenXe chuyenXe = new ChuyenXe();
 		Iterable<ChuyenXe> ls = chuyenXeService.listChuyenXe(id);
@@ -53,11 +53,18 @@ public class QuanLyVeController {
 		}
 		return chuyenXe;
 	}
+	@ResponseBody
+	@DeleteMapping(value = "/delete/{id}")
+	public String deleteCustomer(@PathVariable int id) {
+		veService.xoa(id);;
+		return "OK!";
+	}
 	public CustomUserDetails checkLogin(ModelMap modelMap, Principal principal) {
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
 		modelMap.put("userName", loginedUser.getUser().getTenDangNhap());
 		modelMap.put("userId", loginedUser.getUser().getId());
 		modelMap.put("id_nx", loginedUser.getUser().getId_nx());
+		modelMap.put("tenNhaXe", nhaXeService.timNhaXe(loginedUser.getUser().getId_nx()).getTenNhaXe());
 		return loginedUser;
 	}
 }

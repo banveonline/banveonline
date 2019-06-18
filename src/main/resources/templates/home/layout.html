@@ -19,7 +19,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	
 	
 	
+	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
+
 
 
 
@@ -38,8 +42,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link type="text/css" rel="stylesheet"
 	th:href="@{/css/JFFormStyle-1.css}" />
 <!-- js -->
-<script th:src="@{/js/jquery.min.js}"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript"
+	src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 <script th:src="@{/js/modernizr.custom.js}"></script>
+<script defer th:src="@{/js/jquery.flexslider.js}"></script>
+<script th:src="@{/js/easyResponsiveTabs.js}" type="text/javascript"></script>
+<script th:src="@{/js/jquery-ui.js}"></script>
+<script type="text/javascript" th:src="@{/js/script.js}"></script>
+<script type="text/javascript" th:src="@{/js/headline.min.js}"></script>
 <!-- //js -->
 <!-- fonts -->
 <link
@@ -60,7 +71,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	});
 </script>
 <!--pop-up-->
-<script src="js/menu_jquery.js"></script>
+<script th:src="@{/js/menu_jquery.js}"></script>
 <!--//pop-up-->
 </head>
 <body>
@@ -69,7 +80,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="header-grids">
 				<div class="logo">
-					<h1><a  href="index.html"><span>VeXe</span>Online</a></h1>
+					<h1>
+						<a href="index.html"><span>VeXe</span>Online</a>
+					</h1>
 				</div>
 				<!--navbar-header-->
 				<div class="header-dropdown">
@@ -101,7 +114,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="dropdown-grids">
 						<div id="loginContainer">
-							<a href="#" id="loginButton"><span>Đăng nhập</span></a>
+							<a id="loginButton"><span>Đăng nhập</span></a>
 							<div id="loginBox">
 								<form id="loginForm" th:action="@{/action-login}" method="post">
 									<div class="login-grids">
@@ -243,11 +256,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 			</div>
-			<script defer th:src="@{/js/jquery.flexslider.js}"></script>
-			<script th:src="@{/js/easyResponsiveTabs.js}" type="text/javascript"></script>
-			<script th:src="@{/js/jquery-ui.js}"></script>
-			<script type="text/javascript" th:src="@{/js/script.js}"></script>
-			<script type="text/javascript" th:src="@{/js/headline.min.js}"></script>
 			<script type="text/javascript">
 				$(window).load(function() {
 					$('.flexslider').flexslider({

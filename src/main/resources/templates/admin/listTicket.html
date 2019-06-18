@@ -21,42 +21,65 @@
 							<h3 style="text-align: center;">Danh sách chuyến xe trống</h3>
 						</th:block>
 						<!-- /.panel-heading -->
-						<div class="panel-body">
-							<div class="table-responsive" style="width: 100%;">
-								<th:block th:unless="${#lists.isEmpty(ve)}">
-									<div class="row">
-										<table class="table table-bordered">
-											<thead>
-												<tr>
-													<th style="text-align: center;">ID vé xe</th>
-													<th style="text-align: center;">ID chuyến xe</th>
-													<th style="text-align: center;">Họ tên khách hàng</th>
-													<th style="text-align: center;">Số điện thoại</th>
-													<th style="text-align: center;">Số chố</th>
-													<th style="text-align: center;">Ngày đặt</th>
-													<th></th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr th:each="vexe,iterStat : ${ve}">
-													<td style="text-align: center;" th:text="${vexe.id}"></td>
-													<td style="text-align: center;" th:text="${vexe.getChuyenxe().getId_CX()}"></td>
-													<td style="text-align: center;" th:text="${vexe.tenKH}"></td>
-													<td style="text-align: center;" th:text="${vexe.sdt}"></td>
-													<td style="text-align: center;" th:text="${vexe.soCho}"></td>
-													<td style="text-align: center;" th:text="${vexe.ngayDatVe}"></td>
+						<th:block th:unless="${#lists.isEmpty(ve)}">
+							<table class="table table-bordered" id="listTicket">
+								<thead>
+									<tr>
+										<th style="text-align: center;">ID vé xe</th>
+										<th style="text-align: center;">ID chuyến xe</th>
+										<th style="text-align: center;">Họ tên khách hàng</th>
+										<th style="text-align: center;">Số điện thoại</th>
+										<th style="text-align: center;">Số chố</th>
+										<th style="text-align: center;">Ngày đặt</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="vexe,iterStat : ${ve}">
+										<td style="text-align: center;" th:text="${vexe.id}" id="id"></td>
+										<td style="text-align: center;"
+											th:text="${vexe.getChuyenxe().getId_CX()}"></td>
+										<td style="text-align: center;" th:text="${vexe.tenKH}"></td>
+										<td style="text-align: center;" th:text="${vexe.sdt}"></td>
+										<td style="text-align: center;" th:text="${vexe.soCho}"></td>
+										<td style="text-align: center;" th:text="${vexe.ngayDatVe}"></td>
 
-													<td class="ql"><a
-														th:href="@{/admin/datve/chi-tiet-dat-ve/{id}(id=${vexe.id})}">Chi
-															tiết</a></td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</th:block>
-							</div>
-							<!-- /.table-responsive -->
-						</div>
+										<td class="ql"><a
+											th:href="@{/admin/datve/chi-tiet-dat-ve/{id}(id=${vexe.id})}">Chi
+												tiết </a>
+											<button type="submit" id="click">
+												<span class="glyphicon glyphicon-remove"></span>
+											</button></td>
+									</tr>
+								</tbody>
+							</table>
+						</th:block>
+						<div id="resultMsgDiv"></div>
+						<script>
+						$(document).ready(function(){
+							var id = document
+							.getElementById("id").innerText;
+							var workingObject = $(this);
+							$(document).on("click","button",function() {
+								  $.ajax({
+										type : "DELETE",
+										url : "http://localhost:8080/delete/" + id,
+										success: function(resultMsg){
+											$("#resultMsgDiv").html("<p style='background-color:#67597E; color:white; padding:20px 20px 20px 20px'>" +
+													"Customer with Id=" + customerId + " is deleted successfully!"  +
+												"</p>");
+											workingObject.closest("tr").remove();
+										},
+										error : function(e) {
+											alert("Lỗi");
+											console.log("ERROR: ", e);
+										}
+									});
+							  });
+							});
+							</script>
+						<div id="resultMsgDiv"></div>
+						<!-- /.table-responsive -->
 						<!-- /.panel-body -->
 					</div>
 					<!-- /.panel -->
@@ -68,7 +91,7 @@
 	</div>
 	<script>
 		$(document).ready(function() {
-			$('#dataTables-example').DataTable({
+			$('#listTicket').DataTable({
 				responsive : true
 			});
 		});
