@@ -19,8 +19,10 @@ public class NhaXeController {
 	@Autowired
 	private NhaXeService nhaXeService;
 	@GetMapping(value = "/nhaxe/{nha_xe}")
-	public String index(@PathVariable String nha_xe,ModelMap modelMap ) {
-		
+	public String index(@PathVariable(name = "nha_xe") String nhaXe,ModelMap modelMap ) {
+		if(nhaXe.equals("tat-ca")) {
+			modelMap.put("nhaxe", nhaXeService.findAll());
+		}
 		return "home/garage";
 	}
 	@GetMapping("/listNhaXe")

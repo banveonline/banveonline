@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="faqs-top-grids">
 				<div class="product-grids">
 					<div class="col-md-9 product-right">
-						<div class="product-right-grids">
+						<div class="product-right-grids" th:each="nhaxe,iterStat : ${nhaxe}">
 							<div class="product-right-top">
 								<div class="p-left">
 									<div class="p-right-img">
@@ -27,165 +27,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="p-right">
 									<div class="col-md-6 p-right-left">
-										<a href="p-single.html">Xe Phương Trang</a>
-										<div class="p-right-price">
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</div>
-										<p>Địa chỉ: 009999090090</p>
-										<p class="p-call">Liên hệ: 0999000 890</p>
+										<b>Nhà xe: </b><a href="p-single.html" th:text = "${nhaxe.tenNhaXe}"></a>
+										<br/>
+										<b>Số điện thoại: </b><b th:text = "${nhaxe.sdt}"></b>
+										<br/>
+										<b>Địa chỉ: </b><b class="p-call" th:text = "${nhaxe.diaChi}"></b>
 									</div>
 									<div class="col-md-6 p-right-right">
-										<h6>Rating : 4.1/5</h6>
-										<p>(123) Views</p>
-										<span class="p-offer">$140</span><span class="p-last-price">$230</span>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="product-right-grids">
-							<div class="product-right-top">
-								<div class="p-left">
-									<div class="p-right-img p-right-img1">
-										<a href="p-single.html"> </a>
-									</div>
-								</div>
-								<div class="p-right">
-									<div class="col-md-6 p-right-left">
-										<a href="p-single.html">Lorem ipsum dolor sit amet</a>
-										<div class="p-right-price">
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</div>
-										<p>Vestibulum molestie id orci eget vulputate</p>
-										<p class="p-call">+1 234 567 890</p>
-									</div>
-									<div class="col-md-6 p-right-right">
-										<h6>Rating : 4.1/5</h6>
-										<p>(123) Views</p>
-										<span class="p-offer">$240</span><span class="p-last-price">$430</span>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="product-right-grids">
-							<div class="product-right-top">
-								<div class="p-left">
-									<div class="p-right-img p-right-img2">
-										<a href="p-single.html"> </a>
-									</div>
-								</div>
-								<div class="p-right">
-									<div class="col-md-6 p-right-left">
-										<a href="p-single.html">Lorem ipsum dolor sit amet</a>
-										<div class="p-right-price">
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</div>
-										<p>Vestibulum molestie id orci eget vulputate</p>
-										<p class="p-call">+1 234 567 890</p>
-									</div>
-									<div class="col-md-6 p-right-right">
-										<h6>Rating : 4.1/5</h6>
-										<p>(123) Views</p>
-										<span class="p-offer">$120</span><span class="p-last-price">$310</span>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="product-right-grids">
-							<div class="product-right-top">
-								<div class="p-left">
-									<div class="p-right-img p-right-img3">
-										<a href="p-single.html"> </a>
-									</div>
-								</div>
-								<div class="p-right">
-									<div class="col-md-6 p-right-left">
-										<a href="p-single.html">Lorem ipsum dolor sit amet</a>
-										<div class="p-right-price">
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</div>
-										<p>Vestibulum molestie id orci eget vulputate</p>
-										<p class="p-call">+1 234 567 890</p>
-									</div>
-									<div class="col-md-6 p-right-right">
-										<h6>Rating : 4.1/5</h6>
-										<p>(123) Views</p>
-										<span class="p-offer">$140</span><span class="p-last-price">$230</span>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="product-right-grids">
-							<div class="product-right-top">
-								<div class="p-left">
-									<div class="p-right-img p-right-img1">
-										<a href="p-single.html"> </a>
-									</div>
-								</div>
-								<div class="p-right">
-									<div class="col-md-6 p-right-left">
-										<a href="p-single.html">Lorem ipsum dolor sit amet</a>
-										<div class="p-right-price">
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</div>
-										<p>Địa chỉ: a234</p>
-										<p class="p-call">Liên hệ: 099999999999</p>
-									</div>
-									<div class="col-md-6 p-right-right">
-										<h6>Rating : 4.1/5</h6>
-										<p>(123) Views</p>
-										<span class="p-offer">$380</span><span class="p-last-price">$540</span>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="product-right-grids">
-							<div class="product-right-top">
-								<div class="p-left">
-									<div class="p-right-img p-right-img2">
-										<a href="p-single.html"> </a>
-									</div>
-								</div>
-								<div class="p-right">
-									<div class="col-md-6 p-right-left">
-										<a href="p-single.html">Lorem ipsum dolor sit amet</a>
-										<div class="p-right-price">
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</div>
-										<p>Vestibulum molestie id orci eget vulputate</p>
-										<p class="p-call">+1 234 567 890</p>
-									</div>
-									<div class="col-md-6 p-right-right">
-										<h6>Rating : 4.1/5</h6>
-										<p>(123) Views</p>
-										<span class="p-offer">$360</span><span class="p-last-price">$750</span>
 									</div>
 									<div class="clearfix"></div>
 								</div>

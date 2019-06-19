@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.main.admin.entity.ChuyenXe;
 import com.main.admin.model.CustomUserDetails;
 import com.main.admin.service.ChuyenXeService;
-import com.main.admin.service.NhaXeService;
 import com.main.admin.service.VeService;
 
 @Controller
@@ -53,7 +52,7 @@ public class QuanLyVeController {
 	}
 	@ResponseBody
 	@DeleteMapping(value = "/delete/{id}")
-	public String deleteCustomer(@PathVariable int id) {
+	public String deleteTicket(@PathVariable int id) {
 		veService.xoa(id);;
 		return "OK!";
 	}

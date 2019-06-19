@@ -34,6 +34,7 @@ public class UserController {
 		modelMap.put("userName", loginedUser.getUser().getTenDangNhap());
 		modelMap.put("userId", loginedUser.getUser().getId());
 		modelMap.put("id_nx", loginedUser.getUser().getNhaXe().getId_nx());
+		modelMap.put("tenNhaXe", loginedUser.getUser().getNhaXe().getTenNhaXe());
 		return "/admin/index";
 	}
 
@@ -58,7 +59,9 @@ public class UserController {
 	}
 
 	@GetMapping("/admin/user/addUser")
-	public String addUser(ModelMap modelMap) {
+	public String addUser(ModelMap modelMap, Principal principal) {
+		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
+		modelMap.put("tenNhaXe", loginedUser.getUser().getNhaXe().getTenNhaXe());
 		UserForm userForm = new UserForm();
 		modelMap.put("userForm", userForm);
 		return "/admin/user/addUser";

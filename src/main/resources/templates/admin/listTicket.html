@@ -21,6 +21,7 @@
 							<h3 style="text-align: center;">Danh sách chuyến xe trống</h3>
 						</th:block>
 						<!-- /.panel-heading -->
+						<div id="resultMsgDiv"></div>
 						<th:block th:unless="${#lists.isEmpty(ve)}">
 							<table class="table table-bordered" id="listTicket">
 								<thead>
@@ -57,18 +58,14 @@
 						<div id="resultMsgDiv"></div>
 						<script>
 						$(document).ready(function(){
-							var id = document
-							.getElementById("id").innerText;
-							var workingObject = $(this);
+							var id = document.getElementById("id").innerText;
 							$(document).on("click","button",function() {
 								  $.ajax({
 										type : "DELETE",
-										url : "http://localhost:8080/delete/" + id,
+										url : "/delete/" + id,
 										success: function(resultMsg){
 											$("#resultMsgDiv").html("<p style='background-color:#67597E; color:white; padding:20px 20px 20px 20px'>" +
-													"Customer with Id=" + customerId + " is deleted successfully!"  +
-												"</p>");
-											workingObject.closest("tr").remove();
+													"Xóa chuyến xe " + id + " thành công!"  + "</p>");
 										},
 										error : function(e) {
 											alert("Lỗi");
@@ -77,8 +74,6 @@
 									});
 							  });
 							});
-							</script>
-						<div id="resultMsgDiv"></div>
 						<!-- /.table-responsive -->
 						<!-- /.panel-body -->
 					</div>
