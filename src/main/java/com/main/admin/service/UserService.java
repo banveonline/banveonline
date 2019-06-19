@@ -16,4 +16,6 @@ public interface UserService {
 	public boolean checkUserName(String userName);
 	public boolean checkEmail(String email);
 	public boolean addUser(UserForm userForm);
+	public boolean delete(int id);
+	
 }

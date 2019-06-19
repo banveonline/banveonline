@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.main.admin.entity.User;
+import com.main.admin.form.JsonRespone;
 import com.main.admin.form.UserForm;
 import com.main.admin.model.CustomUserDetails;
 import com.main.admin.service.UserService;
@@ -34,6 +36,7 @@ public class UserController {
 		modelMap.put("userName", loginedUser.getUser().getTenDangNhap());
 		modelMap.put("userId", loginedUser.getUser().getId());
 		modelMap.put("id_nx", loginedUser.getUser().getNhaXe().getId_nx());
+		modelMap.put("loginedUser", loginedUser);
 		return "/admin/index";
 	}
 
@@ -65,16 +68,49 @@ public class UserController {
 	}
 	
 	@GetMapping("/user/userName/{userName}")
-	public @ResponseBody boolean checkUserName(@PathVariable String userName) {
-		return userService.checkUserName(userName);
+	public @ResponseBody JsonRespone checkUserName(ModelMap modelMap, @PathVariable String userName) {
+		boolean flg = userService.checkUserName(userName);
+		JsonRespone jsonRespone = new JsonRespone();
+		if(flg) {
+			jsonRespone.setValidated(true);
+			return jsonRespone;
+		}
+		jsonRespone.setValidated(false);
+		return jsonRespone;
 	}
 	
 	@GetMapping("/user/email/{email}")
-	public @ResponseBody boolean checkEmail(@PathVariable String email) {
-		return userService.checkEmail(email);
+	public @ResponseBody JsonRespone checkEmail(ModelMap modelMap, @PathVariable String email) {
+		boolean flg = userService.checkEmail(email);
+		JsonRespone jsonRespone = new JsonRespone();
+		if(flg) {
+			jsonRespone.setValidated(true);
+			return jsonRespone;
+		}
+		jsonRespone.setValidated(false);
+		return jsonRespone;
 	}
 	@PostMapping("/admin/user/add")
-	public @ResponseBody boolean saveUser(@ModelAttribute("userForm") UserForm userForm) {
-		return userService.addUser(userForm);
+	public @ResponseBody JsonRespone saveUser(ModelMap modelMap, @ModelAttribute("userForm") UserForm userForm) {
+		boolean flg =  userService.addUser(userForm);
+		JsonRespone jsonRespone = new JsonRespone();
+		if(flg) {
+			jsonRespone.setValidated(true);
+			return jsonRespone;
+		}
+		jsonRespone.setValidated(false);
+		return jsonRespone;
+	}
+	
+	@DeleteMapping("/admin/user/delete/{id}")
+	public @ResponseBody JsonRespone  delete(ModelMap modelMap, @PathVariable("id") int id) {
+		JsonRespone jsonRespone = new JsonRespone();
+		boolean flg = userService.delete(id);
+		if(flg) {
+			jsonRespone.setValidated(true);
+			return jsonRespone;
+		}
+		jsonRespone.setValidated(false);
+		return jsonRespone;
 	}
 }
