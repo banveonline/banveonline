@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.datatables.mapping.DataTablesInput;
-import org.springframework.data.jpa.datatables.mapping.DataTablesOutput;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
@@ -82,6 +80,14 @@ public class UserServiceImpl implements UserService{
 		user.setEmail(userForm.getEmail());
 		User inserted = userDAO.save(user);
 		if(inserted != null) {
+			return true;
+		}
+		return false;
+	}
+	@Override
+	public boolean delete(int id) {
+		if (userDAO.exists(id)) {
+			userDAO.delete(userDAO.getOne(id));
 			return true;
 		}
 		return false;

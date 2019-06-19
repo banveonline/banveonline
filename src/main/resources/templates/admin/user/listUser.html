@@ -46,8 +46,7 @@
 		            { "data": "id",
 		            	render : function(data) {
 							return '<td>'+
-										'<button type="button" onclick="location.href=\'/admin/user/view/'+data+'\'" class="btn btn-primary">Xem</button>'+
-										'<button type="button" class="btn btn-danger" onclick="deleteData('+ data+ ')">Xóa</button>'+
+										'<button type="button" class="btn btn-danger" onclick="deleteUser('+ data+ ')">Xóa</button>'+
 									'</td>';
 						}
 		            }
@@ -60,6 +59,21 @@
 		        } );
 		    } ).draw();
 		});
+		
+		function deleteUser(id) {
+					$.ajax({
+							type : "DELETE",
+							url : "/admin/user/delete/"+ id,
+							success : function(data) {
+								if (data.validated == true) {
+									alert("Xóa user Thành Công");
+									$('table#users').DataTable().ajax.reload();
+								}else{
+									alert("Xóa user thất bại");
+								}
+							}
+					});
+		}
 	</script>
 </body>
 </html>

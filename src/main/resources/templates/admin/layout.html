@@ -39,7 +39,30 @@
 <!-- Custom Fonts -->
 <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"
 	type="text/css" />
+<!-- js -->
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
+<script th:src="@{/js/jquery.min.js}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script th:src="@{/js/metisMenu.min.js}"></script>
+
+<!-- DataTables JavaScript -->
+<script th:src="@{/js/dataTables/jquery.dataTables.min.js}"></script>
+<script th:src="@{/js/dataTables/dataTables.bootstrap.min.js}"></script>
+<!-- Datatime -->
+<script th:src="@{/js/bootstrap-datetimepicker.js}"></script>
+<script th:src="@{/js/bootstrap-datetimepicker.min.js}"></script>
+<script th:src="@{/js/bootstrap-datepicker.min.js}"></script>
+<!-- Custom Theme JavaScript -->
+<script th:src="@{/js/startmin.js}"></script>
+<!-- <script type="text/javascript" th:src="@{/js/js.cookie.js}"></script> -->
+<script type="text/javascript" th:src="@{/js/jquery-validation/jquery.validate.js}"></script>
+<!-- <script th:src = "@{/js/toastr.min.js}"></script> -->
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -144,11 +167,14 @@
 						</li>
 						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Quản lý đặt vé<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
-								<li><a th:href="@{/admin/datve/danhsach}">Danh sách đặt vé</a></li>
-							</ul>
-						</li>
-						<li><a href="CaNhan.html"><i class="fa fa-table fa-fw"></i>Thông tin nhà xe</a></li>
-						<li sec:authorize="hasRole('ROLE_ADMIN')"><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Quản lý User<span class="fa arrow"></span></a>
+								<li><a th:href="@{/admin/datve/danhsach}">Danh sách đặt
+										vé</a></li>
+							</ul></li>
+						<li><a href="CaNhan.html"><i class="fa fa-table fa-fw"></i>Thông
+								tin nhà xe</a></li>
+						<li th:if="${loginedUser.user.role.roleName == 'ROLE_ADMIN'}"><a href="#"><i
+								class="fa fa-bar-chart-o fa-fw"></i>Quản lý User<span
+								class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a th:href="@{/admin/user/addUser}">Tạo user</a></li>
 								<li><a th:href="@{/admin/user/listUser}">Danh sách user</a></li>
