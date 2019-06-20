@@ -155,7 +155,7 @@
 								<i class="fa fa-dashboard fa-fw"></i> Thống kê
 							</a>
 						</li>
-						<li>
+						<li th:if="${loginedUser.user.role.roleName == 'ROLE_MEMBER'}">
 							<a href="#">
 								<i class="fa fa-bar-chart-o fa-fw"></i>Quản lý Chuyến xe
 									<span class="fa arrow"></span>
@@ -165,12 +165,12 @@
 								<li><a th:href="@{/admin/chuyenxe/danhsach}">Danh sách chuyến xe</a></li>
 							</ul>
 						</li>
-						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Quản lý đặt vé<span class="fa arrow"></span></a>
+						<li th:if="${loginedUser.user.role.roleName == 'ROLE_MEMBER'}"><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Quản lý đặt vé<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li><a th:href="@{/admin/datve/danhsach}">Danh sách đặt
 										vé</a></li>
 							</ul></li>
-						<li><a href="CaNhan.html"><i class="fa fa-table fa-fw"></i>Thông
+						<li th:if="${loginedUser.user.role.roleName == 'ROLE_MEMBER'}"><a href="CaNhan.html"><i class="fa fa-table fa-fw"></i>Thông
 								tin nhà xe</a></li>
 						<li th:if="${loginedUser.user.role.roleName == 'ROLE_ADMIN'}"><a href="#"><i
 								class="fa fa-bar-chart-o fa-fw"></i>Quản lý User<span
@@ -180,33 +180,20 @@
 								<li><a th:href="@{/admin/user/listUser}">Danh sách user</a></li>
 							</ul>
 						</li>
+						<li th:if="${loginedUser.user.role.roleName == 'ROLE_ADMIN'}"><a href="#"><i
+								class="fa fa-bar-chart-o fa-fw"></i>Quản lý nhà xe<span
+								class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a th:href="@{/admin/user/addCoachs}">Tạo nhà xe</a></li>
+								<li><a th:href="@{/admin/user/listCoachs}">Danh sách nhà xe</a></li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->
 			</div>
 			<!-- /.navbar-static-side -->
 		</nav>
-		<!-- jQuery -->
-		<script th:src="@{/js/jquery.min.js}"></script>
-
-		<!-- Bootstrap Core JavaScript -->
-		<script th:src="@{/js/bootstrap.min.js}"></script>
-
-		<!-- Metis Menu Plugin JavaScript -->
-		<script th:src="@{/js/metisMenu.min.js}"></script>
-
-		<!-- DataTables JavaScript -->
-		<script th:src="@{/js/dataTables/jquery.dataTables.min.js}"></script>
-		<script th:src="@{/js/dataTables/dataTables.bootstrap.min.js}"></script>
-		<!-- Datatime -->
-		<script th:src="@{/js/bootstrap-datetimepicker.js}"></script>
-		<script th:src="@{/js/bootstrap-datetimepicker.min.js}"></script>
-		<script th:src="@{/js/bootstrap-datepicker.min.js}"></script>
-		<!-- Custom Theme JavaScript -->
-		<script th:src="@{/js/startmin.js}"></script>
-		<!-- <script type="text/javascript" th:src="@{/js/js.cookie.js}"></script> -->
-		<script th:src="@{/js/jquery.spring-friendly.js}"></script>
-		<script type="text/javascript" th:src="@{/js/jquery-validation/jquery.validate.js}"></script>
 	</div>
 </body>
 </html>

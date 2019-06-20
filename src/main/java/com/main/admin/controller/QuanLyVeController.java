@@ -32,7 +32,8 @@ public class QuanLyVeController {
 	}
 
 	@GetMapping("/admin/datve/chi-tiet-dat-ve/{id}")
-	public String ticketDetail(@PathVariable int id, ModelMap modelMap) {
+	public String ticketDetail(@PathVariable int id, ModelMap modelMap,Principal principal) {
+		checkLogin(modelMap, principal);
 		modelMap.put("ve", veService.tim(id));
 		modelMap.put("chuyenxe", getChuyenXe( veService.tim(id).getChuyenxe().getId_CX()));
 		return "admin/ticketDetail";
@@ -62,6 +63,7 @@ public class QuanLyVeController {
 		modelMap.put("userId", loginedUser.getUser().getId());
 		modelMap.put("tenNhaXe", loginedUser.getUser().getNhaXe().getTenNhaXe());
 		modelMap.put("id_nx", loginedUser.getUser().getNhaXe().getId_nx());
+		modelMap.put("loginedUser", loginedUser);
 		return loginedUser;
 	}
 }

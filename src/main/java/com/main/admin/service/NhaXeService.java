@@ -3,6 +3,7 @@ package com.main.admin.service;
 import java.util.List;
 
 import com.main.admin.entity.NhaXe;
+import com.main.admin.form.CoachForm;
 
 public interface NhaXeService {
 	
@@ -16,4 +17,7 @@ public interface NhaXeService {
 	
 	public List<NhaXe> findAll();
 
+	public boolean checkNhaXe(String nhaXe);
+	
+	public boolean addNhaXe(CoachForm coachForm);
 }

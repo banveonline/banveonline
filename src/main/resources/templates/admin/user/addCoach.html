@@ -13,90 +13,53 @@
 			</div>
 			<!-- /.row -->
 			<div class="row">
-				<form th:action="@{/admin/user/add}" th:object="${userForm}" method="post" id="addUserForm">
+				<form th:action="@{/admin/user/addCoach}" th:object="${coachForm}"
+					method="post" id="addCoachForm">
 					<div class="form-group">
-						<label for="username">Tên nhà xe</label>
-						<input th:field="*{tenNhaXe}"  name="tenNhaXe" type="text" class="form-control" onblur="checkUserName(this.value)" id="username" aria-describedby="basic-username" placeholder="Tên nhà xe"> 
-						<div class="valid-feedback" style="color: red" id="username-valid-feedback" hidden="true">
-					        Nhà xe đã tồn tại đã tồn tại! 
-					    </div>
+						<label for="username">Tên nhà xe</label> <input
+							th:field="*{tenNhaXe}" name="tenNhaXe" type="text"
+							class="form-control" onblur="checkNhaXe(this.value)"
+							id="username" aria-describedby="basic-username"
+							placeholder="Tên nhà xe">
+						<div class="valid-feedback" style="color: red"
+							id="username-valid-feedback" hidden="true">Nhà xe đã tồn
+							tại đã tồn tại!</div>
 					</div>
 					<div class="form-group">
-						<label for="password">Mật khẩu</label> 
-						<input th:field="*{matKhau}" name="matKhau" type="password" class="form-control" id="password" placeholder="Mật Khẩu">
+						<label for="password">Địa chỉ</label> <input th:field="*{diaChi}"
+							name="matKhau" type="text" class="form-control" id="password"
+							placeholder="Mật Khẩu">
 					</div>
 					<div class="form-group">
-						<label for="email">Email</label> 
-						<input th:field="*{email}" type="email" name="email" onblur="checkEmail(this.value)" class="form-control" id="email" placeholder="Email">
-						<div class="valid-feedback" style="color: red" id="email-valid-feedback" hidden="true">
-					        Email đã tồn tại! 
-					    </div>
-					</div>
-					<div class="form-group">
-						<label for="sdt">Số điện thoại</label> 
-						<input th:field="*{sdt}" type="text" name="sdt" class="form-control" id="sdt" placeholder="Số điện thoại">
+						<label for="sdt">Số điện thoại</label> <input th:field="*{sdt}"
+							type="text" name="sdt" class="form-control" id="sdt"
+							placeholder="Số điện thoại">
 					</div>
 					<div class="form-group" style="text-align: center;">
 						<button type="submit" class="btn btn-primary">Tạo</button>
 					</div>
-					
+
 				</form>
 			</div>
 			<!-- /.row -->
 		</div>
 	</div>
 	<script>
-		$(document).ready(function(){
-			//get danh sách nhà xe và put vào select nhà xe
+		checkNhaXe = function(value) {
 			$.ajax({
 				type : "GET",
-				url : "/listNhaXe",
+				url : "/user/coachName/" + value,
 				success : function(data) {
-					if (data) {
-						for(var i in data){
-							var item = data[i];
-							var option = new Option(item.tenNhaXe,item.id_nx);
-							$("#selectNhaXe").append(option);
-						}	
-					}
-				}
-			});
-		})
-		
-		//kiểm tra tên đăng nhập có tồn tại chưa
-		checkUserName = function(value){
-			$.ajax({
-				type: "GET",
-				url: "/user/userName/" + value,
-				success : function(data) {
-					if (data) {
+					if (data.validated) {
 						$("#username-valid-feedback").show();
-					}else{
+					} else {
 						$("#username-valid-feedback").hide();
 					}
 				}
 			})
 		}
-		
-		//kiểm tra Email có tồn tại chưa
-		checkEmail = function(value){
-			if(value){
-				$.ajax({
-					type: "GET",
-					url: "/user/email/" + value,
-					success : function(data) {
-						if (data) {
-							$("#email-valid-feedback").show();
-						}else{
-							$("#email-valid-feedback").hide();
-						}
-					}
-				})
-			}
-		}
-		//tạo user voi ajax
-		$("form").submit(function(e){
-			var form = "#addUserForm";
+		$("form").submit(function(e) {
+			var form = "#addCoachForm";
 			$.ajax({
 				type : $(form).attr('method'),
 				url : $(form).attr('action'),
@@ -109,9 +72,9 @@
 					}
 				}
 			});
-            e.preventDefault(e);
-            document.getElementById("addUserForm").reset();
-        });
+			e.preventDefault(e);
+			document.getElementById("addCoachForm").reset();
+		});
 	</script>
 </body>
 </html>

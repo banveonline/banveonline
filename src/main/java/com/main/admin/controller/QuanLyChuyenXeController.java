@@ -82,6 +82,7 @@ public class QuanLyChuyenXeController {
 		modelMap.put("userId", loginedUser.getUser().getId());
 		modelMap.put("tenNhaXe", loginedUser.getUser().getNhaXe().getTenNhaXe());
 		modelMap.put("id_nx", loginedUser.getUser().getNhaXe().getId_nx());
+		modelMap.put("loginedUser", loginedUser);
 		return loginedUser;
 	}
 }
