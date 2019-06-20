@@ -7,7 +7,6 @@ public class CoachForm {
 	private String diaChi;
 	private String sdt;
 	public CoachForm() {
-		super();
 	}
 	public String getAnh() {
 		return anh;

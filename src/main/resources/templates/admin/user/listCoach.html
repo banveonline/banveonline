@@ -16,7 +16,7 @@
 				<table id="coach" class="table">
 					<thead>
 						<tr>
-							<th>ID</th>
+							<th>STT</th>
 							<th>Tên nhà xe</th>
 							<th>Số điện thoại</th>
 							<th>Địa chỉ</th>
@@ -39,14 +39,13 @@
 			        dataSrc: ''
 			    },
 		        columns: [
-		            { "data": "anh" },
+		            { "data": "id_nx" },
 		            { "data": "tenNhaXe" },
 		            { "data": "sdt" },
 		            { "data": "diaChi" },
-		            { "data": "id",
+		            { "data": "id_nx",
 		            	render : function(data) {
 							return '<td>'+
-										'<button type="button" onclick="location.href=\'/admin/user/view/'+data+'\'" class="btn btn-primary">Xem</button>'+
 										'<button type="button" class="btn btn-danger" onclick="deleteData('+ data+ ')">Xóa</button>'+
 									'</td>';
 						}
@@ -60,6 +59,20 @@
 		        } );
 		    } ).draw();
 		});
+		function deleteData(id_nx) {
+			$.ajax({
+					type : "DELETE",
+					url : "/admin/user/deleteCoach/"+ id_nx,
+					success : function(data) {
+						if (data.validated == true) {
+							alert("Xóa nhà xe Thành Công");
+							$('table#coach').DataTable().ajax.reload();
+						}else{
+							alert("Xóa nhà xe thất bại");
+						}
+					}
+			});
+}
 	</script>
 </body>
 </html>

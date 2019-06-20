@@ -9,7 +9,7 @@ public interface NhaXeService {
 	
 	public Iterable<NhaXe> listNhaXe();
 	
-	public void xoaNhaXe(int id);
+	public boolean xoaNhaXe(int id);
 	
 	public NhaXe luuNhaXe(NhaXe nhaXe);
 	

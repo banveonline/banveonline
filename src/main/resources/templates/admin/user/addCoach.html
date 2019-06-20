@@ -11,6 +11,21 @@
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
+			<script>
+			checkNhaXe = function(value) {
+				$.ajax({
+					type : "GET",
+					url : "/user/coachName/" + value,
+					success : function(data) {
+						if (data.validated) {
+							$("#username-valid-feedback").show();
+						} else {
+							$("#username-valid-feedback").hide();
+						}
+					}
+				})
+			}
+			</script>
 			<!-- /.row -->
 			<div class="row">
 				<form th:action="@{/admin/user/addCoach}" th:object="${coachForm}"
@@ -45,19 +60,6 @@
 		</div>
 	</div>
 	<script>
-		checkNhaXe = function(value) {
-			$.ajax({
-				type : "GET",
-				url : "/user/coachName/" + value,
-				success : function(data) {
-					if (data.validated) {
-						$("#username-valid-feedback").show();
-					} else {
-						$("#username-valid-feedback").hide();
-					}
-				}
-			})
-		}
 		$("form").submit(function(e) {
 			var form = "#addCoachForm";
 			$.ajax({
@@ -66,9 +68,9 @@
 				data : $(form).serialize(),
 				success : function(res) {
 					if (res) {
-						alert("Tạo user thành công");
+						alert("Tạo nhà xe thành công");
 					} else {
-						alert("Tạo user lỗi");
+						alert("Tạo nhà xe lỗi");
 					}
 				}
 			});

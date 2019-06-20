@@ -6,7 +6,7 @@ public interface VeService {
 
 	public Iterable<Ve> danhSachVe(int id_nx);
 	
-	public void xoa(int id);
+	public boolean xoa(int id);
 	
 	public void luu(Ve ve);
 	

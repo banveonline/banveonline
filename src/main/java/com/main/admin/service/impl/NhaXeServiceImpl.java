@@ -21,8 +21,12 @@ public class NhaXeServiceImpl implements NhaXeService{
 	}
 
 	@Override
-	public void xoaNhaXe(int id) {
-		nhaXeDAO.delete(id);
+	public boolean xoaNhaXe(int id) {
+		if(nhaXeDAO.exists(id)) {
+			nhaXeDAO.delete(nhaXeDAO.getOne(id));
+			return true;
+		}
+		return false;
 	}
 
 	@Override
@@ -54,7 +58,7 @@ public class NhaXeServiceImpl implements NhaXeService{
 	public boolean addNhaXe(CoachForm coachForm) {
 		NhaXe nx = new NhaXe();
 		nx.setAnh(coachForm.getAnh());
-		nx.setId_nx(coachForm.getId());
+		nx.setId_nx(0);
 		nx.setTenNhaXe(coachForm.getTenNhaXe());
 		nx.setDiaChi(coachForm.getDiaChi());
 		nx.setSdt(coachForm.getSdt());

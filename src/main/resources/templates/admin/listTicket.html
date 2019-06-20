@@ -22,8 +22,7 @@
 						</th:block>
 						<!-- /.panel-heading -->
 						<div id="resultMsgDiv"></div>
-						<th:block th:unless="${#lists.isEmpty(ve)}">
-							<table class="table table-bordered" id="listTicket">
+							<table class="table table-bordered" id="list">
 								<thead>
 									<tr>
 										<th style="text-align: center;">ID vé xe</th>
@@ -37,7 +36,7 @@
 								</thead>
 								<tbody>
 									<tr th:each="vexe,iterStat : ${ve}">
-										<td style="text-align: center;" th:text="${vexe.id}" id="id"></td>
+										<td style="text-align: center;" th:text="${vexe.id}" id="a"></td>
 										<td style="text-align: center;"
 											th:text="${vexe.getChuyenxe().getId_CX()}"></td>
 										<td style="text-align: center;" th:text="${vexe.tenKH}"></td>
@@ -48,32 +47,25 @@
 										<td class="ql"><a
 											th:href="@{/admin/datve/chi-tiet-dat-ve/{id}(id=${vexe.id})}">Chi
 												tiết </a>
-											<button type="submit" id="click">
+											<button type="button" onclick="deleteTicket()">
 												<span class="glyphicon glyphicon-remove"></span>
 											</button></td>
 									</tr>
 								</tbody>
 							</table>
-						</th:block>
 						<div id="resultMsgDiv"></div>
 						<script>
-						$(document).ready(function(){
-							var id = document.getElementById("id").innerText;
-							$(document).on("click","button",function() {
-								  $.ajax({
-										type : "DELETE",
-										url : "/delete/" + id,
-										success: function(resultMsg){
-											$("#resultMsgDiv").html("<p style='background-color:#67597E; color:white; padding:20px 20px 20px 20px'>" +
-													"Xóa chuyến xe " + id + " thành công!"  + "</p>");
-										},
-										error : function(e) {
-											alert("Lỗi");
-											console.log("ERROR: ", e);
-										}
-									});
-							  });
-							});
+						function deleteTicket() {
+							var id = document.getElementById("a").innerText;
+							$.ajax({
+								type : "DELETE",
+								url : "/admin/ticket/delete/"+ id,
+								success : function(ve) {
+										alert("Xóa vé Thành Công");
+										$('table#list').DataTable().ajax.reload();
+								}
+						});
+						}
 							</script>
 							
 						<!-- /.table-responsive -->

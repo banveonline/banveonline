@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -62,6 +63,17 @@ public class CoachController {
 		}
 		jsonRespone.setValidated(false);
 		System.out.println("-----" + jsonRespone.toString());
+		return jsonRespone;
+	}
+	@DeleteMapping("/admin/user/deleteCoach/{id}")
+	public @ResponseBody JsonRespone  delete(ModelMap modelMap, @PathVariable("id") int id) {
+		JsonRespone jsonRespone = new JsonRespone();
+		boolean flg = nhaXeService.xoaNhaXe(id);
+		if( flg) {
+			jsonRespone.setValidated(true);
+			return jsonRespone;
+		}
+		jsonRespone.setValidated(false);
 		return jsonRespone;
 	}
 	public CustomUserDetails checkLogin(ModelMap modelMap, Principal principal) {

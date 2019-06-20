@@ -19,8 +19,12 @@ public class VeServiceImpl implements VeService{
 	}
 
 	@Override
-	public void xoa(int id) {
-		veDAO.delete(id);
+	public boolean xoa(int id) {
+		if(veDAO.exists(id)) {
+			veDAO.delete(veDAO.getOne(id));
+			return true;
+		}
+		return false;
 	}
 
 	@Override
