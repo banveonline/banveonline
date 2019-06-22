@@ -60,9 +60,13 @@
 							$.ajax({
 								type : "DELETE",
 								url : "/admin/ticket/delete/"+ id,
-								success : function(ve) {
+								success : function(data) {
+									if(data == true){
 										alert("Xóa vé Thành Công");
 										$('table#list').DataTable().ajax.reload();
+									}else{
+										alert("Xóa vé thất bại");
+									}
 								}
 						});
 						}

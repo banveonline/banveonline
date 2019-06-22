@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.main.admin.entity.ChuyenXe;
-import com.main.admin.entity.Ve;
 import com.main.admin.form.JsonRespone;
 import com.main.admin.model.CustomUserDetails;
 import com.main.admin.service.ChuyenXeService;
@@ -54,14 +53,16 @@ public class QuanLyVeController {
 		return chuyenXe;
 	}
 	@DeleteMapping("/admin/ticket/delete/{id}")
-	public @ResponseBody Iterable<Ve> deleteTicket(ModelMap modelMap,@PathVariable("id") int id,Principal principal) {
-		boolean flg = veService.xoa(id);
-		CustomUserDetails loginedUser = checkLogin(modelMap, principal);
-		Iterable<Ve> ls = veService.danhSachVe(loginedUser.getUser().getNhaXe().getId_nx());
-		if(flg) {
-			return ls;
+	public @ResponseBody JsonRespone deleteTicket(ModelMap modelMap,@PathVariable("id") int id,Principal principal) {
+		checkLogin(modelMap, principal);
+		JsonRespone jsonRespone = new JsonRespone();
+		boolean ck = veService.xoa(id);
+		if(ck) {
+			jsonRespone.setValidated(true);
+			return jsonRespone;
 		}
-		return ls;
+		jsonRespone.setValidated(false);
+		return jsonRespone;
 	}
 	public CustomUserDetails checkLogin(ModelMap modelMap, Principal principal) {
 		CustomUserDetails loginedUser = (CustomUserDetails) ((Authentication) principal).getPrincipal();
