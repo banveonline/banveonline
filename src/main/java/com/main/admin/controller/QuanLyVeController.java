@@ -57,6 +57,7 @@ public class QuanLyVeController {
 		checkLogin(modelMap, principal);
 		JsonRespone jsonRespone = new JsonRespone();
 		boolean ck = veService.xoa(id);
+		System.out.println(ck);
 		if(ck) {
 			jsonRespone.setValidated(true);
 			return jsonRespone;

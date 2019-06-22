@@ -61,9 +61,10 @@
 								type : "DELETE",
 								url : "/admin/ticket/delete/"+ id,
 								success : function(data) {
-									if(data == true){
+									alert(data);
+									if(data.validated == true){
 										alert("Xóa vé Thành Công");
-										$('table#list').DataTable().ajax.reload();
+										$('#list').DataTable().ajax.reload();
 									}else{
 										alert("Xóa vé thất bại");
 									}
@@ -84,7 +85,7 @@
 	</div>
 	<script>
 		$(document).ready(function() {
-			$('#listTicket').DataTable({
+			$('#list').DataTable({
 				responsive : true
 			});
 		});

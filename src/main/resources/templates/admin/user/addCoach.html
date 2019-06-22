@@ -17,6 +17,7 @@
 					type : "GET",
 					url : "/user/coachName/" + value,
 					success : function(data) {
+						alert(data.validated);
 						if (data.validated) {
 							$("#username-valid-feedback").show();
 						} else {
@@ -31,10 +32,10 @@
 				<form th:action="@{/admin/user/addCoach}" th:object="${coachForm}"
 					method="post" id="addCoachForm">
 					<div class="form-group">
-						<label for="username">Tên nhà xe</label> <input
+						<label for="nhaXe">Tên nhà xe</label> <input
 							th:field="*{tenNhaXe}" name="tenNhaXe" type="text"
 							class="form-control" onblur="checkNhaXe(this.value)"
-							id="username" aria-describedby="basic-username"
+							id="nhaXe" aria-describedby="basic-username"
 							placeholder="Tên nhà xe">
 						<div class="valid-feedback" style="color: red"
 							id="username-valid-feedback" hidden="true">Nhà xe đã tồn

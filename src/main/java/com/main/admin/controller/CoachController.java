@@ -46,6 +46,7 @@ public class CoachController {
 	public @ResponseBody JsonRespone saveUser(ModelMap modelMap, @ModelAttribute("userForm") CoachForm coachForm) {
 		boolean flg =  nhaXeService.addNhaXe(coachForm);
 		JsonRespone jsonRespone = new JsonRespone();
+		System.out.println(flg);
 		if(flg) {
 			jsonRespone.setValidated(true);
 			return jsonRespone;
@@ -55,6 +56,7 @@ public class CoachController {
 	}
 	@GetMapping("/user/coachName/{coachName}")
 	public @ResponseBody JsonRespone checkNhaXe(ModelMap modelMap, @PathVariable String nhaXe) {
+		System.out.println(nhaXe);
 		boolean flg = nhaXeService.checkNhaXe(nhaXe);
 		JsonRespone jsonRespone = new JsonRespone();
 		if(flg) {
