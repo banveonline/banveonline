@@ -34,7 +34,7 @@
 										<th></th>
 									</tr>
 								</thead>
-								<tbody>
+								<!-- <tbody>
 									<tr th:each="vexe,iterStat : ${ve}">
 										<td style="text-align: center;" th:text="${vexe.id}" id="a"></td>
 										<td style="text-align: center;"
@@ -51,17 +51,40 @@
 												<span class="glyphicon glyphicon-remove"></span>
 											</button></td>
 									</tr>
-								</tbody>
+								</tbody> -->
 							</table>
 						<div id="resultMsgDiv"></div>
 						<script>
-						function deleteTicket() {
-							var id = document.getElementById("a").innerText;
+						$(document).ready(function() {
+							var t = $('#list').DataTable({
+								ajax: {
+							        url: '/admin/ticket/listVe',
+							        dataSrc: '',
+							    },
+						        columns: [
+						            { "data": "id" },
+						            { "data": "chuyenxe.id_CX" },
+						            { "data": "tenKH" },
+						            { "data": "sdt" },
+						            { "data": "soCho" },
+						            { "data": "ngayDatVe" },
+						            { "data": "id",
+						            	render : function(data) {
+											return '<td>'+
+														'<a class="btn btn-danger" href =/admin/datve/chi-tiet-dat-ve/'+data+'>Chitiết </a>'+
+														'<button type="button" class="btn btn-danger" onclick="deleteTicket('+ data+ ')">Xóa</button>'+
+													'</td>';
+										}
+						            }
+						        ],
+						        
+							});
+						});
+						function deleteTicket(id) {
 							$.ajax({
 								type : "DELETE",
 								url : "/admin/ticket/delete/"+ id,
 								success : function(data) {
-									alert(data);
 									if(data.validated == true){
 										alert("Xóa vé Thành Công");
 										$('#list').DataTable().ajax.reload();
@@ -83,12 +106,5 @@
 			<!-- /.row -->
 		</div>
 	</div>
-	<script>
-		$(document).ready(function() {
-			$('#list').DataTable({
-				responsive : true
-			});
-		});
-	</script>
 </body>
 </html>

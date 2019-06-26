@@ -1,6 +1,7 @@
 package com.main.admin.controller;
 
 import java.security.Principal;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.main.admin.entity.ChuyenXe;
+import com.main.admin.entity.Ve;
 import com.main.admin.form.JsonRespone;
 import com.main.admin.model.CustomUserDetails;
 import com.main.admin.service.ChuyenXeService;
@@ -30,6 +32,12 @@ public class QuanLyVeController {
 		CustomUserDetails loginedUser = checkLogin(modelMap, principal);
 		modelMap.put("ve", veService.danhSachVe(loginedUser.getUser().getNhaXe().getId_nx()));
 		return "admin/listTicket";
+	}
+	@GetMapping("/admin/ticket/listVe")
+	private @ResponseBody Iterable<Ve> listVe(ModelMap modelMap,Principal principal) {
+		CustomUserDetails loginedUser = checkLogin(modelMap, principal);
+		Iterable<Ve> list = veService.danhSachVe(loginedUser.getUser().getNhaXe().getId_nx());
+		return list;
 	}
 
 	@GetMapping("/admin/datve/chi-tiet-dat-ve/{id}")
